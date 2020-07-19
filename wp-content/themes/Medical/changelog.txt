@@ -1,0 +1,26 @@
+2015-11-25 - Version 1.1
+* Cleaned up the PHP notice messages
+* Updated the Facebook widget to use the latest changes and features
+* Removed the <title> meta tag from the header.php, since it is deprecated in WP 4.4 and it is recommended to use the add_theme_support( 'title-tag' );
+* PHP 7 compatiblity fixes
+* Fixed slider not displaying in the full width page template
+
+* Upgrading Instructions:
+  1. Re-upload all the files in the 'lib/widgets' folder from the new version to your current theme's 'lib/widgets' folder
+  2. Re-upload the following files from the new version to your current theme's folder
+    - lib/Themater.php
+    - lib/Admin.php
+    - lib/default-admin-options.php
+    - includes/featuredposts/featuredposts.php
+    - includes/featuredposts/template.php
+    - includes/social_profiles.php (if exists)
+    - includes/aboutus.php (if exists)
+  3. Edit your header.php and remove the <title> meta tag: <title><?php $theme->meta_title(); ?></title>
+  4. Re-upload page-template-full.php from the new version to your curren theme's folder
+     Or edit page-template-full.php and add the below code immediately after <div id="main-fullwidth">
+     <?php $theme->hook("main_before"); $theme->hook("content_before");  ?>
+  5. Edit your style.css and update the version number with the new version number you are seeing for this update
+   
+
+2015-05-12 - Version 1.0
+* Initial theme release!
