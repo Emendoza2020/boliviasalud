@@ -24,8 +24,8 @@
     
     <div id="header">
         <div class="login">
-            <a href="http://localhost/saludbolivia/registration/">PUBLICA AQUI TU ANUNCIO </a> <label> / </label>
-            <a href="http://localhost/saludbolivia/login/">Iniciar Sesión </a>
+            <a href="<?php echo get_home_url();?>/registration/">PUBLICA AQUI TU ANUNCIO </a> <label> / </label>
+            <a href="<?php echo get_home_url();?>/login/">Iniciar Sesión </a>
         </div>
         <div class="banner">
             <?php 
