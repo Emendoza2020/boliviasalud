@@ -1,7 +1,8 @@
 <?php $piereg = PieReg_Base::get_pr_global_options(); ?>
 <?php
 $pie_user_email_types 	= get_option( 'pie_user_email_types' );
-$replacement_fields = "";			   	
+$replacement_fields = "";		
+$woocommerce_fields = "";	   	
 $fields = maybe_unserialize(get_option("pie_fields"));
 if(sizeof($fields ) > 0 && (is_array($fields) || is_object($fields)) )
 {
@@ -26,15 +27,44 @@ if(sizeof($fields ) > 0 && (is_array($fields) || is_object($fields)) )
 		break;
 		endswitch;						
 
-		if($pie_fields['type'] == "invitation")
+    if($pie_fields['type'] == "invitation")
+    {
       $meta_key = "invitation_code";
+    }
     elseif($pie_fields['type'] == "custom_role")
+    {
       $meta_key = "custom_role";
-		else
-			$meta_key	= "pie_".$pie_fields['type']."_".$pie_fields['id'];
-		
-		$replacement_fields .= '<option value="%'.$meta_key.'%">'.$pie_fields['label'].'</option>';
-	}
+    }
+    elseif($pie_fields['type'] == "wc_billing_address")
+    {
+      $meta_key = "wc_billing_address";
+      if( empty($pie_fields['label']) ) 
+      {
+        $pie_fields['label'] = "WC Billing Address";
+      }
+    }
+    elseif($pie_fields['type'] == "wc_shipping_address") 
+    {
+      $meta_key = "wc_shipping_address";
+      if( empty($pie_fields['label']) ) 
+      {
+        $pie_fields['label'] = "WC Shipping Address";
+      }
+    }
+    else
+    {
+      $meta_key	= "pie_".$pie_fields['type']."_".$pie_fields['id'];
+    }
+    
+    if ($pie_fields['type'] == "wc_billing_address" || $pie_fields['type'] == "wc_shipping_address")
+    {
+      $woocommerce_fields .= '<option value="%'.$meta_key.'%">'.$pie_fields['label'].'</option>';
+    }
+    else
+    {
+      $replacement_fields .= '<option value="%'.$meta_key.'%">'.$pie_fields['label'].'</option>';
+    }
+  }
 }
 ?>
 
@@ -124,6 +154,9 @@ if(sizeof($fields ) > 0 && (is_array($fields) || is_object($fields)) )
                               </optgroup>
                               <optgroup label="<?php _e("Custom Fields",'pie-register') ?>">
                                   <?php echo $replacement_fields; ?>
+                              </optgroup>
+                              <optgroup label="<?php _e("WooCommerce Fields",'pie-register') ?>">
+                                  <?php echo $woocommerce_fields; ?>
                               </optgroup>
                               <optgroup label="<?php _e("Other",'pie-register') ?>">
                                   <option value="%user_ip%"><?php _e("User IP",'pie-register') ?></option>

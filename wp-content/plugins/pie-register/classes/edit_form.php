@@ -75,7 +75,7 @@ class Edit_form extends PieReg_Base
 		$this->pie_post_array	= $this->piereg_sanitize_post_data_escape( ( (isset($_POST) && !empty($_POST))?$_POST : array() ) );
 		
 		$regXemail = "/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$/";
-		if ( empty( $this->pie_post_array['e_mail'] ) || !preg_match($regXemail,$this->pie_post_array['e_mail']) )
+		if ( empty( $this->pie_post_array['e_mail'] ) || !is_email($this->pie_post_array['e_mail']) )
 		{
 			$errors->add( "email" , '<strong>'.ucwords(__('error','pie-register')).'</strong>: '.apply_filters("piereg_invalid_Email_address",__('Invalid E-mail address','pie-register' )));		
 		}	
@@ -379,7 +379,7 @@ class Edit_form extends PieReg_Base
 			else if($rule=="email" && !empty($field_name))
 			{
 				$regXemail = "/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$/";
-				if( !preg_match($regXemail,$field_name) )
+				if( !is_email($field_name) )
 				{
 					$errors->add( $slug , '<strong>'.ucwords(__('error','pie-register')).'</strong>: '.$field['label'] .apply_filters("piereg_field_must_contain_a_valid_email_address",__(' field must contain a valid email address.','pie-register' )));	
 				}	

@@ -37,7 +37,7 @@
 			}
 		}
 		?>
-        <div class="pie-help-left">
+        <div class="pie-help"> <!-- pie-help-left -->
             <div id="tabsSetting" class="tabsSetting">
                 <div class="whiteLayer"></div>
                 <ul class="tabLayer1">
@@ -458,29 +458,6 @@
                 <?php } ?>            
             </div>
         </div>    
-        <div class="pie-help-right">
-            <div id="pie_embed_signup">
-                <?php $user = wp_get_current_user(); ?>    
-				<h3 class="piemc-title"><?php _e('Subscribe to our Newsletter','pie-register'); ?> </h3>
-				<p><?php _e('Be the first to receive Plugin Features and Addons update.','pie-register'); ?></p>
-				<form action="https://pieregister.us20.list-manage.com/subscribe/post?u=c036cac17bd3cc140233ff340&amp;id=9784a38ef2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                	<div class="fields">
-						<label for="piemc-email"><?php _e('Email Address', 'pie-register'); ?></label>
-						<input type="email" value="<?php echo esc_attr($user->user_email); ?>" name="EMAIL" class="regular-text" id="piemc-email" required="">
-					</div>
-					<div class="fields">
-						<label for="piemc-fname"><?php _e('First Name', 'pie-register'); ?></label>
-						<input type="text" value="<?php echo esc_attr($user->user_firstname); ?>" name="FNAME" class="regular-text" id="piemc-fname">
-					</div>
-					<div style="position: absolute; left: -5000px;" aria-hidden="true">
-                        <input type="text" name="b_c036cac17bd3cc140233ff340_9784a38ef2" tabindex="-1" value="">
-                    </div>
-					<div class="fields">
-						<input type="submit" value="<?php _e('Subscribe', 'pie-register'); ?>" name="subscribe" class="button submit_btn">
-					</div>
-				</form>
-			</div>
-        </div>
     </div>
   </div>
 </div>

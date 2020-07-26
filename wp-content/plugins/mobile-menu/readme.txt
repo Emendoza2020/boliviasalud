@@ -3,8 +3,8 @@ Contributors: takanakui, freemius
 link: http://profiles.wordpress.org/takanakui
 Tags:   mobile, navigation, responsive, menu,  responsive menu, mobile menu,  tablet menu, hamburger menu, hamburger, wordpress responsive menu, wordpress mobile menu, canvas menu
 Requires at least: 4.4
-Tested up to: 5.3
-Stable tag: 2.8
+Tested up to: 5.4
+Stable tag: 2.8.1.2
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -132,6 +132,23 @@ Not available at the moment
  
 == Changelog ==
 
+
+
+= 2.8.1.2 =
+* Fix!        - Fix empty mobmenul-container
+* Fix!        - Fix fonts issues that weren't being applied
+* Fix!        - Validate if the target of an menu URL exists before calling it
+* Fix!        - Remove customizer CSS regeneration
+* Fix!        - Fix the close of the menu panel when clicking in internal links
+* Improvment! - Hide more theme/plugin menus by default (Elementor, Ocean WP, Square theme, Genesis theme)
+* Improvment! - Make the code mirror fields resizable
+* Improvment! - Update Freemius SDK
+* Improvment! - Include Aria Label for acessibility reasons
+* Improvment! - Decode the URL Hash so it can be handled by Javascript.
+
+= 2.8.1.1 =
+* Fix!        - Avoid undefined index when acessing to an array position
+* Fix!        - Fix the header font CSS typo
 
 = 2.8 =
 * New!        - Testing Mode. Only admins can see the new Mobile Menu

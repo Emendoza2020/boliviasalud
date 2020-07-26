@@ -31,11 +31,11 @@ class WP_Mobile_Menu_Core
         $lpanel_elements = $titan->getOption( 'left_menu_content_position' );
         $rpanel_elements = $titan->getOption( 'right_menu_content_position' );
         // If the User profile is being used at the Top of the left panel.
-        if ( 'user-profile' === $lpanel_elements[0] ) {
+        if ( isset( $lpanel_elements[0] ) && 'user-profile' === $lpanel_elements[0] ) {
             $classes[] = 'left-mobmenu-user-profile';
         }
         // If the User profile is being used at the Top of the right panel.
-        if ( 'user-profile' === $rpanel_elements[0] ) {
+        if ( isset( $rpanel_elements[0] ) && 'user-profile' === $rpanel_elements[0] ) {
             $classes[] = 'right-mobmenu-user-profile';
         }
         if ( '' === $display_type || !$display_type ) {
@@ -59,7 +59,6 @@ class WP_Mobile_Menu_Core
                 $menu_display_type = 'mob-menu-overlay';
                 break;
         }
-        $this->menu_display_type = $menu_display_type;
         $classes[] = $menu_display_type;
         // Check if the Auto-hide Header option is on so it can be added a new class.
         if ( $titan->getOption( 'autohide_header' ) ) {
@@ -195,6 +194,10 @@ class WP_Mobile_Menu_Core
         $submenu_close_icon_font = $titan->getOption( 'submenu_close_icon_font' );
         $mm_open_cart_menu = '';
         $logo_content = '';
+        $search_form = '<div class="mm-panel-search-form"><form action="' . esc_url( home_url( '/' ) ) . '" method="get" class="search-form">
+        <input type="text" name="s" id="s" class="search" placeholder="Search for.." value="' . esc_attr( get_search_query() ) . '" required>
+        <button type="submit" id="search-submit" class="search-submit"><i class="mob-icon-search-6"></i></button>
+        </form></div>';
         $menu_display_type = 'mob-menu-slideout';
         $output = '';
         $output .= '<div class="mobmenu-overlay"></div>';
@@ -215,7 +218,7 @@ class WP_Mobile_Menu_Core
         if ( $titan->getOption( 'enable_mm_woo_open_cart_menu' ) ) {
             $mm_open_cart_menu = ' data-open-cart="true"';
         }
-        $menu_display_class = ' data-menu-display="' . $this->menu_display_type . '"';
+        $menu_display_class = ' data-menu-display="' . $menu_display_type . '"';
         $output .= '<div class="mob-menu-header-holder mobmenu" ' . $menu_display_class . $sticky_el_data_detach . $autoclose_menus_el_data . $mm_open_cart_menu . ' data-open-icon="' . $submenu_open_icon_font . '" data-close-icon="' . $submenu_close_icon_font . '">';
         // Left Menu Content.
         
@@ -239,7 +242,13 @@ class WP_Mobile_Menu_Core
             }
             
             $left_icon_image = wp_get_attachment_image_src( $titan->getOption( 'left_menu_icon' ) );
-            $left_icon_image = $left_icon_image[0];
+            
+            if ( !$left_icon_image ) {
+                $left_icon_image = '';
+            } else {
+                $left_icon_image = $left_icon_image[0];
+            }
+            
             $left_menu_icon = $titan->getOption( 'left_menu_icon_new' );
             switch ( $left_menu_icon ) {
                 case 'image':
@@ -306,7 +315,10 @@ class WP_Mobile_Menu_Core
         
         $header_elements_order = array( 'left-menu', 'logo', 'right-menu' );
         $language_selector = '';
-        $header_output = '<div  class="mobmenul-container">';
+        $header_output = '';
+        if ( $titan->getOption( 'enable_left_menu' ) ) {
+            $header_output = '<div  class="mobmenul-container">';
+        }
         if ( !empty($header_elements_order) ) {
             foreach ( $header_elements_order as $element ) {
                 switch ( $element ) {
@@ -323,7 +335,13 @@ class WP_Mobile_Menu_Core
                         $header_output .= $header_shop_filter;
                         break;
                     case 'logo':
-                        $header_output .= '</div>' . $logo_content . '<div class="mobmenur-container">';
+                        
+                        if ( $titan->getOption( 'enable_left_menu' ) ) {
+                            $header_output .= '</div>' . $logo_content . '<div class="mobmenur-container">';
+                        } else {
+                            $header_output .= $logo_content . '<div class="mobmenur-container">';
+                        }
+                        
                         break;
                     case 'search':
                         $header_output .= $header_search;
@@ -381,7 +399,7 @@ class WP_Mobile_Menu_Core
                             $left_menu_panel_content .= $this->get_user_profile_asset__premium_only();
                             break;
                         case 'search':
-                            $left_menu_panel_content .= $header_cart;
+                            $left_menu_panel_content .= $search_form;
                             break;
                         case 'logo':
                             $left_menu_panel_content .= $logo_content;
@@ -452,10 +470,10 @@ class WP_Mobile_Menu_Core
                             $right_menu_panel_content .= $this->get_user_profile_asset__premium_only();
                             break;
                         case 'search':
-                            $right_menu_panel_content .= $header_cart;
+                            $right_menu_panel_content .= $search_form;
                             break;
                         case 'logo':
-                            $right_menu_panel_content .= '</div>' . $logo_content;
+                            $right_menu_panel_content .= $logo_content;
                             break;
                     }
                 }
@@ -508,7 +526,7 @@ class WP_Mobile_Menu_Core
             // Display the menu.
             $output = wp_nav_menu( array(
                 $menu_param   => $current_menu,
-                'items_wrap'  => '<ul id="mobmenu' . $menu . '">%3$s</ul>',
+                'items_wrap'  => '<ul id="mobmenu' . $menu . '" role="navigation" aria-label="' . __( 'Main navigation for mobile devices', 'mobile-menu' ) . '">%3$s</ul>',
                 'fallback_cb' => false,
                 'depth'       => $mobmenu_depth,
                 'walker'      => new WP_Mobile_Menu_Walker_Nav_Menu( $menu, '' ),

@@ -22,6 +22,7 @@ $left_menu_height_translate = '100%';
 $woo_menu_width_translate = '100%';
 $woo_menu_width = 0;
 $woo_menu_font = '';
+$search_results_font = $titan->getOption( 'search_results_font' );
 if ( in_array( '1', $def_el_arr, true ) ) {
     $default_elements .= '.nav, ';
 }
@@ -370,6 +371,7 @@ echo  $titan->getOption( 'left_panel_submenu_text_color' ) ;
 ?> ;
 		width: 100%;
 		position: initial;
+		height: 100%;
 	}
 	.mob-menu-left-bg-holder {
 		<?php 
@@ -691,6 +693,7 @@ echo  $left_menu_height_translate ;
 		color: <?php 
 echo  $titan->getOption( 'header_text_color' ) ;
 ?> ;
+		text-decoration: none;
 	}
 	.headertext span {
 		position: <?php 
@@ -830,9 +833,9 @@ $right_menu_font = $titan->getOption( 'right_menu_font' );
 ?>
 
 .mob-menu-logo-holder > .headertext span,.mobmenu input.mob-menu-search-field {
-	font-family:"<?php 
+	font-family:<?php 
 echo  $header_menu_font['font-family'] ;
-?>";
+?>;
 	font-size:<?php 
 echo  $header_menu_font['font-size'] ;
 ?>;
@@ -875,9 +878,9 @@ echo  $text_after_left_icon_font['text-transform'] ;
 }
 
 #mobmenuleft .mob-expand-submenu,#mobmenuleft > .widgettitle,#mobmenuleft li a,#mobmenuleft li a:visited,#mobmenuleft .mobmenu-content h2,#mobmenuleft .mobmenu-content h3,.mobmenu-left-panel .mobmenu-display-name {
-	font-family:"<?php 
+	font-family:<?php 
 echo  $left_menu_font['font-family'] ;
-?>";
+?>;
 	font-size:<?php 
 echo  $left_menu_font['font-size'] ;
 ?>;
@@ -899,9 +902,9 @@ echo  $left_menu_font['text-transform'] ;
 }
 
 .mob-menu-copyright,.mob-menu-copyright a,.mob-menu-copyright p,.mob-menu-copyright h1,.mob-menu-copyright h2,.mob-menu-copyright h3,.mob-menu-copyright h4,.mob-menu-copyright h5,.mob-menu-copyright h6 {
-	font-family:"<?php 
+	font-family:<?php 
 echo  $left_menu_copy_font['font-family'] ;
-?>";
+?>;
 	font-size:<?php 
 echo  $left_menu_copy_font['font-size'] ;
 ?>;
@@ -923,9 +926,9 @@ echo  $left_menu_copy_font['text-transform'] ;
 }
 
 .right-menu-icon-text {
-	font-family:"<?php 
+	font-family:<?php 
 echo  $text_before_right_icon_font['font-family'] ;
-?>";
+?>;
 	font-size:<?php 
 echo  $text_before_right_icon_font['font-size'] ;
 ?>;
@@ -947,9 +950,9 @@ echo  $text_before_right_icon_font['text-transform'] ;
 }
 
 #mobmenuright li a,#mobmenuright li a:visited,#mobmenuright .mobmenu-content h2,#mobmenuright .mobmenu-content h3,.mobmenu-left-panel .mobmenu-display-name {
-	font-family:"<?php 
+	font-family:<?php 
 echo  $right_menu_font['font-family'] ;
-?>";
+?>;
 	font-size:<?php 
 echo  $right_menu_font['font-size'] ;
 ?>;

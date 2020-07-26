@@ -360,7 +360,8 @@ if( !isset($_GET['form_id']) && !$this->piereg_pro_is_activate )
 						case 'phone':
 						case 'invitation' :
 						case 'textarea':
-						case 'dropdown':
+            case 'dropdown':
+						case 'custom_role':
 						case 'number':
 						case 'name':
 							$data_field_id = ' data-field_id="'.$field['id'].'" '; // Applied conditional logic in these fields. 
@@ -451,6 +452,7 @@ if( !isset($_GET['form_id']) && !$this->piereg_pro_is_activate )
 					break;
 					case 'dropdown':
 					case 'multiselect':
+          case 'custom_role':
 						$this->addDropdown($field,$field['id']);
 					break;
 					case 'number':
@@ -458,7 +460,6 @@ if( !isset($_GET['form_id']) && !$this->piereg_pro_is_activate )
 					break;
 					case 'radio':
           case 'checkbox':
-          case 'custom_role':
 						$this->addCheckRadio($field,$field['id']);
 					break;
 					case 'html':

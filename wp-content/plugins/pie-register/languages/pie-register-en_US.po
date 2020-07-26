@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-27 11:18+0500\n"
-"PO-Revision-Date: 2020-04-27 11:22+0500\n"
+"POT-Creation-Date: 2020-05-19 11:31+0500\n"
+"PO-Revision-Date: 2020-05-19 11:31+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -223,9 +223,9 @@ msgstr ""
 "received it, you can get it by logging into your account <a href=\"%s\" "
 "target=\"_blank\">dashboard</a>."
 
-#: classes/app/app_api.php:200 pie-register.php:2175 pie-register.php:2195
-#: pie-register.php:2205 pie-register.php:2228 pie-register.php:2273
-#: pie-register.php:6880
+#: classes/app/app_api.php:200 pie-register.php:2388 pie-register.php:2408
+#: pie-register.php:2418 pie-register.php:2441 pie-register.php:2486
+#: pie-register.php:7143
 msgid ""
 "We are sorry, but this IP address has been blocked due to too many recent "
 "failed login attempts."
@@ -235,19 +235,19 @@ msgstr ""
 
 #: classes/app/app_api.php:692 classes/unverified_pagination.php:200
 #: classes/unverified_pagination.php:280 menus/PieRegEditForm.php:129
-#: pie-register.php:922
+#: pie-register.php:940
 msgid "E-mail Verification"
 msgstr "E-mail Verification"
 
 #: classes/app/app_api.php:695 classes/unverified_pagination.php:199
 #: classes/unverified_pagination.php:283 menus/PieRegEditForm.php:128
-#: pie-register.php:922
+#: pie-register.php:940
 msgid "Admin Verification"
 msgstr "Admin Verification"
 
 #: classes/app/app_api.php:698 classes/unverified_pagination.php:201
 #: classes/unverified_pagination.php:286 menus/PieRegEditForm.php:130
-#: pie-register.php:922
+#: pie-register.php:940
 msgid "E-mail & Admin Verification"
 msgstr "E-mail & Admin Verification"
 
@@ -266,7 +266,7 @@ msgid "ID"
 msgstr "ID"
 
 #: classes/attachment_pagination.php:112 classes/base.php:451
-#: classes/unverified_pagination.php:67 menus/PieRegEditForm.php:674
+#: classes/unverified_pagination.php:67 menus/PieRegEditForm.php:675
 #: menus/PieRegImportExport.php:212
 #: pie_register_template/login/login_form_template.php:17
 msgid "Username"
@@ -277,7 +277,7 @@ msgstr "Username"
 msgid "Email Address"
 msgstr "Email Address"
 
-#: classes/attachment_pagination.php:114 pie-register.php:2670
+#: classes/attachment_pagination.php:114 pie-register.php:2883
 msgid "Attachments"
 msgstr "Attachments"
 
@@ -301,163 +301,163 @@ msgstr "Forgot Password"
 msgid "Profile"
 msgstr "Profile"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Afghanistan"
 msgstr "Afghanistan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Albania"
 msgstr "Albania"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Algeria"
 msgstr "Algeria"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "American Samoa"
 msgstr "American Samoa"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Andorra"
 msgstr "Andorra"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Angola"
 msgstr "Angola"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Antigua and Barbuda"
 msgstr "Antigua and Barbuda"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Argentina"
 msgstr "Argentina"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Armenia"
 msgstr "Armenia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Australia"
 msgstr "Australia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Austria"
 msgstr "Austria"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Azerbaijan"
 msgstr "Azerbaijan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bahamas"
 msgstr "Bahamas"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bahrain"
 msgstr "Bahrain"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bangladesh"
 msgstr "Bangladesh"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Barbados"
 msgstr "Barbados"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Belarus"
 msgstr "Belarus"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Belgium"
 msgstr "Belgium"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Belize"
 msgstr "Belize"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Benin"
 msgstr "Benin"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bermuda"
 msgstr "Bermuda"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bhutan"
 msgstr "Bhutan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bolivia"
 msgstr "Bolivia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnia and Herzegovina"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Botswana"
 msgstr "Botswana"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Brazil"
 msgstr "Brazil"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Brunei"
 msgstr "Brunei"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Bulgaria"
 msgstr "Bulgaria"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Burkina Faso"
 msgstr "Burkina Faso"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Burundi"
 msgstr "Burundi"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Cambodia"
 msgstr "Cambodia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Cameroon"
 msgstr "Cameroon"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Canada"
 msgstr "Canada"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Cape Verde"
 msgstr "Cape Verde"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Central African Republic"
 msgstr "Central African Republic"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Chad"
 msgstr "Chad"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Chile"
 msgstr "Chile"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "China"
 msgstr "China"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Colombia"
 msgstr "Colombia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Comoros"
 msgstr "Comoros"
 
@@ -465,7 +465,7 @@ msgstr "Comoros"
 msgid "Congo"
 msgstr "Congo"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Costa Rica"
 msgstr "Costa Rica"
 
@@ -473,923 +473,925 @@ msgstr "Costa Rica"
 msgid "Côte d'Ivoire"
 msgstr "Côte d'Ivoire"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Croatia"
 msgstr "Croatia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Cuba"
 msgstr "Cuba"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Cyprus"
 msgstr "Cyprus"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Czech Republic"
 msgstr "Czech Republic"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Denmark"
 msgstr "Denmark"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Djibouti"
 msgstr "Djibouti"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Dominica"
 msgstr "Dominica"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Dominican Republic"
 msgstr "Dominican Republic"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "East Timor"
 msgstr "East Timor"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Ecuador"
 msgstr "Ecuador"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Egypt"
 msgstr "Egypt"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Equatorial Guinea"
 msgstr "Equatorial Guinea"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Eritrea"
 msgstr "Eritrea"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Estonia"
 msgstr "Estonia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Ethiopia"
 msgstr "Ethiopia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Fiji"
 msgstr "Fiji"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Finland"
 msgstr "Finland"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "France"
 msgstr "France"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Gabon"
 msgstr "Gabon"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Gambia"
 msgstr "Gambia"
 
-#: classes/base.php:238 classes/base.php:242 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:242 classes/base.php:1081
 msgid "Georgia"
 msgstr "Georgia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Germany"
 msgstr "Germany"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Ghana"
 msgstr "Ghana"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Greece"
 msgstr "Greece"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Greenland"
 msgstr "Greenland"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Grenada"
 msgstr "Grenada"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Guam"
 msgstr "Guam"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Guatemala"
 msgstr "Guatemala"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Guinea"
 msgstr "Guinea"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Guinea-Bissau"
 msgstr "Guinea-Bissau"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Guyana"
 msgstr "Guyana"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Haiti"
 msgstr "Haiti"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Honduras"
 msgstr "Honduras"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Hong Kong"
 msgstr "Hong Kong"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Hungary"
 msgstr "Hungary"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Iceland"
 msgstr "Iceland"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "India"
 msgstr "India"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Indonesia"
 msgstr "Indonesia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Iran"
 msgstr "Iran"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Iraq"
 msgstr "Iraq"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Ireland"
 msgstr "Ireland"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Israel"
 msgstr "Israel"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Italy"
 msgstr "Italy"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Jamaica"
 msgstr "Jamaica"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Japan"
 msgstr "Japan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Jordan"
 msgstr "Jordan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Kazakhstan"
 msgstr "Kazakhstan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Kenya"
 msgstr "Kenya"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Kiribati"
 msgstr "Kiribati"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "North Korea"
 msgstr "North Korea"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "South Korea"
 msgstr "South Korea"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Kuwait"
 msgstr "Kuwait"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Kyrgyzstan"
 msgstr "Kyrgyzstan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Laos"
 msgstr "Laos"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Latvia"
 msgstr "Latvia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Lebanon"
 msgstr "Lebanon"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Lesotho"
 msgstr "Lesotho"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Liberia"
 msgstr "Liberia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Libya"
 msgstr "Libya"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Lithuania"
 msgstr "Lithuania"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Luxembourg"
 msgstr "Luxembourg"
 
-#: classes/base.php:238 classes/base.php:1078
-msgid "Macedonia"
-msgstr "Macedonia"
+#: classes/base.php:238 classes/base.php:1081
+#, fuzzy
+#| msgid "Congo, Republic of the"
+msgid "The Republic of North Macedonia"
+msgstr "Democratic Republic of the Congo"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Madagascar"
 msgstr "Madagascar"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Malawi"
 msgstr "Malawi"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Malaysia"
 msgstr "Malaysia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Maldives"
 msgstr "Maldives"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Mali"
 msgstr "Mali"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Malta"
 msgstr "Malta"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Marshall Islands"
 msgstr "Marshall Islands"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Mauritania"
 msgstr "Mauritania"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Mauritius"
 msgstr "Mauritius"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Mexico"
 msgstr "Mexico"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Micronesia"
 msgstr "Micronesia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Moldova"
 msgstr "Moldova"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Monaco"
 msgstr "Monaco"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Mongolia"
 msgstr "Mongolia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Montenegro"
 msgstr "Montenegro"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Morocco"
 msgstr "Morocco"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Mozambique"
 msgstr "Mozambique"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Myanmar"
 msgstr "Myanmar"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Namibia"
 msgstr "Namibia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Nauru"
 msgstr "Nauru"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Nepal"
 msgstr "Nepal"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Netherlands"
 msgstr "Netherlands"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "New Zealand"
 msgstr "New Zealand"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Nicaragua"
 msgstr "Nicaragua"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Niger"
 msgstr "Niger"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Nigeria"
 msgstr "Nigeria"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Norway"
 msgstr "Norway"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Northern Mariana Islands"
 msgstr "Northern Mariana Islands"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Oman"
 msgstr "Oman"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Pakistan"
 msgstr "Pakistan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Palau"
 msgstr "Palau"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Palestine"
 msgstr "Palestine"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Panama"
 msgstr "Panama"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Papua New Guinea"
 msgstr "Papua New Guinea"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Paraguay"
 msgstr "Paraguay"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Peru"
 msgstr "Peru"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Philippines"
 msgstr "Philippines"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Poland"
 msgstr "Poland"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Portugal"
 msgstr "Portugal"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Puerto Rico"
 msgstr "Puerto Rico"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Qatar"
 msgstr "Qatar"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Romania"
 msgstr "Romania"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Russia"
 msgstr "Russia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Rwanda"
 msgstr "Rwanda"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Saint Kitts and Nevis"
 msgstr "Saint Kitts and Nevis"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Saint Lucia"
 msgstr "Saint Lucia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Saint Vincent and the Grenadines"
 msgstr "Saint Vincent and the Grenadines"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Samoa"
 msgstr "Samoa"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "San Marino"
 msgstr "San Marino"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Sao Tome and Principe"
 msgstr "Sao Tome and Principe"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Saudi Arabia"
 msgstr "Saudi Arabia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Senegal"
 msgstr "Senegal"
 
-#: classes/base.php:238 classes/base.php:1078
-msgid "Serbia and Montenegro"
-msgstr "Serbia and Montenegro"
+#: classes/base.php:238 classes/base.php:1081
+msgid "Serbia"
+msgstr ""
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Seychelles"
 msgstr "Seychelles"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Singapore"
 msgstr "Singapore"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Slovakia"
 msgstr "Slovakia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Slovenia"
 msgstr "Slovenia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Solomon Islands"
 msgstr "Solomon Islands"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Somalia"
 msgstr "Somalia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "South Africa"
 msgstr "South Africa"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Spain"
 msgstr "Spain"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Sudan"
 msgstr "Sudan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Sudan, South"
 msgstr "Sudan, South"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Suriname"
 msgstr "Suriname"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Swaziland"
 msgstr "Swaziland"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Sweden"
 msgstr "Sweden"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Switzerland"
 msgstr "Switzerland"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Syria"
 msgstr "Syria"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Taiwan"
 msgstr "Taiwan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Tajikistan"
 msgstr "Tajikistan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Tanzania"
 msgstr "Tanzania"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Thailand"
 msgstr "Thailand"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Togo"
 msgstr "Togo"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Tonga"
 msgstr "Tonga"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Trinidad and Tobago"
 msgstr "Trinidad and Tobago"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Tunisia"
 msgstr "Tunisia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Turkey"
 msgstr "Turkey"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Turkmenistan"
 msgstr "Turkmenistan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Tuvalu"
 msgstr "Tuvalu"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Uganda"
 msgstr "Uganda"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Ukraine"
 msgstr "Ukraine"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "United Arab Emirates"
 msgstr "United Arab Emirates"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "United Kingdom"
 msgstr "United Kingdom"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "United States"
 msgstr "United States"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Uruguay"
 msgstr "Uruguay"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Uzbekistan"
 msgstr "Uzbekistan"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Vanuatu"
 msgstr "Vanuatu"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Vatican City"
 msgstr "Vatican City"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Venezuela"
 msgstr "Venezuela"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Vietnam"
 msgstr "Vietnam"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Virgin Islands, British"
 msgstr "Virgin Islands, British"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Virgin Islands, U.S."
 msgstr "Virgin Islands, U.S."
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Yemen"
 msgstr "Yemen"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Zambia"
 msgstr "Zambia"
 
-#: classes/base.php:238 classes/base.php:1078
+#: classes/base.php:238 classes/base.php:1081
 msgid "Zimbabwe"
 msgstr "Zimbabwe"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Alabama"
 msgstr "Alabama"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Alaska"
 msgstr "Alaska"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Arizona"
 msgstr "Arizona"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Arkansas"
 msgstr "Arkansas"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "California"
 msgstr "California"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Colorado"
 msgstr "Colorado"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Connecticut"
 msgstr "Connecticut"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Delaware"
 msgstr "Delaware"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "District of Columbia"
 msgstr "District of Columbia"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Florida"
 msgstr "Florida"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Hawaii"
 msgstr "Hawaii"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Idaho"
 msgstr "Idaho"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Illinois"
 msgstr "Illinois"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Indiana"
 msgstr "Indiana"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Iowa"
 msgstr "Iowa"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Kansas"
 msgstr "Kansas"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Kentucky"
 msgstr "Kentucky"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Louisiana"
 msgstr "Louisiana"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Maine"
 msgstr "Maine"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Maryland"
 msgstr "Maryland"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Massachusetts"
 msgstr "Massachusetts"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Michigan"
 msgstr "Michigan"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Minnesota"
 msgstr "Minnesota"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Mississippi"
 msgstr "Mississippi"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Missouri"
 msgstr "Missouri"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Montana"
 msgstr "Montana"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Nebraska"
 msgstr "Nebraska"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Nevada"
 msgstr "Nevada"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "New Hampshire"
 msgstr "New Hampshire"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "New Jersey"
 msgstr "New Jersey"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "New Mexico"
 msgstr "New Mexico"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "New York"
 msgstr "New York"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "North Carolina"
 msgstr "North Carolina"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "North Dakota"
 msgstr "North Dakota"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Ohio"
 msgstr "Ohio"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Oklahoma"
 msgstr "Oklahoma"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Oregon"
 msgstr "Oregon"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Pennsylvania"
 msgstr "Pennsylvania"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Rhode Island"
 msgstr "Rhode Island"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "South Carolina"
 msgstr "South Carolina"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "South Dakota"
 msgstr "South Dakota"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Tennessee"
 msgstr "Tennessee"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Texas"
 msgstr "Texas"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Utah"
 msgstr "Utah"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Vermont"
 msgstr "Vermont"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Virginia"
 msgstr "Virginia"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Washington"
 msgstr "Washington"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "West Virginia"
 msgstr "West Virginia"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Wisconsin"
 msgstr "Wisconsin"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Wyoming"
 msgstr "Wyoming"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Armed Forces Americas"
 msgstr "Armed Forces Americas"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Armed Forces Europe"
 msgstr "Armed Forces Europe"
 
-#: classes/base.php:242 classes/base.php:1078
+#: classes/base.php:242 classes/base.php:1081
 msgid "Armed Forces Pacific"
 msgstr "Armed Forces Pacific"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Alberta"
 msgstr "Alberta"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "British Columbia"
 msgstr "British Columbia"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Manitoba"
 msgstr "Manitoba"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "New Brunswick"
 msgstr "New Brunswick"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Newfoundland and Labrador"
 msgstr "Newfoundland and Labrador"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Northwest Territories"
 msgstr "Northwest Territories"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Nova Scotia"
 msgstr "Nova Scotia"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Nunavut"
 msgstr "Nunavut"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Ontario"
 msgstr "Ontario"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Prince Edward Island"
 msgstr "Prince Edward Island"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Quebec"
 msgstr "Quebec"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Saskatchewan"
 msgstr "Saskatchewan"
 
-#: classes/base.php:246 classes/base.php:1078
+#: classes/base.php:246 classes/base.php:1081
 msgid "Yukon"
 msgstr "Yukon"
 
-#: classes/base.php:252 classes/base.php:1957
+#: classes/base.php:252 classes/base.php:1973
 msgid "Your account is ready."
 msgstr "Your account is ready."
 
-#: classes/base.php:253 classes/base.php:1958
+#: classes/base.php:253 classes/base.php:1974
 msgid "Your account is being processed."
 msgstr "Your account is being processed."
 
-#: classes/base.php:254 classes/base.php:1959
+#: classes/base.php:254 classes/base.php:1975
 msgid "Email verification."
 msgstr "Email verification."
 
@@ -1401,31 +1403,31 @@ msgstr "Email address change verification."
 msgid "Current Email address change verification."
 msgstr "Current Email address change verification."
 
-#: classes/base.php:257 classes/base.php:1960
+#: classes/base.php:257 classes/base.php:1976
 msgid "Your account has been activated."
 msgstr "Your account has been activated."
 
-#: classes/base.php:258 classes/base.php:1966
+#: classes/base.php:258 classes/base.php:1982
 msgid "Password Reset Request."
 msgstr "Password Reset Request."
 
-#: classes/base.php:259 classes/base.php:1961
+#: classes/base.php:259 classes/base.php:1977
 msgid "Overdue Payment."
 msgstr "Overdue Payment."
 
-#: classes/base.php:260 classes/base.php:1962
+#: classes/base.php:260 classes/base.php:1978
 msgid "Payment Processed."
 msgstr "Payment Processed."
 
-#: classes/base.php:261 classes/base.php:266 classes/base.php:1963
+#: classes/base.php:261 classes/base.php:266 classes/base.php:1979
 msgid "Payment Failed."
 msgstr "Payment Failed."
 
-#: classes/base.php:262 classes/base.php:1964
+#: classes/base.php:262 classes/base.php:1980
 msgid "Payment Pending."
 msgstr "Payment Pending."
 
-#: classes/base.php:263 classes/base.php:1965
+#: classes/base.php:263 classes/base.php:1981
 msgid "Email Verification Reminder."
 msgstr "Email Verification Reminder."
 
@@ -1437,27 +1439,27 @@ msgstr "Final Email Verification Reminder."
 msgid "User Temporarily Blocked Notice"
 msgstr "User Temporarily Blocked Notice"
 
-#: classes/base.php:282 classes/base.php:1987
-#: menus/PieRegPaymentGateway.php:123 pie-register.php:5062
+#: classes/base.php:282 classes/base.php:2003
+#: menus/PieRegPaymentGateway.php:123 pie-register.php:5329
 msgid "Payment was successful."
 msgstr "Payment was successful."
 
-#: classes/base.php:283 classes/base.php:1988
-#: menus/PieRegPaymentGateway.php:128 pie-register.php:5065
+#: classes/base.php:283 classes/base.php:2004
+#: menus/PieRegPaymentGateway.php:128 pie-register.php:5332
 msgid "Payment failed."
 msgstr "Payment failed."
 
-#: classes/base.php:284 classes/base.php:1989
-#: menus/PieRegPaymentGateway.php:133 pie-register.php:5068
+#: classes/base.php:284 classes/base.php:2005
+#: menus/PieRegPaymentGateway.php:133 pie-register.php:5335
 msgid "Account needs to be activated."
 msgstr "Account needs to be activated."
 
-#: classes/base.php:285 classes/base.php:1990
-#: menus/PieRegPaymentGateway.php:138 pie-register.php:5072
+#: classes/base.php:285 classes/base.php:2006
+#: menus/PieRegPaymentGateway.php:138 pie-register.php:5339
 msgid "Account is already active."
 msgstr "Account is already active."
 
-#: classes/base.php:297 classes/base.php:2001
+#: classes/base.php:297 classes/base.php:2017
 msgid "New User Registration"
 msgstr "New User Registration"
 
@@ -1465,7 +1467,7 @@ msgstr "New User Registration"
 msgid "You are temporarily blocked at"
 msgstr "You are temporarily blocked at"
 
-#: classes/base.php:443 pie-register.php:1976
+#: classes/base.php:443 pie-register.php:2022
 msgid "Registration Form"
 msgstr "Registration Form"
 
@@ -1474,7 +1476,7 @@ msgid "Please fill in the form below to register."
 msgstr "Please fill in the form below to register."
 
 #: classes/base.php:463 classes/base.php:893
-#: classes/unverified_pagination.php:68 menus/PieRegEditForm.php:377
+#: classes/unverified_pagination.php:68 menus/PieRegEditForm.php:378
 msgid "Email"
 msgstr "Email"
 
@@ -1489,7 +1491,7 @@ msgstr "Confirm Email"
 msgid "Password"
 msgstr "Password"
 
-#: classes/base.php:479 pie-register.php:5333
+#: classes/base.php:479 pie-register.php:5600
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
@@ -1498,28 +1500,28 @@ msgstr "Confirm Password"
 msgid "First Name"
 msgstr "First Name"
 
-#: classes/base.php:500 menus/PieRegImportExport.php:224 pie-register.php:5637
+#: classes/base.php:500 menus/PieRegImportExport.php:224 pie-register.php:5900
 msgid "Last Name"
 msgstr "Last Name"
 
-#: classes/base.php:509 classes/base.php:893 menus/PieRegEditForm.php:680
+#: classes/base.php:509 classes/base.php:893 menus/PieRegEditForm.php:681
 #: menus/PieRegImportExport.php:248
 msgid "Website"
 msgstr "Website"
 
-#: classes/base.php:517 menus/PieRegEditForm.php:683
+#: classes/base.php:517 menus/PieRegEditForm.php:684
 msgid "AIM"
 msgstr "AIM"
 
-#: classes/base.php:525 menus/PieRegEditForm.php:686
+#: classes/base.php:525 menus/PieRegEditForm.php:687
 msgid "Yahoo IM"
 msgstr "Yahoo IM"
 
-#: classes/base.php:533 menus/PieRegEditForm.php:689
+#: classes/base.php:533 menus/PieRegEditForm.php:690
 msgid "Jabber / Google Talk"
 msgstr "Jabber / Google Talk"
 
-#: classes/base.php:541 menus/PieRegEditForm.php:692
+#: classes/base.php:541 menus/PieRegEditForm.php:693
 msgid "About Yourself"
 msgstr "About Yourself"
 
@@ -1532,12 +1534,12 @@ msgstr "Thank you for registering"
 #: classes/base.php:921 classes/base.php:924 classes/base.php:927
 #: classes/base.php:929 classes/base.php:933 classes/base.php:938
 #: classes/base.php:954 classes/base.php:969 classes/base.php:980
-#: classes/base.php:994 classes/base.php:1004 classes/base.php:1014
-#: classes/base.php:1016 classes/base.php:1022 classes/base.php:1037
-#: classes/base.php:1047 classes/base.php:1049 classes/base.php:1068
-#: classes/base.php:1078 classes/base.php:1098 classes/base.php:1102
-#: classes/base.php:1105 classes/base.php:1107 classes/base.php:1125
-#: classes/base.php:1142 classes/base.php:1153 classes/base.php:1164
+#: classes/base.php:995 classes/base.php:1005 classes/base.php:1015
+#: classes/base.php:1017 classes/base.php:1023 classes/base.php:1040
+#: classes/base.php:1050 classes/base.php:1052 classes/base.php:1071
+#: classes/base.php:1081 classes/base.php:1102 classes/base.php:1106
+#: classes/base.php:1109 classes/base.php:1111 classes/base.php:1130
+#: classes/base.php:1147 classes/base.php:1157 classes/base.php:1168
 #: classes/base.php:1194 classes/base.php:1196 classes/base.php:1207
 #: classes/base.php:1240 menus/PieRegEditForm.php:66
 msgid "Label"
@@ -1545,12 +1547,12 @@ msgstr "Label"
 
 #: classes/base.php:893 classes/base.php:907 classes/base.php:929
 #: classes/base.php:933 classes/base.php:938 classes/base.php:954
-#: classes/base.php:969 classes/base.php:980 classes/base.php:994
-#: classes/base.php:1004 classes/base.php:1022 classes/base.php:1037
-#: classes/base.php:1047 classes/base.php:1058 classes/base.php:1068
-#: classes/base.php:1078 classes/base.php:1105 classes/base.php:1107
-#: classes/base.php:1125 classes/base.php:1142 classes/base.php:1153
-#: classes/base.php:1164 classes/base.php:1196 classes/base.php:1240
+#: classes/base.php:969 classes/base.php:980 classes/base.php:995
+#: classes/base.php:1005 classes/base.php:1023 classes/base.php:1040
+#: classes/base.php:1050 classes/base.php:1061 classes/base.php:1071
+#: classes/base.php:1081 classes/base.php:1109 classes/base.php:1111
+#: classes/base.php:1130 classes/base.php:1147 classes/base.php:1157
+#: classes/base.php:1168 classes/base.php:1196 classes/base.php:1240
 #: classes/piereg_walker-nav-menu.php:152 menus/PieRegEditForm.php:72
 #: piereg_walker-nav-menu.php:213
 msgid "Description"
@@ -1561,33 +1563,33 @@ msgid "Length"
 msgstr "Length"
 
 #: classes/base.php:893 classes/base.php:938 classes/base.php:954
-#: classes/base.php:969 classes/base.php:980 classes/base.php:994
-#: classes/base.php:1004 classes/base.php:1022 classes/base.php:1037
-#: classes/base.php:1047 classes/base.php:1058 classes/base.php:1068
-#: classes/base.php:1078 classes/base.php:1107 classes/base.php:1125
-#: classes/base.php:1142 classes/base.php:1153 classes/base.php:1183
+#: classes/base.php:969 classes/base.php:980 classes/base.php:995
+#: classes/base.php:1005 classes/base.php:1023 classes/base.php:1040
+#: classes/base.php:1050 classes/base.php:1061 classes/base.php:1071
+#: classes/base.php:1081 classes/base.php:1111 classes/base.php:1130
+#: classes/base.php:1147 classes/base.php:1157 classes/base.php:1187
 #: classes/base.php:1196 classes/base.php:1221
 msgid "Rules"
 msgstr "Rules"
 
 #: classes/base.php:893 classes/base.php:938 classes/base.php:954
-#: classes/base.php:969 classes/base.php:980 classes/base.php:994
-#: classes/base.php:1004 classes/base.php:1022 classes/base.php:1037
-#: classes/base.php:1047 classes/base.php:1058 classes/base.php:1068
-#: classes/base.php:1078 classes/base.php:1107 classes/base.php:1125
-#: classes/base.php:1142 classes/base.php:1153 classes/base.php:1183
+#: classes/base.php:969 classes/base.php:980 classes/base.php:995
+#: classes/base.php:1005 classes/base.php:1023 classes/base.php:1040
+#: classes/base.php:1050 classes/base.php:1061 classes/base.php:1071
+#: classes/base.php:1081 classes/base.php:1111 classes/base.php:1130
+#: classes/base.php:1147 classes/base.php:1157 classes/base.php:1187
 #: classes/base.php:1196 classes/base.php:1221
 msgid "Required"
 msgstr "Required"
 
 #: classes/base.php:893 classes/base.php:938 classes/base.php:980
-#: classes/base.php:1107 classes/base.php:1125 classes/base.php:1194
+#: classes/base.php:1111 classes/base.php:1130 classes/base.php:1194
 msgid "Default Value"
 msgstr "Default Value"
 
 #: classes/base.php:893 classes/base.php:907 classes/base.php:933
-#: classes/base.php:938 classes/base.php:980 classes/base.php:1022
-#: classes/base.php:1105 classes/base.php:1196
+#: classes/base.php:938 classes/base.php:980 classes/base.php:1023
+#: classes/base.php:1109 classes/base.php:1196
 msgid "Placeholder"
 msgstr "Placeholder"
 
@@ -1599,7 +1601,7 @@ msgstr "Validation Rule"
 msgid "None"
 msgstr "None"
 
-#: classes/base.php:893 menus/PieRegEditForm.php:713
+#: classes/base.php:893 menus/PieRegEditForm.php:714
 msgid "Number"
 msgstr "Number"
 
@@ -1611,7 +1613,7 @@ msgstr "Alphabetic"
 msgid "Alphanumeric"
 msgstr "Alphanumeric"
 
-#: classes/base.php:893 classes/base.php:1107 classes/base.php:1125
+#: classes/base.php:893 classes/base.php:1111 classes/base.php:1130
 msgid "USA Format"
 msgstr "USA Format"
 
@@ -1622,96 +1624,96 @@ msgstr "Phone International"
 #: classes/base.php:893 classes/base.php:907 classes/base.php:911
 #: classes/base.php:929 classes/base.php:933 classes/base.php:938
 #: classes/base.php:954 classes/base.php:969 classes/base.php:980
-#: classes/base.php:994 classes/base.php:1004 classes/base.php:1022
-#: classes/base.php:1037 classes/base.php:1047 classes/base.php:1058
-#: classes/base.php:1068 classes/base.php:1078 classes/base.php:1105
-#: classes/base.php:1107 classes/base.php:1125 classes/base.php:1142
-#: classes/base.php:1153 classes/base.php:1183 classes/base.php:1196
+#: classes/base.php:995 classes/base.php:1005 classes/base.php:1023
+#: classes/base.php:1040 classes/base.php:1050 classes/base.php:1061
+#: classes/base.php:1071 classes/base.php:1081 classes/base.php:1109
+#: classes/base.php:1111 classes/base.php:1130 classes/base.php:1147
+#: classes/base.php:1157 classes/base.php:1187 classes/base.php:1196
 #: classes/base.php:1221 classes/base.php:1246
 msgid "Validation Message"
 msgstr "Validation Message"
 
 #: classes/base.php:893 classes/base.php:907 classes/base.php:929
 #: classes/base.php:933 classes/base.php:938 classes/base.php:954
-#: classes/base.php:969 classes/base.php:980 classes/base.php:994
-#: classes/base.php:1004 classes/base.php:1022 classes/base.php:1037
-#: classes/base.php:1047 classes/base.php:1058 classes/base.php:1068
-#: classes/base.php:1078 classes/base.php:1105 classes/base.php:1107
-#: classes/base.php:1125 classes/base.php:1142 classes/base.php:1153
-#: classes/base.php:1183 classes/base.php:1196 classes/base.php:1221
+#: classes/base.php:969 classes/base.php:980 classes/base.php:995
+#: classes/base.php:1005 classes/base.php:1023 classes/base.php:1040
+#: classes/base.php:1050 classes/base.php:1061 classes/base.php:1071
+#: classes/base.php:1081 classes/base.php:1109 classes/base.php:1111
+#: classes/base.php:1130 classes/base.php:1147 classes/base.php:1157
+#: classes/base.php:1187 classes/base.php:1196 classes/base.php:1221
 #: classes/base.php:1246 menus/PieRegEditForm.php:78
 msgid "CSS Class Name"
 msgstr "CSS Class Name"
 
-#: classes/base.php:896 classes/base.php:941 classes/base.php:957
-#: classes/base.php:972 classes/base.php:983 classes/base.php:997
-#: classes/base.php:1007 classes/base.php:1025 classes/base.php:1040
-#: classes/base.php:1061 classes/base.php:1071 classes/base.php:1089
-#: classes/base.php:1110 classes/base.php:1128 classes/base.php:1145
-#: classes/base.php:1156 classes/base.php:1186 classes/base.php:1198
+#: classes/base.php:898 classes/base.php:943 classes/base.php:959
+#: classes/base.php:974 classes/base.php:985 classes/base.php:1000
+#: classes/base.php:1010 classes/base.php:1028 classes/base.php:1045
+#: classes/base.php:1066 classes/base.php:1076 classes/base.php:1094
+#: classes/base.php:1116 classes/base.php:1135 classes/base.php:1152
+#: classes/base.php:1162 classes/base.php:1189 classes/base.php:1198
 msgid "Show in Profile"
 msgstr "Show in Profile"
 
-#: classes/base.php:896 classes/base.php:903 classes/base.php:929
-#: classes/base.php:941 classes/base.php:948 classes/base.php:957
-#: classes/base.php:964 classes/base.php:972 classes/base.php:983
-#: classes/base.php:990 classes/base.php:997 classes/base.php:1007
-#: classes/base.php:1025 classes/base.php:1032 classes/base.php:1040
-#: classes/base.php:1061 classes/base.php:1071 classes/base.php:1089
-#: classes/base.php:1110 classes/base.php:1117 classes/base.php:1128
-#: classes/base.php:1135 classes/base.php:1145 classes/base.php:1156
-#: classes/base.php:1186 classes/base.php:1198 classes/base.php:1202
+#: classes/base.php:898 classes/base.php:903 classes/base.php:929
+#: classes/base.php:943 classes/base.php:948 classes/base.php:959
+#: classes/base.php:964 classes/base.php:974 classes/base.php:985
+#: classes/base.php:991 classes/base.php:1000 classes/base.php:1010
+#: classes/base.php:1028 classes/base.php:1035 classes/base.php:1045
+#: classes/base.php:1066 classes/base.php:1076 classes/base.php:1094
+#: classes/base.php:1116 classes/base.php:1122 classes/base.php:1135
+#: classes/base.php:1140 classes/base.php:1152 classes/base.php:1162
+#: classes/base.php:1189 classes/base.php:1198 classes/base.php:1202
 #: classes/base.php:1260 menus/PieRegEditForm.php:156
-#: menus/PieRegEditForm.php:588 menus/PieRegHelp.php:328
+#: menus/PieRegEditForm.php:589 menus/PieRegHelp.php:328
 #: menus/notification/PieRegUserNotification.php:99
-#: menus/settings/PieRegUX.php:143 pie-register.php:1750
+#: menus/settings/PieRegUX.php:143 pie-register.php:1796
 msgid "Yes"
 msgstr "Yes"
 
-#: classes/base.php:896 classes/base.php:903 classes/base.php:929
-#: classes/base.php:941 classes/base.php:948 classes/base.php:957
-#: classes/base.php:964 classes/base.php:972 classes/base.php:983
-#: classes/base.php:990 classes/base.php:997 classes/base.php:1007
-#: classes/base.php:1025 classes/base.php:1032 classes/base.php:1040
-#: classes/base.php:1061 classes/base.php:1071 classes/base.php:1089
-#: classes/base.php:1110 classes/base.php:1117 classes/base.php:1128
-#: classes/base.php:1135 classes/base.php:1145 classes/base.php:1156
-#: classes/base.php:1186 classes/base.php:1198 classes/base.php:1202
+#: classes/base.php:898 classes/base.php:903 classes/base.php:929
+#: classes/base.php:943 classes/base.php:948 classes/base.php:959
+#: classes/base.php:964 classes/base.php:974 classes/base.php:985
+#: classes/base.php:991 classes/base.php:1000 classes/base.php:1010
+#: classes/base.php:1028 classes/base.php:1035 classes/base.php:1045
+#: classes/base.php:1066 classes/base.php:1076 classes/base.php:1094
+#: classes/base.php:1116 classes/base.php:1122 classes/base.php:1135
+#: classes/base.php:1140 classes/base.php:1152 classes/base.php:1162
+#: classes/base.php:1189 classes/base.php:1198 classes/base.php:1202
 #: classes/base.php:1260 menus/PieRegEditForm.php:159
-#: menus/PieRegEditForm.php:585 menus/PieRegHelp.php:328
+#: menus/PieRegEditForm.php:586 menus/PieRegHelp.php:328
 #: menus/notification/PieRegUserNotification.php:102
-#: menus/settings/PieRegUX.php:147 pie-register.php:1754
+#: menus/settings/PieRegUX.php:147 pie-register.php:1800
 msgid "No"
 msgstr "No"
 
 #: classes/base.php:903 classes/base.php:948 classes/base.php:964
-#: classes/base.php:990 classes/base.php:1032 classes/base.php:1117
-#: classes/base.php:1135 classes/base.php:1202 classes/base.php:1260
+#: classes/base.php:991 classes/base.php:1035 classes/base.php:1122
+#: classes/base.php:1140 classes/base.php:1202 classes/base.php:1260
 #: menus/PieRegEditForm.php:152
 msgid "Enable Conditional Logic"
 msgstr "Enable Conditional Logic"
 
 #: classes/base.php:903 classes/base.php:948 classes/base.php:964
-#: classes/base.php:990 classes/base.php:1032 classes/base.php:1117
-#: classes/base.php:1135 classes/base.php:1202 classes/base.php:1260
+#: classes/base.php:991 classes/base.php:1035 classes/base.php:1122
+#: classes/base.php:1140 classes/base.php:1202 classes/base.php:1260
 msgid "Show"
 msgstr "Show"
 
 #: classes/base.php:903 classes/base.php:948 classes/base.php:964
-#: classes/base.php:990 classes/base.php:1032 classes/base.php:1117
-#: classes/base.php:1135 classes/base.php:1202 classes/base.php:1260
+#: classes/base.php:991 classes/base.php:1035 classes/base.php:1122
+#: classes/base.php:1140 classes/base.php:1202 classes/base.php:1260
 msgid "Hide"
 msgstr "Hide"
 
 #: classes/base.php:903 classes/base.php:948 classes/base.php:964
-#: classes/base.php:990 classes/base.php:1032 classes/base.php:1117
-#: classes/base.php:1135 classes/base.php:1202 classes/base.php:1260
+#: classes/base.php:991 classes/base.php:1035 classes/base.php:1122
+#: classes/base.php:1140 classes/base.php:1202 classes/base.php:1260
 #: menus/PieRegEditForm.php:180 menus/PieRegEditForm.php:240
-#: pie-register.php:922
+#: pie-register.php:940
 msgid "this field if"
 msgstr "this field if"
 
-#: classes/base.php:929 classes/base.php:933 classes/base.php:1022
+#: classes/base.php:929 classes/base.php:933 classes/base.php:1023
 msgid "Label2"
 msgstr "Label2"
 
@@ -1759,42 +1761,42 @@ msgstr "Very weak"
 msgid "Strength Message"
 msgstr "Strength Message"
 
-#: classes/base.php:933 classes/base.php:1022
+#: classes/base.php:933 classes/base.php:1023
 msgid "Placeholder 2"
 msgstr "Placeholder 2"
 
-#: classes/base.php:938 classes/base.php:1153
+#: classes/base.php:938 classes/base.php:1157
 msgid "Rows"
 msgstr "Rows"
 
-#: classes/base.php:938 classes/base.php:1153
+#: classes/base.php:938 classes/base.php:1157
 msgid "Columns"
 msgstr "Columns"
 
-#: classes/base.php:954 classes/base.php:969 classes/base.php:994
-#: classes/base.php:1004 classes/base.php:1164 classes/base.php:1243
+#: classes/base.php:954 classes/base.php:969 classes/base.php:995
+#: classes/base.php:1005 classes/base.php:1168 classes/base.php:1243
 msgid "Display Value"
 msgstr "Display Value"
 
-#: classes/base.php:954 classes/base.php:969 classes/base.php:994
-#: classes/base.php:1004 classes/base.php:1164
+#: classes/base.php:954 classes/base.php:969 classes/base.php:995
+#: classes/base.php:1005 classes/base.php:1168
 msgid "Value"
 msgstr "Value"
 
-#: classes/base.php:954 classes/base.php:969 classes/base.php:994
-#: classes/base.php:1004 classes/base.php:1181 classes/base.php:1243
+#: classes/base.php:954 classes/base.php:969 classes/base.php:995
+#: classes/base.php:1005 classes/base.php:1185 classes/base.php:1243
 msgid "Checked"
 msgstr "Checked"
 
-#: classes/base.php:954 classes/base.php:969 classes/base.php:1037
-#: classes/base.php:1078
+#: classes/base.php:954 classes/base.php:969 classes/base.php:1040
+#: classes/base.php:1081
 msgid "List Type"
 msgstr "List Type"
 
 #: classes/base.php:954 classes/base.php:969 classes/profile_admin.php:226
-#: pie-register.php:5437
-#: pie_register_template/profile_edit/edit_form_template.php:592
-#: pie_register_template/registration/registration_form_template.php:892
+#: pie-register.php:5704
+#: pie_register_template/profile_edit/edit_form_template.php:596
+#: pie_register_template/registration/registration_form_template.php:896
 msgid "Country"
 msgstr "Country"
 
@@ -1814,124 +1816,124 @@ msgstr "Min"
 msgid "Max"
 msgstr "Max"
 
-#: classes/base.php:1020
+#: classes/base.php:1021
 msgid "Next Button"
 msgstr "Next Button"
 
-#: classes/base.php:1020 menus/PieRegEditForm.php:605
+#: classes/base.php:1021 menus/PieRegEditForm.php:606
 msgid "Text"
 msgstr "Text"
 
-#: classes/base.php:1020
+#: classes/base.php:1021
 msgid "Image"
 msgstr "Image"
 
-#: classes/base.php:1020 classes/base.php:1142
+#: classes/base.php:1021 classes/base.php:1147
 msgid "Image URL"
 msgstr "Image URL"
 
-#: classes/base.php:1020
+#: classes/base.php:1021
 msgid "Previous Button"
 msgstr "Previous Button"
 
-#: classes/base.php:1037
+#: classes/base.php:1040
 msgid "12 hour"
 msgstr "12 hour"
 
-#: classes/base.php:1037
+#: classes/base.php:1040
 msgid "24 hour"
 msgstr "24 hour"
 
-#: classes/base.php:1049
+#: classes/base.php:1052
 msgid "File Types"
 msgstr "File Types"
 
-#: classes/base.php:1049
+#: classes/base.php:1052
 msgid "Separated with commas"
 msgstr "Separated with commas"
 
-#: classes/base.php:1053 classes/base.php:1055
+#: classes/base.php:1056 classes/base.php:1058
 msgid "File Size"
 msgstr "File Size"
 
-#: classes/base.php:1053
+#: classes/base.php:1056
 msgid "Size in KB"
 msgstr "Size in KB"
 
-#: classes/base.php:1055
+#: classes/base.php:1058
 msgid "Available in premium"
 msgstr "Available in premium"
 
-#: classes/base.php:1078 classes/base.php:1107 classes/base.php:1125
+#: classes/base.php:1081 classes/base.php:1111 classes/base.php:1130
 msgid "International"
 msgstr "International"
 
-#: classes/base.php:1078
+#: classes/base.php:1081
 msgid "Default Country"
 msgstr "Default Country"
 
-#: classes/base.php:1078
+#: classes/base.php:1081
 msgid "Congo, Democratic Republic of the"
 msgstr "Democratic Republic of the Congo"
 
-#: classes/base.php:1078
+#: classes/base.php:1081
 msgid "Congo, Republic of the"
 msgstr "Democratic Republic of the Congo"
 
-#: classes/base.php:1078
+#: classes/base.php:1081
 msgid "Côte d\\'Ivoire"
 msgstr "Côte d\\'Ivoire"
 
-#: classes/base.php:1078
+#: classes/base.php:1081
 msgid "Hide Address 2"
 msgstr "Hide Address 2"
 
-#: classes/base.php:1078
+#: classes/base.php:1081
 msgid "Hide State"
 msgstr "Hide State"
 
-#: classes/base.php:1078
+#: classes/base.php:1081
 msgid "Default State"
 msgstr "Default State"
 
-#: classes/base.php:1098
+#: classes/base.php:1102
 msgid "Captcha Skin"
 msgstr "Captcha Skin"
 
-#: classes/base.php:1098
+#: classes/base.php:1102
 msgid "Red"
 msgstr "Red"
 
-#: classes/base.php:1098
+#: classes/base.php:1102
 msgid "White"
 msgstr "White"
 
-#: classes/base.php:1098
+#: classes/base.php:1102
 msgid "Clean"
 msgstr "Clean"
 
-#: classes/base.php:1098
+#: classes/base.php:1102
 msgid "Blackglass"
 msgstr "Blackglass"
 
-#: classes/base.php:1098 menus/settings/PieRegSecurityBasic.php:55
+#: classes/base.php:1102 menus/settings/PieRegSecurityBasic.php:55
 #: menus/settings/PieRegSecurityBasic.php:168
 msgid "Captcha Type"
 msgstr "Captcha Type"
 
-#: classes/base.php:1098
+#: classes/base.php:1102
 msgid "Classic ReCaptcha"
 msgstr "Classic ReCaptcha"
 
-#: classes/base.php:1098 menus/settings/PieRegSecurityBasic.php:59
+#: classes/base.php:1102 menus/settings/PieRegSecurityBasic.php:59
 msgid "No Captcha ReCaptcha"
 msgstr "No Captcha ReCaptcha"
 
-#: classes/base.php:1107 classes/base.php:1125
+#: classes/base.php:1111 classes/base.php:1130
 msgid "Phone Format"
 msgstr "Phone Format"
 
-#: classes/base.php:1125
+#: classes/base.php:1130
 msgid ""
 "Please do not use the + sign. \n"
 " e.g. 4155551212 (USA), 07400123456 (GB)."
@@ -1939,39 +1941,39 @@ msgstr ""
 "Please do not use the + sign. \n"
 " e.g. 4155551212 (USA), 07400123456 (GB)."
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "Date Format"
 msgstr "Date Format"
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "Date Input Type"
 msgstr "Date Input Type"
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "Date Field"
 msgstr "Date Field"
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "Date Picker"
 msgstr "Date Picker"
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "Date Drop Down"
 msgstr "Date Drop Down"
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "No Icon"
 msgstr "No Icon"
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "Calendar Icon"
 msgstr "Calendar Icon"
 
-#: classes/base.php:1142
+#: classes/base.php:1147
 msgid "Custom Icon"
 msgstr "Custom Icon"
 
-#: classes/base.php:1164 classes/base.php:1243
+#: classes/base.php:1168 classes/base.php:1243
 #: classes/unverified_pagination.php:70 menus/PieRegImportExport.php:260
 msgid "Role"
 msgstr "Role"
@@ -2056,11 +2058,11 @@ msgstr "Dropdown"
 msgid "Radio Button"
 msgstr "Radio Button"
 
-#: classes/base.php:1797 classes/base.php:1824 classes/base.php:1850
+#: classes/base.php:1813 classes/base.php:1840 classes/base.php:1866
 msgid "--Please Select --"
 msgstr "--Please Select --"
 
-#: classes/base.php:1877
+#: classes/base.php:1893
 msgid ""
 "Pie Register is only compatible with WordPress v3.5 and up. You are "
 "currently using WordPress."
@@ -2068,19 +2070,19 @@ msgstr ""
 "Pie Register is only compatible with WordPress v3.5 and up. You are "
 "currently using WordPress."
 
-#: classes/base.php:1877
+#: classes/base.php:1893
 msgid "The plugin may not work as expected."
 msgstr "The plugin may not work as expected."
 
-#: classes/base.php:2424 classes/base.php:2442 classes/base.php:2517
+#: classes/base.php:2440 classes/base.php:2458 classes/base.php:2533
 #: classes/edit_form.php:80 classes/edit_form.php:86 classes/edit_form.php:92
 #: classes/edit_form.php:94 classes/edit_form.php:98 classes/edit_form.php:228
 #: classes/edit_form.php:251 classes/edit_form.php:262
 #: classes/edit_form.php:287 classes/edit_form.php:291
-#: classes/edit_form.php:352 classes/edit_form.php:356
-#: classes/edit_form.php:362 classes/edit_form.php:371
-#: classes/edit_form.php:378 classes/edit_form.php:394
-#: classes/edit_form.php:401 classes/profile_admin.php:619
+#: classes/edit_form.php:342 classes/edit_form.php:346
+#: classes/edit_form.php:352 classes/edit_form.php:361
+#: classes/edit_form.php:368 classes/edit_form.php:384
+#: classes/edit_form.php:391 classes/profile_admin.php:619
 #: classes/profile_admin.php:622 classes/profile_admin.php:626
 #: classes/profile_admin.php:630 classes/profile_admin.php:634
 #: classes/profile_admin.php:740 classes/profile_admin.php:745
@@ -2091,47 +2093,48 @@ msgstr "The plugin may not work as expected."
 #: classes/registration_form.php:238 classes/registration_form.php:248
 #: classes/registration_form.php:261 classes/registration_form.php:271
 #: classes/registration_form.php:286 classes/registration_form.php:292
-#: classes/registration_form.php:295 classes/registration_form.php:412
-#: classes/registration_form.php:480 classes/registration_form.php:491
-#: classes/registration_form.php:498 classes/registration_form.php:529
-#: classes/registration_form.php:537 classes/registration_form.php:541
-#: classes/registration_form.php:557 classes/registration_form.php:576
-#: classes/registration_form.php:590 classes/registration_form.php:594
-#: classes/registration_form.php:607 classes/registration_form.php:611
+#: classes/registration_form.php:295 classes/registration_form.php:413
+#: classes/registration_form.php:481 classes/registration_form.php:492
+#: classes/registration_form.php:499 classes/registration_form.php:530
+#: classes/registration_form.php:538 classes/registration_form.php:542
+#: classes/registration_form.php:558 classes/registration_form.php:577
+#: classes/registration_form.php:591 classes/registration_form.php:595
+#: classes/registration_form.php:608 classes/registration_form.php:612
 #: forgot_password.php:80 forgot_password.php:87 forgot_password.php:133
 #: forgot_password.php:156 forgot_password.php:207 login_form.php:155
 #: login_form.php:170 login_form.php:174 login_form.php:182 login_form.php:184
 #: login_form.php:194 login_form.php:197 login_form.php:200
-#: pie-register.php:2283 pie-register.php:2286 pie-register.php:3956
-#: pie-register.php:4022 pie-register.php:4086 pie-register.php:6830
-#: pie-register.php:6833
+#: pie-register.php:2164 pie-register.php:2198 pie-register.php:2206
+#: pie-register.php:2496 pie-register.php:2499 pie-register.php:4222
+#: pie-register.php:4288 pie-register.php:4352 pie-register.php:7093
+#: pie-register.php:7096
 msgid "error"
 msgstr "error"
 
-#: classes/base.php:2424 classes/base.php:2489 classes/base.php:2517
+#: classes/base.php:2440 classes/base.php:2505 classes/base.php:2533
 #: classes/profile_admin.php:740 classes/profile_admin.php:769
 #: classes/profile_admin.php:786
 msgid "Fail to upload profile picture."
 msgstr "Fail to upload profile picture."
 
-#: classes/base.php:2442 classes/edit_form.php:262
-#: classes/registration_form.php:480
+#: classes/base.php:2458 classes/edit_form.php:262
+#: classes/registration_form.php:481
 msgid "Invalid File Type In Profile Picture."
 msgstr "Invalid File Type In Profile Picture."
 
-#: classes/base.php:2505
+#: classes/base.php:2521
 msgid "Invalid File."
 msgstr "Invalid File."
 
-#: classes/base.php:2827
+#: classes/base.php:2843
 msgid "File not exists"
 msgstr "File not exists"
 
-#: classes/base.php:4367
+#: classes/base.php:4407
 msgid "Pie Register Form..."
 msgstr "Pie Register Form..."
 
-#: classes/base.php:4372 classes/unverified_pagination.php:223
+#: classes/base.php:4412 classes/unverified_pagination.php:223
 msgid "Filter"
 msgstr "Filter"
 
@@ -2155,7 +2158,7 @@ msgstr "Invalid Old Password Field!"
 msgid "Old and New passwords are same!"
 msgstr "Old and New passwords are same!"
 
-#: classes/edit_form.php:211 pie-register.php:6959 pie-register.php:8094
+#: classes/edit_form.php:211 pie-register.php:7222 pie-register.php:8357
 msgid "There was a problem and the email was probably not sent."
 msgstr "There was a problem and the email was probably not sent."
 
@@ -2163,44 +2166,44 @@ msgstr "There was a problem and the email was probably not sent."
 msgid "This Email already Exists"
 msgstr "This Email already Exists"
 
-#: classes/edit_form.php:251 classes/registration_form.php:491
+#: classes/edit_form.php:251 classes/registration_form.php:492
 msgid "Invalid File Type"
 msgstr "Invalid File Type"
 
-#: classes/edit_form.php:287 classes/registration_form.php:536
+#: classes/edit_form.php:287 classes/registration_form.php:537
 msgid "Invalid Invitation Code"
 msgstr "Invalid Invitation Code"
 
-#: classes/edit_form.php:291 classes/registration_form.php:529
-#: classes/registration_form.php:541
+#: classes/edit_form.php:291 classes/registration_form.php:530
+#: classes/registration_form.php:542
 msgid "Invitation Code has expired"
 msgstr "Invitation Code has expired"
 
-#: classes/edit_form.php:371 classes/profile_admin.php:622
-#: classes/registration_form.php:621
+#: classes/edit_form.php:361 classes/profile_admin.php:622
+#: classes/registration_form.php:622
 msgid " field must contain only numbers."
 msgstr " field must contain only numbers."
 
-#: classes/edit_form.php:378 classes/profile_admin.php:626
-#: classes/registration_form.php:628
+#: classes/edit_form.php:368 classes/profile_admin.php:626
+#: classes/registration_form.php:629
 msgid " field may only contain alpha-numeric characters."
 msgstr " field may only contain alpha-numeric characters."
 
-#: classes/edit_form.php:386 classes/registration_form.php:636
+#: classes/edit_form.php:376 classes/registration_form.php:637
 msgid " field may only contains alphabetic letters."
 msgstr " field may only contains alphabetic letters."
 
-#: classes/edit_form.php:394 classes/profile_admin.php:630
-#: classes/registration_form.php:644
+#: classes/edit_form.php:384 classes/profile_admin.php:630
+#: classes/registration_form.php:645
 msgid " field must contain a valid email address."
 msgstr " field must contain a valid email address."
 
-#: classes/edit_form.php:401 classes/profile_admin.php:634
-#: classes/registration_form.php:651
+#: classes/edit_form.php:391 classes/profile_admin.php:634
+#: classes/registration_form.php:652
 msgid " must be a valid URL."
 msgstr " must be a valid URL."
 
-#: classes/edit_form.php:407
+#: classes/edit_form.php:397
 msgid " invalid phone number."
 msgstr " invalid phone number."
 
@@ -2268,8 +2271,8 @@ msgid "Click Here To Edit"
 msgstr "Click Here To Edit"
 
 #: classes/invitation_code_pagination.php:250
-#: classes/pie_redirect_settings.php:163 menus/PieRegEditForm.php:410
-#: menus/PieRegInvitationCodes.php:129 pie-register.php:813
+#: classes/pie_redirect_settings.php:163 menus/PieRegEditForm.php:411
+#: menus/PieRegInvitationCodes.php:129 pie-register.php:831
 msgid "Delete"
 msgstr "Delete"
 
@@ -2306,7 +2309,7 @@ msgstr "Click here to edit"
 
 #: classes/pie_redirect_settings.php:160 menus/PieRegHelp.php:261
 #: menus/PieRegHelp.php:274 menus/PieRegHelp.php:287
-#: menus/notification/PieRegUserNotification.php:58 pie-register.php:1744
+#: menus/notification/PieRegUserNotification.php:58 pie-register.php:1790
 #: widget.php:246
 msgid "Enable"
 msgstr "Enable"
@@ -2331,8 +2334,8 @@ msgstr "%s (Pending)"
 msgid "sub item"
 msgstr "sub item"
 
-#: classes/piereg_walker-nav-menu.php:106 menus/PieRegEditForm.php:372
-#: pie-register.php:814
+#: classes/piereg_walker-nav-menu.php:106 menus/PieRegEditForm.php:373
+#: pie-register.php:832
 msgid "Edit"
 msgstr "Edit"
 
@@ -2393,61 +2396,61 @@ msgstr "Original: %s"
 msgid "Remove"
 msgstr "Remove"
 
-#: classes/piereg_walker-nav-menu.php:184 pie-register.php:1998
-#: pie_register_template/profile_edit/edit_form_template.php:1085
+#: classes/piereg_walker-nav-menu.php:184 pie-register.php:2044
+#: pie_register_template/profile_edit/edit_form_template.php:1093
 #: piereg_walker-nav-menu.php:236
 msgid "Cancel"
 msgstr "Cancel"
 
-#: classes/profile_admin.php:173 pie-register.php:5359
-#: pie_register_template/profile_edit/edit_form_template.php:531
-#: pie_register_template/registration/registration_form_template.php:821
+#: classes/profile_admin.php:173 pie-register.php:5626
+#: pie_register_template/profile_edit/edit_form_template.php:535
+#: pie_register_template/registration/registration_form_template.php:825
 msgid "Street Address"
 msgstr "Street Address"
 
-#: classes/profile_admin.php:178 pie-register.php:5370
-#: pie_register_template/profile_edit/edit_form_template.php:537
-#: pie_register_template/registration/registration_form_template.php:828
+#: classes/profile_admin.php:178 pie-register.php:5637
+#: pie_register_template/profile_edit/edit_form_template.php:541
+#: pie_register_template/registration/registration_form_template.php:832
 msgid "Address Line 2"
 msgstr "Address Line 2"
 
-#: classes/profile_admin.php:184 pie-register.php:5375
-#: pie_register_template/profile_edit/edit_form_template.php:543
-#: pie_register_template/registration/registration_form_template.php:835
+#: classes/profile_admin.php:184 pie-register.php:5642
+#: pie_register_template/profile_edit/edit_form_template.php:547
+#: pie_register_template/registration/registration_form_template.php:839
 msgid "City"
 msgstr "City"
 
-#: classes/profile_admin.php:190 pie-register.php:5404
-#: pie_register_template/profile_edit/edit_form_template.php:551
-#: pie_register_template/registration/registration_form_template.php:844
+#: classes/profile_admin.php:190 pie-register.php:5671
+#: pie_register_template/profile_edit/edit_form_template.php:555
+#: pie_register_template/registration/registration_form_template.php:848
 msgid "State / Province / Region"
 msgstr "State / Province / Region"
 
-#: classes/profile_admin.php:199 pie-register.php:5411
-#: pie_register_template/profile_edit/edit_form_template.php:562
-#: pie_register_template/registration/registration_form_template.php:857
+#: classes/profile_admin.php:199 pie-register.php:5678
+#: pie_register_template/profile_edit/edit_form_template.php:566
+#: pie_register_template/registration/registration_form_template.php:861
 msgid "State"
 msgstr "State"
 
-#: classes/profile_admin.php:208 pie-register.php:5418
-#: pie_register_template/profile_edit/edit_form_template.php:573
-#: pie_register_template/registration/registration_form_template.php:870
+#: classes/profile_admin.php:208 pie-register.php:5685
+#: pie_register_template/profile_edit/edit_form_template.php:577
+#: pie_register_template/registration/registration_form_template.php:874
 msgid "Province"
 msgstr "Province"
 
-#: classes/profile_admin.php:216 pie-register.php:5424
-#: pie_register_template/profile_edit/edit_form_template.php:581
-#: pie_register_template/registration/registration_form_template.php:878
+#: classes/profile_admin.php:216 pie-register.php:5691
+#: pie_register_template/profile_edit/edit_form_template.php:585
+#: pie_register_template/registration/registration_form_template.php:882
 msgid "Zip / Postal Code"
 msgstr "Zip / Postal Code"
 
 #: classes/profile_admin.php:223
-#: pie_register_template/profile_edit/edit_form_template.php:589
-#: pie_register_template/registration/registration_form_template.php:889
+#: pie_register_template/profile_edit/edit_form_template.php:593
+#: pie_register_template/registration/registration_form_template.php:893
 msgid "Select Country"
 msgstr "Select Country"
 
-#: classes/profile_admin.php:260 pie-register.php:5660
+#: classes/profile_admin.php:260 pie-register.php:5923
 #: pie_register_template/profile_edit/edit_form_template.php:292
 msgid "AM"
 msgstr "AM"
@@ -2458,28 +2461,28 @@ msgid "PM"
 msgstr "PM"
 
 #: classes/profile_admin.php:282 classes/profile_admin.php:301
-#: classes/profile_admin.php:320 pie-register.php:5576 pie-register.php:5660
+#: classes/profile_admin.php:320 pie-register.php:5839 pie-register.php:5923
 #: pie_register_template/profile_edit/edit_form_template.php:284
-#: pie_register_template/profile_edit/edit_form_template.php:744
-#: pie_register_template/profile_edit/edit_form_template.php:765
-#: pie_register_template/profile_edit/edit_form_template.php:782
+#: pie_register_template/profile_edit/edit_form_template.php:750
+#: pie_register_template/profile_edit/edit_form_template.php:771
+#: pie_register_template/profile_edit/edit_form_template.php:788
 #: pie_register_template/registration/registration_form_template.php:404
-#: pie_register_template/registration/registration_form_template.php:1034
-#: pie_register_template/registration/registration_form_template.php:1055
-#: pie_register_template/registration/registration_form_template.php:1072
-#: pie_register_template/registration/registration_form_template.php:1093
+#: pie_register_template/registration/registration_form_template.php:1040
+#: pie_register_template/registration/registration_form_template.php:1061
+#: pie_register_template/registration/registration_form_template.php:1078
+#: pie_register_template/registration/registration_form_template.php:1099
 msgid "MM"
 msgstr "MM"
 
 #: classes/profile_admin.php:286 classes/profile_admin.php:305
-#: classes/profile_admin.php:312 pie-register.php:5580
-#: pie_register_template/profile_edit/edit_form_template.php:748
-#: pie_register_template/profile_edit/edit_form_template.php:769
-#: pie_register_template/profile_edit/edit_form_template.php:778
-#: pie_register_template/registration/registration_form_template.php:1038
-#: pie_register_template/registration/registration_form_template.php:1059
-#: pie_register_template/registration/registration_form_template.php:1068
-#: pie_register_template/registration/registration_form_template.php:1085
+#: classes/profile_admin.php:312 pie-register.php:5843
+#: pie_register_template/profile_edit/edit_form_template.php:754
+#: pie_register_template/profile_edit/edit_form_template.php:775
+#: pie_register_template/profile_edit/edit_form_template.php:784
+#: pie_register_template/registration/registration_form_template.php:1044
+#: pie_register_template/registration/registration_form_template.php:1065
+#: pie_register_template/registration/registration_form_template.php:1074
+#: pie_register_template/registration/registration_form_template.php:1091
 msgid "DD"
 msgstr "DD"
 
@@ -2488,33 +2491,33 @@ msgstr "DD"
 msgid "yy"
 msgstr "yy"
 
-#: classes/profile_admin.php:332 pie-register.php:5597
-#: pie_register_template/profile_edit/edit_form_template.php:825
-#: pie_register_template/profile_edit/edit_form_template.php:878
-#: pie_register_template/profile_edit/edit_form_template.php:922
-#: pie_register_template/registration/registration_form_template.php:1133
-#: pie_register_template/registration/registration_form_template.php:1186
-#: pie_register_template/registration/registration_form_template.php:1227
+#: classes/profile_admin.php:332 pie-register.php:5860
+#: pie_register_template/profile_edit/edit_form_template.php:831
+#: pie_register_template/profile_edit/edit_form_template.php:884
+#: pie_register_template/profile_edit/edit_form_template.php:928
+#: pie_register_template/registration/registration_form_template.php:1139
+#: pie_register_template/registration/registration_form_template.php:1192
+#: pie_register_template/registration/registration_form_template.php:1233
 msgid "Month"
 msgstr "Month"
 
-#: classes/profile_admin.php:342 pie-register.php:5602
-#: pie_register_template/profile_edit/edit_form_template.php:838
-#: pie_register_template/profile_edit/edit_form_template.php:890
-#: pie_register_template/profile_edit/edit_form_template.php:909
-#: pie_register_template/registration/registration_form_template.php:1145
-#: pie_register_template/registration/registration_form_template.php:1198
-#: pie_register_template/registration/registration_form_template.php:1215
+#: classes/profile_admin.php:342 pie-register.php:5865
+#: pie_register_template/profile_edit/edit_form_template.php:844
+#: pie_register_template/profile_edit/edit_form_template.php:896
+#: pie_register_template/profile_edit/edit_form_template.php:915
+#: pie_register_template/registration/registration_form_template.php:1151
+#: pie_register_template/registration/registration_form_template.php:1204
+#: pie_register_template/registration/registration_form_template.php:1221
 msgid "Day"
 msgstr "Day"
 
-#: classes/profile_admin.php:352 pie-register.php:5607
-#: pie_register_template/profile_edit/edit_form_template.php:850
-#: pie_register_template/profile_edit/edit_form_template.php:866
-#: pie_register_template/profile_edit/edit_form_template.php:935
-#: pie_register_template/registration/registration_form_template.php:1157
-#: pie_register_template/registration/registration_form_template.php:1174
-#: pie_register_template/registration/registration_form_template.php:1239
+#: classes/profile_admin.php:352 pie-register.php:5870
+#: pie_register_template/profile_edit/edit_form_template.php:856
+#: pie_register_template/profile_edit/edit_form_template.php:872
+#: pie_register_template/profile_edit/edit_form_template.php:941
+#: pie_register_template/registration/registration_form_template.php:1163
+#: pie_register_template/registration/registration_form_template.php:1180
+#: pie_register_template/registration/registration_form_template.php:1245
 msgid "Year"
 msgstr "Year"
 
@@ -2542,11 +2545,11 @@ msgstr "Invalid upload file."
 msgid "Logout"
 msgstr "Logout"
 
-#: classes/profile_front.php:152 menus/PieRegEditForm.php:387
+#: classes/profile_front.php:153 menus/PieRegEditForm.php:388
 msgid "Billing Address"
 msgstr "Billing Address"
 
-#: classes/profile_front.php:233 menus/PieRegEditForm.php:391
+#: classes/profile_front.php:234 menus/PieRegEditForm.php:392
 msgid "Shipping Address"
 msgstr "Shipping Address"
 
@@ -2562,17 +2565,17 @@ msgstr "Username already exists"
 msgid "E-mail address already exists"
 msgstr "E-mail address already exists"
 
-#: classes/registration_form.php:227 pie-register.php:2059
+#: classes/registration_form.php:227 pie-register.php:2272
 msgid "Your IP address has been blocked by administrator."
 msgstr "Your IP address has been blocked by administrator."
 
 #: classes/registration_form.php:238 classes/registration_form.php:261
-#: pie-register.php:2076
+#: pie-register.php:2289
 msgid "This user has been blocked by administrator."
 msgstr "This user has been blocked by administrator."
 
 #: classes/registration_form.php:248 classes/registration_form.php:271
-#: pie-register.php:2093
+#: pie-register.php:2306
 msgid "This email address has been blocked by administrator."
 msgstr "This email address has been blocked by administrator."
 
@@ -2581,33 +2584,33 @@ msgstr "This email address has been blocked by administrator."
 msgid "Spamming not allowed"
 msgstr "Spamming not allowed"
 
-#: classes/registration_form.php:377 classes/registration_form.php:411
-#: classes/registration_form.php:426 classes/registration_form.php:428
-#: classes/registration_form.php:440 classes/registration_form.php:468
-#: classes/registration_form.php:610
+#: classes/registration_form.php:378 classes/registration_form.php:412
+#: classes/registration_form.php:427 classes/registration_form.php:429
+#: classes/registration_form.php:441 classes/registration_form.php:469
+#: classes/registration_form.php:611
 msgid "is required."
 msgstr "is required."
 
-#: classes/registration_form.php:388
+#: classes/registration_form.php:389
 msgid "Please confirm your acceptance of our terms & conditions"
 msgstr "Please confirm your acceptance of our terms & conditions"
 
-#: classes/registration_form.php:498
+#: classes/registration_form.php:499
 msgid "Invalid File Size"
 msgstr "Invalid File Size"
 
-#: classes/registration_form.php:557 forgot_password.php:133
-#: pie-register.php:2172 pie-register.php:2192 pie-register.php:2202
-#: pie-register.php:2225
+#: classes/registration_form.php:558 forgot_password.php:133
+#: pie-register.php:2385 pie-register.php:2405 pie-register.php:2415
+#: pie-register.php:2438
 msgid "Invalid Security Code"
 msgstr "Invalid Security Code"
 
-#: classes/registration_form.php:576 classes/registration_form.php:590
-#: classes/registration_form.php:594
+#: classes/registration_form.php:577 classes/registration_form.php:591
+#: classes/registration_form.php:595
 msgid "Invalid Math Captcha"
 msgstr "Invalid Math Captcha"
 
-#: classes/registration_form.php:657
+#: classes/registration_form.php:658
 msgid " is invalid phone number."
 msgstr " is invalid phone number."
 
@@ -2740,11 +2743,12 @@ msgstr "Confirm new password"
 msgid "You canceled your payment."
 msgstr "You canceled your payment."
 
-#: login_form.php:90 pie-register.php:2290
+#: login_form.php:90 pie-register.php:2503
 msgid "Invalid username"
 msgstr "Invalid username"
 
 #: login_form.php:95 login_form.php:101 login_form.php:164 login_form.php:187
+#: pie-register.php:2177 pie-register.php:2187
 msgid "warning"
 msgstr "warning"
 
@@ -2784,13 +2788,13 @@ msgstr "Your account is already activated"
 msgid "You key has been expired, please reset password again!"
 msgstr "You key has been expired, please reset password again!"
 
-#: login_form.php:182 login_form.php:184 pie-register.php:2283
-#: pie-register.php:2286 pie_register_template/login/login_form_template.php:59
+#: login_form.php:182 login_form.php:184 pie-register.php:2496
+#: pie-register.php:2499 pie_register_template/login/login_form_template.php:59
 msgid "Password Lost and Found"
 msgstr "Password Lost and Found"
 
-#: login_form.php:182 login_form.php:184 pie-register.php:2283
-#: pie-register.php:2286 pie_register_template/login/login_form_template.php:59
+#: login_form.php:182 login_form.php:184 pie-register.php:2496
+#: pie-register.php:2499 pie_register_template/login/login_form_template.php:59
 msgid "Lost your password?"
 msgstr "Lost your password?"
 
@@ -2865,7 +2869,7 @@ msgid "Download All User Documents"
 msgstr "Download All User Documents"
 
 #: menus/PieRegBulkEmail.php:7 menus/PieRegBulkEmail.php:24
-#: pie-register.php:2657
+#: pie-register.php:2870
 msgid "Bulk Email"
 msgstr "Bulk Email"
 
@@ -2881,7 +2885,7 @@ msgstr "Sent Items"
 msgid "Manage Forms : Form Editor"
 msgstr "Manage Forms : Form Editor"
 
-#: menus/PieRegEditForm.php:42 menus/PieRegEditForm.php:652
+#: menus/PieRegEditForm.php:42 menus/PieRegEditForm.php:653
 #: menus/settings/PieRegOverrides.php:48
 #: menus/settings/PieRegPagesAllUsers.php:121
 #: menus/settings/PieRegSecurityAdvance.php:31 menus/settings/PieRegUX.php:46
@@ -2918,52 +2922,52 @@ msgid "User Verification"
 msgstr "User Verification"
 
 #: menus/PieRegEditForm.php:172 menus/PieRegEditForm.php:232
-#: pie-register.php:922
+#: pie-register.php:940
 msgid "Verifications"
 msgstr "Verifications"
 
 #: menus/PieRegEditForm.php:187 menus/PieRegEditForm.php:246
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "equal"
 msgstr "equal"
 
 #: menus/PieRegEditForm.php:190 menus/PieRegEditForm.php:249
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "not equal"
 msgstr "not equal"
 
 #: menus/PieRegEditForm.php:193 menus/PieRegEditForm.php:252
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "empty"
 msgstr "empty"
 
 #: menus/PieRegEditForm.php:196 menus/PieRegEditForm.php:255
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "not empty"
 msgstr "not empty"
 
 #: menus/PieRegEditForm.php:199 menus/PieRegEditForm.php:258
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "greater than"
 msgstr "greater than"
 
 #: menus/PieRegEditForm.php:202 menus/PieRegEditForm.php:261
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "less than"
 msgstr "less than"
 
 #: menus/PieRegEditForm.php:205 menus/PieRegEditForm.php:264
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "contains"
 msgstr "contains"
 
 #: menus/PieRegEditForm.php:208 menus/PieRegEditForm.php:267
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "starts with"
 msgstr "starts with"
 
 #: menus/PieRegEditForm.php:211 menus/PieRegEditForm.php:270
-#: pie-register.php:923
+#: pie-register.php:941
 msgid "ends with"
 msgstr "ends with"
 
@@ -2971,7 +2975,7 @@ msgstr "ends with"
 msgid "Drag Fields Here"
 msgstr "Drag Fields Here"
 
-#: menus/PieRegEditForm.php:289 menus/PieRegEditForm.php:660
+#: menus/PieRegEditForm.php:289 menus/PieRegEditForm.php:661
 msgid "Did You Know ?"
 msgstr "Did You Know ?"
 
@@ -2979,176 +2983,176 @@ msgstr "Did You Know ?"
 msgid "You can sort fields vertically"
 msgstr "You can sort fields vertically"
 
-#: menus/PieRegEditForm.php:294 menus/PieRegEditForm.php:665
+#: menus/PieRegEditForm.php:294 menus/PieRegEditForm.php:666
 msgid "Yes Thanks !"
 msgstr "Yes Thanks !"
 
-#: menus/PieRegEditForm.php:563
+#: menus/PieRegEditForm.php:564
 msgid "Edit Button"
 msgstr "Edit Button"
 
-#: menus/PieRegEditForm.php:575
+#: menus/PieRegEditForm.php:576
 msgid "Submit Button Text"
 msgstr "Submit Button Text"
 
-#: menus/PieRegEditForm.php:581
+#: menus/PieRegEditForm.php:582
 msgid "Show Reset Button"
 msgstr "Show Reset Button"
 
-#: menus/PieRegEditForm.php:594
+#: menus/PieRegEditForm.php:595
 msgid "Reset Button Text"
 msgstr "Reset Button Text"
 
-#: menus/PieRegEditForm.php:600
+#: menus/PieRegEditForm.php:601
 msgid "Confirmation Message"
 msgstr "Confirmation Message"
 
-#: menus/PieRegEditForm.php:609
+#: menus/PieRegEditForm.php:610
 msgid "Page"
 msgstr "Page"
 
-#: menus/PieRegEditForm.php:613 pie-register.php:1693
+#: menus/PieRegEditForm.php:614 pie-register.php:1739
 msgid "Redirect"
 msgstr "Redirect"
 
-#: menus/PieRegEditForm.php:619
+#: menus/PieRegEditForm.php:620
 msgid "Redirect URL"
 msgstr "Redirect URL"
 
-#: menus/PieRegEditForm.php:625
+#: menus/PieRegEditForm.php:626
 msgid "Select Page"
 msgstr "Select Page"
 
-#: menus/PieRegEditForm.php:631
+#: menus/PieRegEditForm.php:632
 msgid "Registration Success Message"
 msgstr "Registration Success Message"
 
-#: menus/PieRegEditForm.php:663
+#: menus/PieRegEditForm.php:664
 msgid "You can Drag n Drop fields."
 msgstr "You can Drag n Drop fields."
 
-#: menus/PieRegEditForm.php:670
+#: menus/PieRegEditForm.php:671
 #: menus/notification/PieRegAdminNotification.php:106
 #: menus/notification/PieRegUserNotification.php:113
 msgid "Default Fields"
 msgstr "Default Fields"
 
-#: menus/PieRegEditForm.php:677
+#: menus/PieRegEditForm.php:678
 msgid "Name"
 msgstr "Name"
 
-#: menus/PieRegEditForm.php:697
+#: menus/PieRegEditForm.php:698
 msgid "Standard Fields"
 msgstr "Standard Fields"
 
-#: menus/PieRegEditForm.php:701
+#: menus/PieRegEditForm.php:702
 msgid "Text Field"
 msgstr "Text Field"
 
-#: menus/PieRegEditForm.php:704
+#: menus/PieRegEditForm.php:705
 msgid "Text Area"
 msgstr "Text Area"
 
-#: menus/PieRegEditForm.php:707
+#: menus/PieRegEditForm.php:708
 msgid "Drop Down"
 msgstr "Drop Down"
 
-#: menus/PieRegEditForm.php:710
+#: menus/PieRegEditForm.php:711
 msgid "Multi Select"
 msgstr "Multi Select"
 
-#: menus/PieRegEditForm.php:716
+#: menus/PieRegEditForm.php:717
 msgid "Checkbox"
 msgstr "Checkbox"
 
-#: menus/PieRegEditForm.php:719
+#: menus/PieRegEditForm.php:720
 msgid "Radio Buttons"
 msgstr "Radio Buttons"
 
-#: menus/PieRegEditForm.php:722
+#: menus/PieRegEditForm.php:723
 msgid "Hidden Field"
 msgstr "Hidden Field"
 
-#: menus/PieRegEditForm.php:725
+#: menus/PieRegEditForm.php:726
 msgid "HTML Script"
 msgstr "HTML Script"
 
-#: menus/PieRegEditForm.php:728
+#: menus/PieRegEditForm.php:729
 msgid "Section Break"
 msgstr "Section Break"
 
-#: menus/PieRegEditForm.php:731
+#: menus/PieRegEditForm.php:732
 msgid "Page Break"
 msgstr "Page Break"
 
-#: menus/PieRegEditForm.php:736
+#: menus/PieRegEditForm.php:737
 msgid "Advanced Fields"
 msgstr "Advanced Fields"
 
-#: menus/PieRegEditForm.php:740
+#: menus/PieRegEditForm.php:741
 msgid "Address"
 msgstr "Address"
 
-#: menus/PieRegEditForm.php:743 menus/PieRegPaymentGateway.php:171
+#: menus/PieRegEditForm.php:744 menus/PieRegPaymentGateway.php:171
 #: menus/PieRegPaymentGateway.php:208
 msgid "Date"
 msgstr "Date"
 
-#: menus/PieRegEditForm.php:746
+#: menus/PieRegEditForm.php:747
 msgid "Time"
 msgstr "Time"
 
-#: menus/PieRegEditForm.php:749
+#: menus/PieRegEditForm.php:750
 msgid "Phone"
 msgstr "Phone"
 
-#: menus/PieRegEditForm.php:757
+#: menus/PieRegEditForm.php:758
 msgid "2Way Login Phone #"
 msgstr "2Way Login Phone #"
 
-#: menus/PieRegEditForm.php:762
+#: menus/PieRegEditForm.php:763
 msgid "Upload File"
 msgstr "Upload File"
 
-#: menus/PieRegEditForm.php:765
+#: menus/PieRegEditForm.php:766
 msgid "Profile Picture"
 msgstr "Profile Picture"
 
-#: menus/PieRegEditForm.php:768
+#: menus/PieRegEditForm.php:769
 msgid "List"
 msgstr "List"
 
-#: menus/PieRegEditForm.php:771
+#: menus/PieRegEditForm.php:772
 msgid "Custom User Role"
 msgstr "Custom User Role"
 
-#: menus/PieRegEditForm.php:775
+#: menus/PieRegEditForm.php:776
 msgid "Membership"
 msgstr "Membership"
 
-#: menus/PieRegEditForm.php:780 menus/PieRegImportExport.php:100
-#: menus/PieRegInvitationCodes.php:20 pie-register.php:2641
+#: menus/PieRegEditForm.php:781 menus/PieRegImportExport.php:100
+#: menus/PieRegInvitationCodes.php:20 pie-register.php:2854
 msgid "Invitation Codes"
 msgstr "Invitation Codes"
 
-#: menus/PieRegEditForm.php:784
+#: menus/PieRegEditForm.php:785
 msgid "Terms &amp; Conditions"
 msgstr "Terms &amp; Conditions"
 
-#: menus/PieRegEditForm.php:787
+#: menus/PieRegEditForm.php:788
 msgid "Re-Captcha"
 msgstr "Re-Captcha"
 
-#: menus/PieRegEditForm.php:790 menus/settings/PieRegSecurityBasic.php:67
+#: menus/PieRegEditForm.php:791 menus/settings/PieRegSecurityBasic.php:67
 #: menus/settings/PieRegSecurityBasic.php:179
 msgid "Math Captcha"
 msgstr "Math Captcha"
 
-#: menus/PieRegEditForm.php:794
+#: menus/PieRegEditForm.php:795
 msgid "Honeypot"
 msgstr "Honeypot"
 
-#: menus/PieRegExportUsers.php:8 pie-register.php:2647
+#: menus/PieRegExportUsers.php:8 pie-register.php:2860
 msgid "Export Users"
 msgstr "Export Users"
 
@@ -3156,11 +3160,11 @@ msgstr "Export Users"
 msgid "MailChimp"
 msgstr "MailChimp"
 
-#: menus/PieRegHelp.php:25 pie-register.php:2688
+#: menus/PieRegHelp.php:25 pie-register.php:2901
 msgid "Help"
 msgstr "Help"
 
-#: menus/PieRegHelp.php:45 pie-register.php:7913
+#: menus/PieRegHelp.php:45 pie-register.php:8176
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -3261,17 +3265,17 @@ msgid "Short Code"
 msgstr "Short Code"
 
 #: menus/PieRegHelp.php:125 menus/settings/PieRegSecurityBasic.php:20
-#: menus/settings/PieRegUX.php:62 pie-register.php:1990
+#: menus/settings/PieRegUX.php:62 pie-register.php:2036
 msgid "Login Form"
 msgstr "Login Form"
 
 #: menus/PieRegHelp.php:131 menus/settings/PieRegSecurityBasic.php:146
-#: menus/settings/PieRegUX.php:92 pie-register.php:1991 widget.php:271
+#: menus/settings/PieRegUX.php:92 pie-register.php:2037 widget.php:271
 msgid "Forgot Password Form"
 msgstr "Forgot Password Form"
 
 #: menus/PieRegHelp.php:137 menus/settings/PieRegPagesAllUsers.php:55
-#: pie-register.php:1992
+#: pie-register.php:2038
 msgid "Profile Page"
 msgstr "Profile Page"
 
@@ -3395,7 +3399,7 @@ msgstr "Be the first to receive Plugin Features and Addons update."
 msgid "Subscribe"
 msgstr "Subscribe"
 
-#: menus/PieRegImportExport.php:11 pie-register.php:2680
+#: menus/PieRegImportExport.php:11 pie-register.php:2893
 msgid "Import/Export"
 msgstr "Import/Export"
 
@@ -3582,7 +3586,7 @@ msgstr ""
 #: menus/restrictions/PieRegRestrictUsers.php:49
 #: menus/restrictions/PieRegRestrictUsers.php:92
 #: menus/restrictions/PieRegRestrictUsers.php:132
-#: menus/settings/PieRegPagesRoleBased.php:17 pie-register.php:5674
+#: menus/settings/PieRegPagesRoleBased.php:17 pie-register.php:5937
 msgid "Note"
 msgstr "Note"
 
@@ -3610,7 +3614,7 @@ msgstr "Apply"
 msgid "Select Bulk Option and also Invitation Code"
 msgstr "Select Bulk Option and also Invitation Code"
 
-#: menus/PieRegNotifications.php:6 pie-register.php:2638
+#: menus/PieRegNotifications.php:6 pie-register.php:2851
 msgid "Notifications"
 msgstr "Notifications"
 
@@ -3622,7 +3626,7 @@ msgstr "Admin Notification"
 msgid "User Notification"
 msgstr "User Notification"
 
-#: menus/PieRegPaymentGateway.php:16 pie-register.php:2667
+#: menus/PieRegPaymentGateway.php:16 pie-register.php:2880
 msgid "Payment Gateways"
 msgstr "Payment Gateways"
 
@@ -3659,7 +3663,7 @@ msgid "Sandbox"
 msgstr "Sandbox"
 
 #: menus/PieRegPaymentGateway.php:68 menus/PieRegPaymentGateway.php:145
-#: menus/notification/PieRegAdminNotification.php:141
+#: menus/notification/PieRegAdminNotification.php:142
 #: menus/notification/PieRegUserNotification.php:159
 #: menus/restrictions/PieRegAllowedUsers.php:60
 #: menus/restrictions/PieRegAllowedUsers.php:102
@@ -3763,7 +3767,7 @@ msgstr "Method"
 msgid "Type"
 msgstr "Type"
 
-#: menus/PieRegPaymentGateway.php:199 pie-register.php:4811
+#: menus/PieRegPaymentGateway.php:199 pie-register.php:5078
 msgid "No Record Found"
 msgstr "No Record Found"
 
@@ -3801,15 +3805,15 @@ msgstr "View Pricing"
 msgid "Features"
 msgstr "Features"
 
-#: menus/PieRegProFeatures.php:43 pie-register.php:2693
+#: menus/PieRegProFeatures.php:43 pie-register.php:2906
 msgid "Addons"
 msgstr "Addons"
 
-#: menus/PieRegProFeatures.php:266
+#: menus/PieRegProFeatures.php:279
 msgid "Upgrade Now"
 msgstr "Upgrade Now"
 
-#: menus/PieRegProFeatures.php:267
+#: menus/PieRegProFeatures.php:280
 msgid "View all features"
 msgstr "View all features"
 
@@ -3829,11 +3833,17 @@ msgstr "Submissions"
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: menus/PieRegRegistrationForm.php:108
+#: menus/PieRegRegistrationForm.php:97
+#, fuzzy
+#| msgid "Geolocation"
+msgid "duplication"
+msgstr "Geolocation"
+
+#: menus/PieRegRegistrationForm.php:125
 msgid "No Registration Form Found"
 msgstr "No Registration Form Found"
 
-#: menus/PieRegRestrictUsers.php:11 pie-register.php:2674
+#: menus/PieRegRestrictUsers.php:11 pie-register.php:2887
 msgid "User Control"
 msgstr "User Control"
 
@@ -3845,7 +3855,7 @@ msgstr "Block Users"
 msgid "Allow Users"
 msgstr "Allow Users"
 
-#: menus/PieRegSettings.php:15 pie-register.php:1238 pie-register.php:2677
+#: menus/PieRegSettings.php:15 pie-register.php:1256 pie-register.php:2890
 msgid "Settings"
 msgstr "Settings"
 
@@ -3988,11 +3998,15 @@ msgid "Email Body"
 msgstr "Email Body"
 
 #: menus/invitations/inviteemail.php:145
-msgid "Invitation link replacement key can be used in email Body"
+#, fuzzy
+#| msgid "Invitation link replacement key can be used in email Body"
+msgid "Invitation link replacement key can be used in Email Body"
 msgstr "Invitation link replacement key can be used in email Body"
 
 #: menus/invitations/inviteemail.php:147
-msgid "Site Title replacement key can be used in email Body"
+#, fuzzy
+#| msgid "Site Title replacement key can be used in email Body"
+msgid "Site Title replacement key can be used in Email Body and Subject"
 msgstr "Site Title replacement key can be used in email Body"
 
 #: menus/invitations/inviteemail.php:155
@@ -4052,20 +4066,20 @@ msgid "Replacement Keys"
 msgstr "Replacement Keys"
 
 #: menus/notification/PieRegAdminNotification.php:105
-#: menus/notification/PieRegUserNotification.php:112 pie-register.php:1975
+#: menus/notification/PieRegUserNotification.php:112 pie-register.php:2021
 #: renew_account.php:164
 msgid "Select"
 msgstr "Select"
 
 #: menus/notification/PieRegAdminNotification.php:107
-#: menus/notification/PieRegUserNotification.php:114 pie-register.php:1817
-#: pie-register.php:1823 renew_account.php:116 renew_account.php:130
+#: menus/notification/PieRegUserNotification.php:114 pie-register.php:1863
+#: pie-register.php:1869 renew_account.php:116 renew_account.php:130
 msgid "User Name"
 msgstr "User Name"
 
 #: menus/notification/PieRegAdminNotification.php:108
-#: menus/notification/PieRegUserNotification.php:115 pie-register.php:1818
-#: pie-register.php:1824
+#: menus/notification/PieRegUserNotification.php:115 pie-register.php:1864
+#: pie-register.php:1870
 msgid "User E-mail"
 msgstr "User E-mail"
 
@@ -4130,11 +4144,17 @@ msgid "Site URL"
 msgstr "Site URL"
 
 #: menus/notification/PieRegAdminNotification.php:124
+#, fuzzy
+#| msgid "Verifications"
+msgid "Verification URL"
+msgstr "Verifications"
+
+#: menus/notification/PieRegAdminNotification.php:125
 #: menus/notification/PieRegUserNotification.php:134
 msgid "Blog Name With Site URL"
 msgstr "Blog Name With Site URL"
 
-#: menus/notification/PieRegAdminNotification.php:125
+#: menus/notification/PieRegAdminNotification.php:126
 #: menus/notification/PieRegUserNotification.php:129
 msgid "User IP"
 msgstr "User IP"
@@ -4378,7 +4398,7 @@ msgid "After Log out Page"
 msgstr "After Log out Page"
 
 #: menus/settings/PieRegPagesRoleBased.php:141
-#: pie_register_template/profile_edit/edit_form_template.php:1086
+#: pie_register_template/profile_edit/edit_form_template.php:1094
 msgid "Update"
 msgstr "Update"
 
@@ -4745,7 +4765,7 @@ msgstr "Custom Logo URL"
 msgid "Please enter Logo URL"
 msgstr "Please enter Logo URL"
 
-#: menus/settings/PieRegUX.php:117 pie-register.php:1714
+#: menus/settings/PieRegUX.php:117 pie-register.php:1760
 msgid "OR"
 msgstr "OR"
 
@@ -4813,485 +4833,532 @@ msgstr ""
 "Note: Tracking Code is now deprecated. Please copy the code and paste in "
 "your theme option or use another plugin. "
 
-#: pie-register.php:425
+#: pie-register.php:436
 msgid "Form deletion failed."
 msgstr "Form deletion failed."
 
-#: pie-register.php:754
+#: pie-register.php:772
 msgid "none"
 msgstr "none"
 
-#: pie-register.php:755
+#: pie-register.php:773
 msgid "* This field is required"
 msgstr "* This field is required"
 
-#: pie-register.php:756
+#: pie-register.php:774
 msgid "* Please select an option"
 msgstr "* Please select an option"
 
-#: pie-register.php:757
+#: pie-register.php:775
 msgid "* This checkbox is required"
 msgstr "* This checkbox is required"
 
-#: pie-register.php:758
+#: pie-register.php:776
 msgid "* Both date range fields are required"
 msgstr "* Both date range fields are required"
 
-#: pie-register.php:759
+#: pie-register.php:777
 msgid "* Field must equal test"
 msgstr "* Field must equal test"
 
-#: pie-register.php:760
+#: pie-register.php:778
 msgid "* Invalid "
 msgstr "* Invalid "
 
-#: pie-register.php:761
+#: pie-register.php:779
 msgid "Date Range"
 msgstr "Date Range"
 
-#: pie-register.php:762
+#: pie-register.php:780
 msgid "Date Time Range"
 msgstr "Date Time Range"
 
-#: pie-register.php:763
+#: pie-register.php:781
 msgid "* Minimum "
 msgstr "* Minimum "
 
-#: pie-register.php:764
+#: pie-register.php:782
 msgid " characters required"
 msgstr " characters required"
 
-#: pie-register.php:765
+#: pie-register.php:783
 msgid "* Maximum "
 msgstr "* Maximum "
 
-#: pie-register.php:766
+#: pie-register.php:784
 msgid " characters allowed"
 msgstr " characters allowed"
 
-#: pie-register.php:767
+#: pie-register.php:785
 msgid "* You must fill one of the following fields"
 msgstr "* You must fill one of the following fields"
 
-#: pie-register.php:768
+#: pie-register.php:786
 msgid "* Minimum value is "
 msgstr "* Minimum value is "
 
-#: pie-register.php:769
+#: pie-register.php:787
 msgid "* Date prior to "
 msgstr "* Date prior to "
 
-#: pie-register.php:770
+#: pie-register.php:788
 msgid "* Date past "
 msgstr "* Date past "
 
-#: pie-register.php:771
+#: pie-register.php:789
 msgid " options allowed"
 msgstr " options allowed"
 
-#: pie-register.php:772
+#: pie-register.php:790
 msgid "* Please select "
 msgstr "* Please select "
 
-#: pie-register.php:773
+#: pie-register.php:791
 msgid " options"
 msgstr " options"
 
-#: pie-register.php:774
+#: pie-register.php:792
 msgid "* Fields do not match"
 msgstr "* Fields do not match"
 
-#: pie-register.php:775
+#: pie-register.php:793
 msgid "* Invalid credit card number"
 msgstr "* Invalid credit card number"
 
-#: pie-register.php:776
+#: pie-register.php:794
 msgid "* Invalid phone number"
 msgstr "* Invalid phone number"
 
-#: pie-register.php:777
+#: pie-register.php:795
 msgid "* Invalid Phone No. Allowed Format (xxx) xxx-xxxx"
 msgstr "* Invalid Phone No. Allowed Format (xxx) xxx-xxxx"
 
-#: pie-register.php:778
+#: pie-register.php:796
 msgid "* Minimum 10 Digits starting with Country Code without + sign."
 msgstr "* Minimum 10 Digits starting with Country Code without + sign."
 
-#: pie-register.php:779
+#: pie-register.php:797
 msgid "* Invalid email address"
 msgstr "* Invalid email address"
 
-#: pie-register.php:780
+#: pie-register.php:798
 msgid "* Not a valid integer"
 msgstr "* Not a valid integer"
 
-#: pie-register.php:781
+#: pie-register.php:799
 msgid "* Invalid number"
 msgstr "* Invalid number"
 
-#: pie-register.php:782
+#: pie-register.php:800
 msgid "* Invalid month"
 msgstr "* Invalid month"
 
-#: pie-register.php:783
+#: pie-register.php:801
 msgid "* Invalid day"
 msgstr "* Invalid day"
 
-#: pie-register.php:784
+#: pie-register.php:802
 msgid "* Invalid year"
 msgstr "* Invalid year"
 
-#: pie-register.php:785
+#: pie-register.php:803
 msgid "* Invalid file extension"
 msgstr "* Invalid file extension"
 
-#: pie-register.php:786
+#: pie-register.php:804
 msgid "* Invalid date, must be in YYYY-MM-DD format"
 msgstr "* Invalid date, must be in YYYY-MM-DD format"
 
-#: pie-register.php:787
+#: pie-register.php:805
 msgid "* Invalid IP address"
 msgstr "* Invalid IP address"
 
-#: pie-register.php:788
+#: pie-register.php:806
 msgid "* Invalid URL"
 msgstr "* Invalid URL"
 
-#: pie-register.php:789
+#: pie-register.php:807
 msgid "* Numbers only"
 msgstr "* Numbers only"
 
-#: pie-register.php:790
+#: pie-register.php:808
 msgid "* Letters only"
 msgstr "* Letters only"
 
-#: pie-register.php:791
+#: pie-register.php:809
 msgid "* No special characters allowed"
 msgstr "* No special characters allowed"
 
-#: pie-register.php:792 pie-register.php:795
+#: pie-register.php:810 pie-register.php:813
 msgid "* This user is already taken"
 msgstr "* This user is already taken"
 
-#: pie-register.php:793 pie-register.php:796 pie-register.php:799
+#: pie-register.php:811 pie-register.php:814 pie-register.php:817
 msgid "* Validating, please wait"
 msgstr "* Validating, please wait"
 
-#: pie-register.php:794
+#: pie-register.php:812
 msgid "* This username is available"
 msgstr "* This username is available"
 
-#: pie-register.php:797 pie-register.php:800
+#: pie-register.php:815 pie-register.php:818
 msgid "* This name is already taken"
 msgstr "* This name is already taken"
 
-#: pie-register.php:798
+#: pie-register.php:816
 msgid "* This name is available"
 msgstr "* This name is available"
 
-#: pie-register.php:801
+#: pie-register.php:819
 msgid "* Please input HELLO"
 msgstr "* Please input HELLO"
 
-#: pie-register.php:802
+#: pie-register.php:820
 msgid "* Invalid Date"
 msgstr "* Invalid Date"
 
-#: pie-register.php:803
+#: pie-register.php:821
 msgid "* Invalid Date or Date Format"
 msgstr "* Invalid Date or Date Format"
 
-#: pie-register.php:804
+#: pie-register.php:822
 msgid "Expected Format: "
 msgstr "Expected Format: "
 
-#: pie-register.php:805
+#: pie-register.php:823
 msgid "mm/dd/yyyy hh:mm:ss AM|PM or "
 msgstr "mm/dd/yyyy hh:mm:ss AM|PM or "
 
-#: pie-register.php:806
+#: pie-register.php:824
 msgid "yyyy-mm-dd hh:mm:ss AM|PM"
 msgstr "yyyy-mm-dd hh:mm:ss AM|PM"
 
-#: pie-register.php:807
+#: pie-register.php:825
 msgid "* Invalid Username"
 msgstr "* Invalid Username"
 
-#: pie-register.php:808
+#: pie-register.php:826
 msgid "* Invalid File"
 msgstr "* Invalid File"
 
-#: pie-register.php:809
+#: pie-register.php:827
 msgid "* Maximum value is "
 msgstr "* Maximum value is "
 
-#: pie-register.php:810
+#: pie-register.php:828
 msgid "* Alphabetic Letters only"
 msgstr "* Alphabetic Letters only"
 
-#: pie-register.php:811
+#: pie-register.php:829
 msgid "* Only Alphanumeric characters are allowed"
 msgstr "* Only Alphanumeric characters are allowed"
 
-#: pie-register.php:812
+#: pie-register.php:830
 msgid "* Invalid file size"
 msgstr "* Invalid file size"
 
-#: pie-register.php:917
+#: pie-register.php:935
 msgid "Please select a form"
 msgstr "Please select a form"
 
-#: pie-register.php:919
+#: pie-register.php:937
 msgid "Invalid Fields"
 msgstr "Invalid Fields"
 
-#: pie-register.php:1184
+#: pie-register.php:1202
 #, php-format
 msgid "Already logged in, Click <a href='%s'>here</a> to edit profile."
 msgstr "Already logged in, Click <a href='%s'>here</a> to edit profile."
 
-#: pie-register.php:1193
+#: pie-register.php:1211
 msgid "Currently this form is disabled by administrator."
 msgstr "Currently this form is disabled by administrator."
 
-#: pie-register.php:1201 pie-register.php:1206
+#: pie-register.php:1219 pie-register.php:1224
 msgid "You are using wrong shortcode of Pie Register."
 msgstr "You are using wrong shortcode of Pie Register."
 
-#: pie-register.php:1237
+#: pie-register.php:1255
 msgid "Go Pro"
 msgstr "Go Pro"
 
-#: pie-register.php:1449
+#: pie-register.php:1467
 msgid "Pie Register - "
 msgstr "Pie Register - "
 
-#: pie-register.php:1470
-#, php-format
+#: pie-register.php:1488
+#, fuzzy, php-format
+#| msgid ""
+#| "Hey, We noticed you have been using Pie Register for at least 7 days now "
+#| "- that's awesome! Could you please do us a BIG favor and give it a %1$s5-"
+#| "star rating on WordPress?%2$s This will help us spread the word and boost "
+#| "our motivation - Thanks!"
 msgid ""
-"Hey, We noticed you have been using Pie Register for at least 7 days now - "
-"that's awesome! Could you please do us a BIG favor and give it a %1$s5-star "
-"rating on WordPress?%2$s This will help us spread the word and boost our "
-"motivation - Thanks!"
+"Hi there, we see you have been using Pie Register for a few days now, that "
+"is awesome! We hope you like it. We have a favor to ask, could you please "
+"%1$sreview us on WordPress?%2$s We like reading your feedback, and it helps "
+"us spread the word. Thank you."
 msgstr ""
 "Hey, We noticed you have been using Pie Register for at least 7 days now - "
 "that's awesome! Could you please do us a BIG favor and give it a %1$s5-star "
 "rating on WordPress?%2$s This will help us spread the word and boost our "
 "motivation - Thanks!"
 
-#: pie-register.php:1476
+#: pie-register.php:1494
 msgid "Sure! I'd love to give a review."
 msgstr "Sure! I'd love to give a review."
 
-#: pie-register.php:1479 pie-register.php:1553
+#: pie-register.php:1497 pie-register.php:1541 pie-register.php:1582
+#: pie-register.php:1627
 msgid "No thanks"
 msgstr "No thanks"
 
-#: pie-register.php:1519
-msgid "To activate the license Go to <a href=\""
-msgstr "To activate the license Go to <a href=\""
+#: pie-register.php:1539
+#, fuzzy
+#| msgid "Pie Register Add-ons"
+msgid "Pie Register - WooCommerce Addon"
+msgstr "Pie Register Add-ons"
 
-#: pie-register.php:1551
-msgid "Bulk Email Addon"
-msgstr "Bulk Email Addon"
-
-#: pie-register.php:1552
+#: pie-register.php:1540
 msgid ""
-"Allows Admin to broadcast an Email message to all the registered users of a "
-"specific form."
+"With the WooCommerce Addon, you can now add fields for billing and shipping "
+"address to your Pie Register registration form and synchronize them with the "
+"WordPress WooCommerce plugin."
 msgstr ""
-"Allows Admin to broadcast an Email message to all the registered users of a "
-"specific form."
 
-#: pie-register.php:1553
-msgid "Purchase Now"
-msgstr "Purchase Now"
+#: pie-register.php:1541
+msgid "Get Now For Free"
+msgstr ""
 
-#: pie-register.php:1586
+#: pie-register.php:1580
+msgid "Admin Helper Application Launched"
+msgstr ""
+
+#: pie-register.php:1581
+msgid ""
+"Use the Pie Register Android App to access the Admin dashboard and verify "
+"and invite users on the go."
+msgstr ""
+
+#: pie-register.php:1582
+#, fuzzy
+#| msgid "Available in Paid version"
+msgid "Available on Play Store"
+msgstr "Available in Paid version"
+
+#: pie-register.php:1625
+#, fuzzy
+#| msgid "Pie Register Add-ons"
+msgid "Pie Register - Field visibility Addon"
+msgstr "Pie Register Add-ons"
+
+#: pie-register.php:1626
+msgid ""
+"Allows you to show or hide certain fields on the front-end registration form "
+"or the User's Profile page."
+msgstr ""
+
+#: pie-register.php:1627
+#, fuzzy
+#| msgid "Click here to edit"
+msgid "Click here for details"
+msgstr "Click here to edit"
+
+#: pie-register.php:1666
 #, php-format
 msgid ""
-" You’re using Pie Register Free plugin. To unlock more features and addons "
-"consider upgrading to Pro. <a href=\"%s\">Click here.</a>"
+"Use coupon code <strong>PRO30</strong> to take 30&#37 OFF on Pie Register "
+"Professional! It includes all the advanced features plus add-ons. Hurry, the "
+"offer expires on May 31st. <a href=\"%s\">Avail Now.</a>"
 msgstr ""
 
-#: pie-register.php:1614
-#, php-format
-msgid ""
-" Pie Register Professional package is available for $59.99 (+ Addons FREE). "
-"<a href=\"%s\">Upgrade now.</a>"
-msgstr ""
-" Pie Register Professional package is available for $59.99 (+ Addons FREE). "
-"<a href=\"%s\">Upgrade now.</a>"
-
-#: pie-register.php:1656
+#: pie-register.php:1702
 msgid "Visibility Restrictions"
 msgstr "Visibility Restrictions"
 
-#: pie-register.php:1659
+#: pie-register.php:1705
 msgid "Visibility"
 msgstr "Visibility"
 
-#: pie-register.php:1666 piereg_walker-nav-menu.php:38
+#: pie-register.php:1712 piereg_walker-nav-menu.php:38
 msgid "Default"
 msgstr "Default"
 
-#: pie-register.php:1667 piereg_walker-nav-menu.php:39
+#: pie-register.php:1713 piereg_walker-nav-menu.php:39
 #: restrict_widget/show_in_use_restrict.php:18
 msgid "Show to Logged in Users"
 msgstr "Show to Logged in Users"
 
-#: pie-register.php:1668 piereg_walker-nav-menu.php:40
+#: pie-register.php:1714 piereg_walker-nav-menu.php:40
 #: restrict_widget/show_in_use_restrict.php:20
 msgid "Show to Non-Logged in Users"
 msgstr "Show to Non-Logged in Users"
 
-#: pie-register.php:1677
+#: pie-register.php:1723
 msgid "Show to"
 msgstr "Show to"
 
-#: pie-register.php:1687
+#: pie-register.php:1733
 msgid "Restriction Type"
 msgstr "Restriction Type"
 
-#: pie-register.php:1697 pie-register.php:1733
+#: pie-register.php:1743 pie-register.php:1779
 msgid "Block Content"
 msgstr "Block Content"
 
-#: pie-register.php:1706
+#: pie-register.php:1752
 msgid "Redirect Url"
 msgstr "Redirect Url"
 
-#: pie-register.php:1720
+#: pie-register.php:1766
 msgid "Redirect Page"
 msgstr "Redirect Page"
 
-#: pie-register.php:1742
+#: pie-register.php:1788
 msgid "Restrict For Search Engine(s)"
 msgstr "Restrict For Search Engine(s)"
 
-#: pie-register.php:1758
+#: pie-register.php:1804
 msgid "Use Global"
 msgstr "Use Global"
 
-#: pie-register.php:1765
+#: pie-register.php:1811
 msgid "Bot Block Content"
 msgstr "Bot Block Content"
 
-#: pie-register.php:1774
+#: pie-register.php:1820
 msgid "Sorry, your browser does not support JavaScript!"
 msgstr "Sorry, your browser does not support JavaScript!"
 
-#: pie-register.php:1813
+#: pie-register.php:1859
 msgid "Activation Code"
 msgstr "Activation Code"
 
-#: pie-register.php:1948
+#: pie-register.php:1994
 msgid "Add Pie Register Form"
 msgstr "Add Pie Register Form"
 
-#: pie-register.php:1948
+#: pie-register.php:1994
 msgid "Add Form"
 msgstr "Add Form"
 
-#: pie-register.php:1968
+#: pie-register.php:2014
 msgid "Select A Form"
 msgstr "Select A Form"
 
-#: pie-register.php:1970
+#: pie-register.php:2016
 msgid "Select a form below to add it to your post or page."
 msgstr "Select a form below to add it to your post or page."
 
-#: pie-register.php:1989
+#: pie-register.php:2035
 msgid "Other Form"
 msgstr "Other Form"
 
-#: pie-register.php:2037
+#: pie-register.php:2112 pie-register.php:2155
+#, fuzzy
+#| msgid "User(s) has been deleted"
+msgid "User has been verified."
+msgstr "User(s) has been deleted"
+
+#: pie-register.php:2164 pie-register.php:2199 pie-register.php:2207
+#, fuzzy
+#| msgid "Invalid activation key"
+msgid "Invalid verification key"
+msgstr "Invalid activation key"
+
+#: pie-register.php:2178 pie-register.php:2188
+#, fuzzy
+#| msgid "Username already exists"
+msgid "User is already verified"
+msgstr "Username already exists"
+
+#: pie-register.php:2250
 msgid "Invalid username or password."
 msgstr "Invalid username or password."
 
-#: pie-register.php:2114
+#: pie-register.php:2327
 msgid "This user has not been allowed by administrator."
 msgstr "This user has not been allowed by administrator."
 
-#: pie-register.php:2131
+#: pie-register.php:2344
 msgid "This email address has not been allowed by administrator."
 msgstr "This email address has not been allowed by administrator."
 
-#: pie-register.php:2283 pie-register.php:2286 pie-register.php:6830
-#: pie-register.php:6833
+#: pie-register.php:2496 pie-register.php:2499 pie-register.php:7093
+#: pie-register.php:7096
 msgid "Invalid username or password"
 msgstr "Invalid username or password"
 
-#: pie-register.php:2345
+#: pie-register.php:2558
 msgid "Please Renew your account. "
 msgstr "Please Renew your account. "
 
-#: pie-register.php:2346
+#: pie-register.php:2559
 msgid "Please Renew your account"
 msgstr "Please Renew your account"
 
-#: pie-register.php:2369
+#: pie-register.php:2582
 msgid "Your account is not active"
 msgstr "Your account is not active"
 
-#: pie-register.php:2426
+#: pie-register.php:2639
 msgid "Something went wrong."
 msgstr "Something went wrong."
 
-#: pie-register.php:2573
+#: pie-register.php:2786
 msgid "your account has been suspended, Please renew your account"
 msgstr "your account has been suspended, Please renew your account"
 
-#: pie-register.php:2609
+#: pie-register.php:2822
 msgid "Your account has been blocked"
 msgstr "Your account has been blocked"
 
-#: pie-register.php:2627
+#: pie-register.php:2840
 msgid "Pie Register"
 msgstr "Pie Register"
 
-#: pie-register.php:2630
+#: pie-register.php:2843
 msgid "Manage Forms"
 msgstr "Manage Forms"
 
-#: pie-register.php:2635
+#: pie-register.php:2848
 msgid "New Form"
 msgstr "New Form"
 
-#: pie-register.php:2684 pie-register.php:3844
+#: pie-register.php:2897 pie-register.php:4108
 msgid "Unverified Users"
 msgstr "Unverified Users"
 
-#: pie-register.php:2696
+#: pie-register.php:2909
 msgid "Go Pro!"
 msgstr "Go Pro!"
 
-#: pie-register.php:2955 pie-register.php:4300 pie-register.php:4414
-#: pie-register.php:5217
+#: pie-register.php:3168 pie-register.php:4566 pie-register.php:4680
+#: pie-register.php:5484
 msgid "Settings Saved"
 msgstr "Settings Saved"
 
-#: pie-register.php:2958 pie-register.php:4293 pie-register.php:4358
-#: pie-register.php:4429 pie-register.php:4444 pie-register.php:4515
-#: pie-register.php:4646 pie-register.php:4814 pie-register.php:4980
-#: pie-register.php:5099 pie-register.php:5160 pie-register.php:5186
-#: pie-register.php:5206 pie-register.php:7140 pie-register.php:7304
-#: pie-register.php:7547 pie-register.php:7584 pie-register.php:7687
-#: pie-register.php:7740 pie-register.php:7777 pie-register.php:7805
-#: pie-register.php:7836 pie-register.php:7935 pie-register.php:7965
-#: pie-register.php:8288
+#: pie-register.php:3171 pie-register.php:4559 pie-register.php:4624
+#: pie-register.php:4695 pie-register.php:4710 pie-register.php:4782
+#: pie-register.php:4913 pie-register.php:5081 pie-register.php:5247
+#: pie-register.php:5366 pie-register.php:5427 pie-register.php:5453
+#: pie-register.php:5473 pie-register.php:7403 pie-register.php:7567
+#: pie-register.php:7810 pie-register.php:7847 pie-register.php:7950
+#: pie-register.php:8003 pie-register.php:8040 pie-register.php:8068
+#: pie-register.php:8099 pie-register.php:8198 pie-register.php:8228
+#: pie-register.php:8551
 msgid "Wrong nonce"
 msgstr "Wrong nonce"
 
-#: pie-register.php:3051
+#: pie-register.php:3300
 msgid "Please select any payment method"
 msgstr "Please select any payment method"
 
-#: pie-register.php:3390
+#: pie-register.php:3644
 msgid "please select any payment method"
 msgstr "please select any payment method"
 
-#: pie-register.php:3443
+#: pie-register.php:3702
 msgid ""
 "Thank you for your registration. You will be notified once the admin "
 "approves your account."
@@ -5299,7 +5366,7 @@ msgstr ""
 "Thank you for your registration. You will be notified once the admin "
 "approves your account."
 
-#: pie-register.php:3484
+#: pie-register.php:3743
 msgid ""
 "Thank you for your registration. An activation link has been sent to verify "
 "your email address."
@@ -5307,7 +5374,7 @@ msgstr ""
 "Thank you for your registration. An activation link has been sent to verify "
 "your email address."
 
-#: pie-register.php:3524
+#: pie-register.php:3788
 msgid ""
 "Thank you for your registration. You will be notified once the admin "
 "approves your account"
@@ -5315,163 +5382,163 @@ msgstr ""
 "Thank you for your registration. You will be notified once the admin "
 "approves your account"
 
-#: pie-register.php:3953
+#: pie-register.php:4219
 msgid "User(s) has been activated"
 msgstr "User(s) has been activated"
 
-#: pie-register.php:3956 pie-register.php:4022 pie-register.php:4086
+#: pie-register.php:4222 pie-register.php:4288 pie-register.php:4352
 msgid "Please select a user to send emails to"
 msgstr "Please select a user to send emails to"
 
-#: pie-register.php:4015
+#: pie-register.php:4281
 msgid "Payment Link Emails have been re-sent"
 msgstr "Payment Link Emails have been re-sent"
 
-#: pie-register.php:4017 pie-register.php:4083
+#: pie-register.php:4283 pie-register.php:4349
 msgid "Invalid User Types"
 msgstr "Invalid User Types"
 
-#: pie-register.php:4081
+#: pie-register.php:4347
 msgid "Verification Emails have been re-sent"
 msgstr "Verification Emails have been re-sent"
 
-#: pie-register.php:4104
+#: pie-register.php:4370
 msgid "User(s) has been deleted"
 msgstr "User(s) has been deleted"
 
-#: pie-register.php:4314 pie-register.php:4439
+#: pie-register.php:4580 pie-register.php:4705
 msgid "Status has been changed."
 msgstr "Status has been changed."
 
-#: pie-register.php:4321
+#: pie-register.php:4587
 msgid "Record has been deleted"
 msgstr "Record has been deleted"
 
-#: pie-register.php:4333
+#: pie-register.php:4599
 msgid "Please select any page or url for user role."
 msgstr "Please select any page or url for user role."
 
-#: pie-register.php:4351
+#: pie-register.php:4617
 msgid "Successfully add new record"
 msgstr "Successfully add new record"
 
-#: pie-register.php:4355 pie-register.php:4379
+#: pie-register.php:4621 pie-register.php:4645
 msgid "Invalid field(s)"
 msgstr "Invalid field(s)"
 
-#: pie-register.php:4375
+#: pie-register.php:4641
 msgid "Successfully update record"
 msgstr "Successfully update record"
 
-#: pie-register.php:4425
+#: pie-register.php:4691
 msgid "The Invitation Code has been deleted"
 msgstr "The Invitation Code has been deleted"
 
-#: pie-register.php:4454
+#: pie-register.php:4720
 msgid "Please select invitation code"
 msgstr "Please select invitation code"
 
-#: pie-register.php:4457
+#: pie-register.php:4723
 msgid "Please select registration page"
 msgstr "Please select registration page"
 
-#: pie-register.php:4483
+#: pie-register.php:4750
 #, php-format
 msgid "%s user already exists."
 msgstr "%s user already exists."
 
-#: pie-register.php:4495
+#: pie-register.php:4762
 #, php-format
 msgid "Invitation code successfully sent to %s"
 msgstr "Invitation code successfully sent to %s"
 
-#: pie-register.php:4508
+#: pie-register.php:4775
 #, php-format
 msgid "Failed to send invitation code to  %s"
 msgstr "Failed to send invitation code to  %s"
 
-#: pie-register.php:4527
+#: pie-register.php:4794
 msgid "Please Activate Pro Version."
 msgstr "Please Activate Pro Version."
 
-#: pie-register.php:4532
+#: pie-register.php:4799
 msgid "Code Prefix is empty."
 msgstr "Code Prefix is empty."
 
-#: pie-register.php:4536 pie-register.php:4541
+#: pie-register.php:4803 pie-register.php:4808
 msgid "Invitation code field is empty."
 msgstr "Invitation code field is empty."
 
-#: pie-register.php:4550
+#: pie-register.php:4817
 msgid "Usage only allows numeric characters."
 msgstr "Usage only allows numeric characters."
 
-#: pie-register.php:4555
+#: pie-register.php:4822
 msgid "Usage should not be less than 0 (zero)."
 msgstr "Usage should not be less than 0 (zero)."
 
-#: pie-register.php:4607
+#: pie-register.php:4874
 msgid "Special Characters are not allowed in code field."
 msgstr "Special Characters are not allowed in code field."
 
-#: pie-register.php:4612 pie-register.php:4637
+#: pie-register.php:4879 pie-register.php:4904
 msgid " invitation Code(s) already exists"
 msgstr " invitation Code(s) already exists"
 
-#: pie-register.php:4620 pie-register.php:4629
+#: pie-register.php:4887 pie-register.php:4896
 msgid "Invitation Code(s) added successfully"
 msgstr "Invitation Code(s) added successfully"
 
-#: pie-register.php:4635
+#: pie-register.php:4902
 msgid " invitation Code(s) added successfully."
 msgstr " invitation Code(s) added successfully."
 
-#: pie-register.php:4640
+#: pie-register.php:4907
 msgid " invitation Code(s) added successfully"
 msgstr " invitation Code(s) added successfully"
 
-#: pie-register.php:4850
+#: pie-register.php:5117
 msgid "You did not select a file to import users"
 msgstr "You did not select a file to import users"
 
-#: pie-register.php:4856
+#: pie-register.php:5123
 msgid "Invalid CSV file."
 msgstr "Invalid CSV file."
 
-#: pie-register.php:4865
+#: pie-register.php:5132
 msgid "Invalid CSV File. It must contain all the default user fields."
 msgstr "Invalid CSV File. It must contain all the default user fields."
 
-#: pie-register.php:5322
+#: pie-register.php:5589
 msgid "Confirm E-Mail"
 msgstr "Confirm E-Mail"
 
-#: pie-register.php:5584
-#: pie_register_template/profile_edit/edit_form_template.php:752
-#: pie_register_template/profile_edit/edit_form_template.php:761
-#: pie_register_template/profile_edit/edit_form_template.php:786
-#: pie_register_template/registration/registration_form_template.php:1042
-#: pie_register_template/registration/registration_form_template.php:1051
-#: pie_register_template/registration/registration_form_template.php:1076
-#: pie_register_template/registration/registration_form_template.php:1089
+#: pie-register.php:5847
+#: pie_register_template/profile_edit/edit_form_template.php:758
+#: pie_register_template/profile_edit/edit_form_template.php:767
+#: pie_register_template/profile_edit/edit_form_template.php:792
+#: pie_register_template/registration/registration_form_template.php:1048
+#: pie_register_template/registration/registration_form_template.php:1057
+#: pie_register_template/registration/registration_form_template.php:1082
+#: pie_register_template/registration/registration_form_template.php:1095
 msgid "YYYY"
 msgstr "YYYY"
 
-#: pie-register.php:5660
+#: pie-register.php:5923
 #: pie_register_template/profile_edit/edit_form_template.php:279
 #: pie_register_template/registration/registration_form_template.php:396
 msgid "HH"
 msgstr "HH"
 
-#: pie-register.php:5674
+#: pie-register.php:5937
 msgid "Please make sure that Re-captcha keys are entered in Settings page"
 msgstr "Please make sure that Re-captcha keys are entered in Settings page"
 
-#: pie-register.php:6023 pie-register.php:6685
+#: pie-register.php:6286 pie-register.php:6948
 msgid "Paypal (Standard)"
 msgstr "Paypal (Standard)"
 
-#: pie-register.php:6081
+#: pie-register.php:6344
 msgid ""
 "Your account has been removed due to not verifying it within the grace "
 "period."
@@ -5479,102 +5546,102 @@ msgstr ""
 "Your account has been removed due to not verifying it within the grace "
 "period."
 
-#: pie-register.php:6193
+#: pie-register.php:6456
 msgid "User registration is currently not allowed."
 msgstr "User registration is currently not allowed."
 
-#: pie-register.php:6244
+#: pie-register.php:6507
 msgid "Please renew your account"
 msgstr "Please renew your account"
 
-#: pie-register.php:6280 pie-register.php:6299
+#: pie-register.php:6543 pie-register.php:6562
 msgid "You are already logged in."
 msgstr "You are already logged in."
 
-#: pie-register.php:6411
+#: pie-register.php:6674
 msgid "Please"
 msgstr "Please"
 
-#: pie-register.php:6411
+#: pie-register.php:6674
 msgid "login"
 msgstr "login"
 
-#: pie-register.php:6411
+#: pie-register.php:6674
 msgid "to see your profile"
 msgstr "to see your profile"
 
-#: pie-register.php:6670
+#: pie-register.php:6933
 msgid "Paypal (Standard) payment method applied."
 msgstr "Paypal (Standard) payment method applied."
 
-#: pie-register.php:6812
+#: pie-register.php:7075
 msgid "Invalid auth keys hash"
 msgstr "Invalid auth keys hash"
 
-#: pie-register.php:6816
+#: pie-register.php:7079
 msgid "Invalid User"
 msgstr "Invalid User"
 
-#: pie-register.php:6845 renew_account.php:104 renew_account.php:183
+#: pie-register.php:7108 renew_account.php:104 renew_account.php:183
 msgid "Renew Account"
 msgstr "Renew Account"
 
-#: pie-register.php:6855
+#: pie-register.php:7118
 msgid "Invalid Username or Password"
 msgstr "Invalid Username or Password"
 
-#: pie-register.php:6859
+#: pie-register.php:7122
 msgid "Please Select any payment method"
 msgstr "Please Select any payment method"
 
-#: pie-register.php:6911
+#: pie-register.php:7174
 msgid "Invalid Field(s)"
 msgstr "Invalid Field(s)"
 
-#: pie-register.php:7173 pie-register.php:7185 pie-register.php:7199
-#: pie-register.php:7211
+#: pie-register.php:7436 pie-register.php:7448 pie-register.php:7462
+#: pie-register.php:7474
 msgid "Invalid File"
 msgstr "Invalid File"
 
-#: pie-register.php:7321 pie-register.php:7325 pie-register.php:7610
-#: pie-register.php:7614 pie-register.php:7756 pie-register.php:7760
-#: pie-register.php:7833
+#: pie-register.php:7584 pie-register.php:7588 pie-register.php:7873
+#: pie-register.php:7877 pie-register.php:8019 pie-register.php:8023
+#: pie-register.php:8096
 msgid "The file version is not compatible with this version"
 msgstr "The file version is not compatible with this version"
 
-#: pie-register.php:7341 pie-register.php:7355 pie-register.php:7366
-#: pie-register.php:7378 pie-register.php:7391 pie-register.php:7397
-#: pie-register.php:7411 pie-register.php:7435 pie-register.php:7448
-#: pie-register.php:7454 pie-register.php:7472 pie-register.php:7504
-#: pie-register.php:7541
+#: pie-register.php:7604 pie-register.php:7618 pie-register.php:7629
+#: pie-register.php:7641 pie-register.php:7654 pie-register.php:7660
+#: pie-register.php:7674 pie-register.php:7698 pie-register.php:7711
+#: pie-register.php:7717 pie-register.php:7735 pie-register.php:7767
+#: pie-register.php:7804
 msgid "Successfully import all settings"
 msgstr "Successfully import all settings"
 
-#: pie-register.php:7581
+#: pie-register.php:7844
 msgid "Record(s) not found"
 msgstr "Record(s) not found"
 
-#: pie-register.php:7683
+#: pie-register.php:7946
 msgid "Successfully import invitation codes"
 msgstr "Successfully import invitation codes"
 
-#: pie-register.php:7772
+#: pie-register.php:8035
 msgid "Successfully import e-mail templates"
 msgstr "Successfully import e-mail templates"
 
-#: pie-register.php:7913
+#: pie-register.php:8176
 msgid "View Pie Register Documentation"
 msgstr "View Pie Register Documentation"
 
-#: pie-register.php:7914
+#: pie-register.php:8177
 msgid "Visit Customer Support Forum"
 msgstr "Visit Customer Support Forum"
 
-#: pie-register.php:7914
+#: pie-register.php:8177
 msgid "Support"
 msgstr "Support"
 
-#: pie-register.php:8103
+#: pie-register.php:8366
 msgid ""
 "Please follow the link sent to your new Email to verify and make the change "
 "applied!"
@@ -5582,15 +5649,15 @@ msgstr ""
 "Please follow the link sent to your new Email to verify and make the change "
 "applied!"
 
-#: pie-register.php:8107 pie-register.php:8130
+#: pie-register.php:8370 pie-register.php:8393
 msgid "Verification link is expired or invalid."
 msgstr "Verification link is expired or invalid."
 
-#: pie-register.php:8119
+#: pie-register.php:8382
 msgid "There is a problem updating your new Email Address, Pleasde try again!"
 msgstr "There is a problem updating your new Email Address, Pleasde try again!"
 
-#: pie-register.php:8125
+#: pie-register.php:8388
 msgid ""
 "You have successfully verified your new Email address. Your Account Email "
 "has been changed"
@@ -5598,11 +5665,11 @@ msgstr ""
 "You have successfully verified your new Email address. Your Account Email "
 "has been changed"
 
-#: pie-register.php:8279
+#: pie-register.php:8542
 msgid "Empty Payment Log File"
 msgstr "Empty Payment Log File"
 
-#: pie-register.php:8284
+#: pie-register.php:8547
 msgid "Successfully remove payment log"
 msgstr "Successfully remove payment log"
 
@@ -5639,85 +5706,85 @@ msgstr "Current Password"
 msgid "Generate Password"
 msgstr "Generate Password"
 
-#: pie_register_template/profile_edit/edit_form_template.php:359
+#: pie_register_template/profile_edit/edit_form_template.php:361
 msgid "January"
 msgstr "January"
 
-#: pie_register_template/profile_edit/edit_form_template.php:360
+#: pie_register_template/profile_edit/edit_form_template.php:362
 msgid "February"
 msgstr "February"
 
-#: pie_register_template/profile_edit/edit_form_template.php:361
+#: pie_register_template/profile_edit/edit_form_template.php:363
 msgid "March"
 msgstr "March"
 
-#: pie_register_template/profile_edit/edit_form_template.php:362
+#: pie_register_template/profile_edit/edit_form_template.php:364
 msgid "April"
 msgstr "April"
 
-#: pie_register_template/profile_edit/edit_form_template.php:363
+#: pie_register_template/profile_edit/edit_form_template.php:365
 msgid "May"
 msgstr "May"
 
-#: pie_register_template/profile_edit/edit_form_template.php:364
+#: pie_register_template/profile_edit/edit_form_template.php:366
 msgid "June"
 msgstr "June"
 
-#: pie_register_template/profile_edit/edit_form_template.php:365
+#: pie_register_template/profile_edit/edit_form_template.php:367
 msgid "July"
 msgstr "July"
 
-#: pie_register_template/profile_edit/edit_form_template.php:366
+#: pie_register_template/profile_edit/edit_form_template.php:368
 msgid "August"
 msgstr "August"
 
-#: pie_register_template/profile_edit/edit_form_template.php:367
+#: pie_register_template/profile_edit/edit_form_template.php:369
 msgid "September"
 msgstr "September"
 
-#: pie_register_template/profile_edit/edit_form_template.php:368
+#: pie_register_template/profile_edit/edit_form_template.php:370
 msgid "October"
 msgstr "October"
 
-#: pie_register_template/profile_edit/edit_form_template.php:369
+#: pie_register_template/profile_edit/edit_form_template.php:371
 msgid "November"
 msgstr "November"
 
-#: pie_register_template/profile_edit/edit_form_template.php:370
+#: pie_register_template/profile_edit/edit_form_template.php:372
 msgid "December"
 msgstr "December"
 
-#: pie_register_template/profile_edit/edit_form_template.php:1077
+#: pie_register_template/profile_edit/edit_form_template.php:1085
 msgid "Previous"
 msgstr "Previous"
 
-#: pie_register_template/registration/registration_form_template.php:540
+#: pie_register_template/registration/registration_form_template.php:548
 #: renew_account.php:156
 msgid "Select Payment"
 msgstr "Select Payment"
 
-#: pie_register_template/registration/registration_form_template.php:542
+#: pie_register_template/registration/registration_form_template.php:550
 msgid "Select Payment Method"
 msgstr "Select Payment Method"
 
-#: pie_register_template/registration/registration_form_template.php:631
+#: pie_register_template/registration/registration_form_template.php:639
 msgid "No payment methods selected by administrator."
 msgstr "No payment methods selected by administrator."
 
-#: pie_register_template/registration/registration_form_template.php:1312
+#: pie_register_template/registration/registration_form_template.php:1320
 #, php-format
 msgid "Click <a target=\"_blank\" href=\"%s\">here</a> to view."
 msgstr "Click <a target=\"_blank\" href=\"%s\">here</a> to view."
 
-#: pie_register_template/registration/registration_form_template.php:1331
+#: pie_register_template/registration/registration_form_template.php:1339
 msgid "Captcha is not configured correctly"
 msgstr "Captcha is not configured correctly"
 
-#: pie_register_template/registration/registration_form_template.php:1743
+#: pie_register_template/registration/registration_form_template.php:1756
 msgid "Weak Password"
 msgstr "Weak Password"
 
-#: pie_register_template/registration/registration_form_template.php:1759
+#: pie_register_template/registration/registration_form_template.php:1772
 msgid "Password not entered"
 msgstr "Password not entered"
 
@@ -5912,8 +5979,35 @@ msgstr "Pie Register - Forgot Password Form"
 msgid "Forgot password"
 msgstr "Forgot password"
 
-#~ msgid "Available in Paid version"
-#~ msgstr "Available in Paid version"
+#~ msgid "Macedonia"
+#~ msgstr "Macedonia"
+
+#~ msgid "Serbia and Montenegro"
+#~ msgstr "Serbia and Montenegro"
+
+#~ msgid "To activate the license Go to <a href=\""
+#~ msgstr "To activate the license Go to <a href=\""
+
+#~ msgid "Bulk Email Addon"
+#~ msgstr "Bulk Email Addon"
+
+#~ msgid ""
+#~ "Allows Admin to broadcast an Email message to all the registered users of "
+#~ "a specific form."
+#~ msgstr ""
+#~ "Allows Admin to broadcast an Email message to all the registered users of "
+#~ "a specific form."
+
+#~ msgid "Purchase Now"
+#~ msgstr "Purchase Now"
+
+#, php-format
+#~ msgid ""
+#~ " Pie Register Professional package is available for $59.99 (+ Addons "
+#~ "FREE). <a href=\"%s\">Upgrade now.</a>"
+#~ msgstr ""
+#~ " Pie Register Professional package is available for $59.99 (+ Addons "
+#~ "FREE). <a href=\"%s\">Upgrade now.</a>"
 
 #, php-format
 #~ msgid ""

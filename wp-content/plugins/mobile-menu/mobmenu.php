@@ -3,11 +3,11 @@
 /**
  * Plugin Name: Mobile Menu
  * Description: An easy to use WordPress responsive mobile menu. Keep your mobile visitors engaged.
- * Version: 2.8
+ * Version: 2.8.1.2
  * Plugin URI: https://www.wpmobilemenu.com/
  * Author: Rui Guerreiro
  * Author URI: https://www.jedipress.com/
- * Tested up to: 5.3
+ * Tested up to: 5.4
  * Text Domain: mobile-menu
  * Domain Path: /languages/
  * License: GPLv2
@@ -16,7 +16,7 @@
 if ( !defined( 'ABSPATH' ) ) {
     die;
 }
-define( 'WP_MOBILE_MENU_VERSION', '2.8' );
+define( 'WP_MOBILE_MENU_VERSION', '2.8.1.2' );
 define( 'WP_MOBILE_MENU_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WP_MOBILE_MENU_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 if ( !class_exists( 'WP_Mobile_Menu' ) ) {
@@ -247,6 +247,12 @@ if ( !class_exists( 'WP_Mobile_Menu' ) ) {
     
     }
 }
-// Instanciate the WP_Mobile_Menu.
-$mobile_menu_instance = new WP_Mobile_Menu();
-$mobile_menu_instance->init_mobile_menu();
+$current_options = get_option( 'mobmenu_options' );
+$admin_options = unserialize( $current_options );
+$is_mobile_only = $admin_options['only_mobile_devices'];
+
+if ( is_admin() || (!$is_mobile_only || $is_mobile_only && wp_is_mobile()) ) {
+    // Instanciate the WP_Mobile_Menu.
+    $mobile_menu_instance = new WP_Mobile_Menu();
+    $mobile_menu_instance->init_mobile_menu();
+}

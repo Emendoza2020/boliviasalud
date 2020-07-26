@@ -161,7 +161,6 @@
      
       $('.mobmenu a[href*="#"], .mobmenu-panel a[href*="#"]')
         // Remove links that don't actually link to anything
-        .not('[href="#"]')
         .not('[href="#0"]')
         .on( 'click', function(event) {
           // On-page links  
@@ -173,19 +172,29 @@
           &&
           $(this).parents('.mobmenu-content').length > 0
         ) {
-          // Figure out element to scroll to
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          // Figure out element to scroll to.
+          var target;
+
+          try {
+	          target = decodeURIComponent( this.hash );
+          } catch(e) {
+ 	          target = this.hash;
+          }
+
+          $( 'html' ).css( 'overflow', '' );
+
           // Does a scroll target exist?
           if (target.length) {
-            if ( 0 < $(this).parents('.mobmenu-left-panel').length ) {
-              mobmenuClosePanel( 'mobmenu-left-panel' );
-            } else {
-              mobmenuClosePanel( 'mobmenu-right-panel' );
-            }
 
-            $( 'html' ).css( 'overflow', '' );
-  
+            
+          if ( 0 < $(this).parents('.mobmenu-left-panel').length ) {
+            mobmenuClosePanel( 'mobmenu-left-panel' );
+          } else {
+            mobmenuClosePanel( 'mobmenu-right-panel' );
+          }
+
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
             $('body,html').animate({
               scrollTop: target.offset().top - $(".mob-menu-header-holder").height() - 50
             }, 1000);

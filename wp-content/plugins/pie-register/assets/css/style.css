@@ -225,7 +225,7 @@
 .pieregister-admin .settings .fields ol{float:left;width:100%;margin:10px 0px 0px 20px;}
 .pieregister-admin .settings .fields ol li{float:left;width:100%;}
 .pieregister-admin .settings .fields ol li ul{list-style:initial;margin:10px 0px 10px 20px;float:left;width:100%;}
-.pieregister-admin .settings .fields .submit_btn{float:right;background:#464646;color:#ffffff;border:0;cursor:pointer;padding:5px;margin:15px 0px 0px 0px;min-width:113px;}
+.pieregister-admin .settings .fields .submit_btn, .pie_user_roles_area .fields .submit_btn{float:right;background:#464646;color:#ffffff;border:0;cursor:pointer;padding:5px;margin:15px 0px 0px 0px;min-width:113px;}
 .pieregister-admin .settings .fields .submit_btn_addon{margin:0px;}
 .pieregister-admin .settings .fields .container_attemps .security_attempts_drop{width:10%;}
 .pieregister-admin .settings .fields .captcha_in_login_attempts{margin-top:-12px;}
@@ -404,7 +404,7 @@ div.warning{border:0px;border-left:4px solid #FFBA00;background:#fff;box-shadow:
 .pieregister-admin .invitation .pagination ul li a:hover{background:#ffffff;color:#567c98;}
 .pieregister-admin .invitation .pagination ul li.active a{background:#ffffff;color:#567c98;}
 .invite-pie-logo{margin-top:20px;}
-.pieregister-admin .clearfix{display:block;clear:both;width:100%;}
+.pieregister-admin .clearfix{display:block;clear:both;width:100%;opacity:1;height:auto;}
 .pieregister-admin .invitation ul{padding-bottom:	0;}
 .pieregister-admin .invitation ul.bg-white{background-color:white;padding:15px !important;margin-top:10px !important;margin-bottom:30px !important;padding-bottom:40px !important;}
 .pieregister-admin .invitation .fields .note{width:100%;text-align:left;}
@@ -587,4 +587,78 @@ form#form_invitation_code_per_page_items label{font-size:13px;}
 }
 .email-dialog .ui-button, .email-dialog .ui-button-icon-primary{
     outline: none;
+}
+.pie_addons #piereg_addon_active > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.pie_addons form#piereg_addon_active input.submit_btn{
+    order: 3;
+}
+.pie_addons form#piereg_addon_active > div > div{
+    order: 2;
+}
+.pie_addons form#piereg_addon_active > div.fields > label{
+    max-width: 206px;
+    min-width: 0;
+    margin-top: 0;
+}
+.pie-notice-with-logo{
+padding: 21px 40px 44px 145px;
+}
+.pie-promo-logo{
+    clear: both;
+    content: "";
+    display: block;
+    background-image: url(../images/pro/promo-logo.png);
+    background-size: 125px 125px;
+    background-repeat: no-repeat;
+    background-position: 0 45%;
+    width: 125px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+}
+.pieregister-admin .settings .fields .quotation.import-email-invites{
+    margin-left: 0;
+    width: 95%;
+    padding-bottom: 0;
+}
+
+.pieregistercustomroles .column-role_name, .pieregistercustomroles .column-wp_role_name, .pieregistercustomroles .column-action, .pieregistercustomroles .no-items{
+    text-align: center;
+}
+.notice-features{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 0.5%;
+}
+.free-notice-feature{
+    margin-right: 5%;
+    width: calc( calc(100% / 2) - 5%);
+}
+.free-notice-feature p:first-of-type{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.free-notice-feature p:last-of-type{
+    margin-top: 0;
+}
+div.pie-admin-notice{
+    border: none;
+}
+.notice.notice-info.pie-admin-notice.pre-feat.is-dismissible{
+    width: calc( 95% - 24px - 25px);
+    padding-bottom: 1%;
+    margin-left: 19px;
+}
+.quotation.import-email-invites.optional-selection{
+    color: black;
+}
+.invitation .invite-form .extra-margin{
+    margin-left: 21%;
 }

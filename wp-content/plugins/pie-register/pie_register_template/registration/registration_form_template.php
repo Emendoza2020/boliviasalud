@@ -425,7 +425,9 @@ class Registration_form_template extends Registration_form
 		$data .= $this->addDesc();
 		$data .= '</div>';
 
-		$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		if($this->piereg_field_visbility_addon_active){
+			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		}
 
 		if($this->readibility){
 			$this->read_only = "";
@@ -459,21 +461,25 @@ class Registration_form_template extends Registration_form
 		{
 			$multiple 	= 'multiple';			
 			//$name = $this->name."[]";
+		} elseif($this->field['type'] == 'custom_role'){
+			$multiple 	= "";
+			$name 		= "custom_role";
 		}
+
 		$data .= '<select '.$this->read_only.' '.$multiple.' id="'.$field_id.'" name="'.$name.'" data-field_id="'.$this->get_pr_widget_prefix().'piereg_field_'.$this->no.'" class="'.$this->addClass().' '.$cl_class.'"'.$cl_data.' '.$this->addValidation().'  >';
 	
-		if($this->field['list_type']=="country")
+		if(isset($this->field['list_type']) && $this->field['list_type']=="country")
 		{
 			 $countries = get_option("pie_countries");			 
 			$data .= $this->createDropdown($countries);			   	
 		}
-		else if($this->field['list_type']=="us_states")
+		else if(isset($this->field['list_type']) && $this->field['list_type']=="us_states")
 		{
 			 $us_states = get_option("pie_us_states");
 			 $options 	= $this->createDropdown($us_states);				 
 			 $data .= $options;						   	
 		}
-		else if($this->field['list_type'] == "can_states")
+		else if(isset($this->field['list_type']) && $this->field['list_type'] == "can_states")
 		{
 			$can_states = get_option("pie_can_states");			
 			$data .= $options 	= $this->createDropdown($can_states);					
@@ -507,8 +513,10 @@ class Registration_form_template extends Registration_form
 		$data .= $this->addDesc();
 		$data .= '</div>';
 		
-		$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
-
+		if($this->piereg_field_visbility_addon_active){
+			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		}
+		
 		if($this->readibility){
 			$this->read_only = "";
 			$data .= '<div class="control_visibility">';
@@ -794,11 +802,7 @@ class Registration_form_template extends Registration_form
 				$dymanic_class = $this->field['type']."_".$this->field['id'];
 
 				$data .= '<div class="radio_container">';
-				if($this->field['type'] == 'custom_role'){
-					$data .= '<input '.$this->read_only.' '.$checked.' value="'.$this->field['value'][$a].'" data-field_id="'.$this->get_pr_widget_prefix().'piereg_field_'.$this->no.'" type="radio" name="custom_role" class="'.$this->addClass("input_fields").' radio_fields" '.$this->addValidation().' data-map-field-by-class="'.$dymanic_class.'" >';
-				}else{
-					$data .= '<input '.$this->read_only.' '.$checked.' value="'.$this->field['value'][$a].'" data-field_id="'.$this->get_pr_widget_prefix().'piereg_field_'.$this->no.'" type="'.$this->field['type'].'" name="'.$this->name.'[]" class="'.$this->addClass("input_fields").' radio_fields" '.$this->addValidation().' data-map-field-by-class="'.$dymanic_class.'" >';
-				}
+				$data .= '<input '.$this->read_only.' '.$checked.' value="'.$this->field['value'][$a].'" data-field_id="'.$this->get_pr_widget_prefix().'piereg_field_'.$this->no.'" type="'.$this->field['type'].'" name="'.$this->name.'[]" class="'.$this->addClass("input_fields").' radio_fields" '.$this->addValidation().' data-map-field-by-class="'.$dymanic_class.'" >';
 				$data .= "<label>";
 					$data .= $this->field['display'][$a];
 				$data .= "</label>";
@@ -899,7 +903,9 @@ class Registration_form_template extends Registration_form
 		$data .= $this->addDesc();
 		$data .= '</div>';
 
-		$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		if($this->piereg_field_visbility_addon_active){
+			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		}
 
 		if($this->readibility){
 			$this->read_only = "";
@@ -1249,7 +1255,9 @@ class Registration_form_template extends Registration_form
 				$data .= '</div>';
 			}	
 			
-			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+			if($this->piereg_field_visbility_addon_active){
+				$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+			}
 
 			if($this->readibility){
 				$this->read_only = "";
@@ -1309,7 +1317,7 @@ class Registration_form_template extends Registration_form
 			$data .= $this->field['label'];
 			$data .= (substr_compare($this->field['label'], '.', -strlen('.')) === 0) ? '' : '. ';		
 		}		
-		$data  .= apply_filters('piereg_terms_field_text',sprintf(__('Click <a target="_blank" href="%s">here</a> to view.','pie-register'),$page_url));
+		$data  .= apply_filters('piereg_terms_field_text',sprintf(__('Click <a target="_blank" href="%s">here</a> to view.','pie-register'),$page_url));		
 		$data .= '</label></div>';
 		return $data;
 	}
@@ -1496,10 +1504,12 @@ class Registration_form_template extends Registration_form
 		return false;
 	}
 	function check_readability(){
-		if( isset($this->field['enable_read_only']) && $this->field['enable_read_only'] != "disabled"){
-			$this->read_only = apply_filters('pie_addon_readibility', $this->read_only, $this->field, 'registration');
-		}		
-		return $this->read_only;
+		if($this->piereg_field_visbility_addon_active){
+			if( isset($this->field['enable_read_only']) && $this->field['enable_read_only'] != "disabled"){
+				$this->read_only = apply_filters('pie_addon_readibility', $this->read_only, $this->field, 'registration');
+			}		
+			return $this->read_only;
+		}
 	}
 	function printFields($fromwidget = false,$form_id="default",$title="false",$description="false")
 	{
@@ -1533,17 +1543,6 @@ class Registration_form_template extends Registration_form
 		if(is_array($this->data)){
 			foreach($this->data as $this->field)
 			{
-				$this->read_only         = "";
-				$this->not_visible       = false;
-				$this->not_visible_class = "";
-				$this->readibility       = false;
-
-				if(isset($this->field['show_on']) && !empty($this->field['show_on'])){
-					$this->not_visible = apply_filters('pie_visibility_on_reg', $this->field, $this->not_visible);
-				}
-				if($this->not_visible){
-					$this->not_visible_class = 'control_visibility';
-				}
 				if($this->field['type']=="")
 				{
 					continue;
@@ -1573,6 +1572,20 @@ class Registration_form_template extends Registration_form
 				$this->name 	= $this->createFieldName($this->field['type']."_".((isset($this->field['id']))?$this->field['id']:""));
 				$this->id 		= $this->name;
 				$this->no		= ( isset($this->field['id']) ? $this->field['id'] : "" );
+
+				$this->read_only         = "";
+				$this->not_visible       = false;
+				$this->readibility       = false;
+
+				if($this->piereg_field_visbility_addon_active){
+					if(isset($this->field['show_on']) && !empty($this->field['show_on'])){
+						$this->not_visible = apply_filters('pie_visibility_on_reg', $this->field, $this->not_visible);
+					}
+					if($this->not_visible){
+						$pie_reg_fields .= '<input id="'.$this->id.'" name="'.$this->name.'" data-field_id="'.$this->get_pr_widget_prefix().'piereg_field_'.$this->no.'" type="hidden" value="" />';
+						continue;
+					}	
+				}
 	
 				//We don't need to print li for hidden field
 				if($this->field['type'] == "hidden")
@@ -1603,9 +1616,9 @@ class Registration_form_template extends Registration_form
 				}
 				
 				if( $this->field['type'] == "honeypot" && $this->piereg_pro_is_activate )
-					$pie_reg_fields .= '<li class="fields '.$topclass.'  '.$this->get_pr_widget_prefix().'piereg_li_'.(isset($this->field['id'])?$this->field['id']:"").' '.$this->not_visible_class.' "  '.$this->field_status.' >';
+					$pie_reg_fields .= '<li class="fields '.$topclass.'  '.$this->get_pr_widget_prefix().'piereg_li_'.(isset($this->field['id'])?$this->field['id']:"").'  "  '.$this->field_status.' >';
 				else
-					$pie_reg_fields .= '<li class="fields '.$_parent.$topclass.' '.$this->not_visible_class.' pageFields_'.$this->pages.' '.$this->get_pr_widget_prefix().'piereg_li_'.(isset($this->field['id'])?$this->field['id']:"").'"  '.$this->field_status.' >';
+					$pie_reg_fields .= '<li class="fields '.$_parent.$topclass.'  pageFields_'.$this->pages.' '.$this->get_pr_widget_prefix().'piereg_li_'.(isset($this->field['id'])?$this->field['id']:"").'"  '.$this->field_status.' >';
 				
 				if($this->field['type'] == "pagebreak")
 				{
@@ -1634,6 +1647,7 @@ class Registration_form_template extends Registration_form
 					break;
 					case 'dropdown':
 					case 'multiselect':
+					case 'custom_role':
 						$this->read_only = $this->check_readability();
 						$pie_reg_fields .= $this->addDropdown();
 					break;
@@ -1643,7 +1657,6 @@ class Registration_form_template extends Registration_form
 					break;
 					case 'radio':
 					case 'checkbox':
-					case 'custom_role':
 						$this->read_only = $this->check_readability();
 						$pie_reg_fields .= $this->addCheckRadio();
 					break;

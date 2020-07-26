@@ -11,7 +11,7 @@ global $theme; get_header();
         $borrar = "DELETE FROM  formulario_registro WHERE id_registro = '$borrar_id'";
         $ejecutar = mysqli_query($con, $borrar);
 
-        header('Location: http://localhost/saludbolivia/form_alta/');
+        header('Location: form_alta');
 
         // if($ejecutar){
         //     echo "<script>alert('Datos Eliminado')</script>";

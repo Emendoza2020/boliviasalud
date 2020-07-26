@@ -1,11 +1,11 @@
 ﻿=== Pie Register – User Registration Forms. Invitation based registrations, Custom Login, Payments ===
 
 Contributors: genetech
-Tags: User Registration, Invite only registrations, membership form, invitation codes, registration form
+Tags: User Registration, membership form, invitation codes, registration form, woocommerce registration form
 Requires at least: 4.0
 Tested up to: 5.4.1
 Requires PHP: 5.6
-Stable tag: 3.5.1
+Stable tag: 3.5.6
 License: GNU Version 2 or Any Later Version
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,13 +23,20 @@ Drag & Drop registration forms builder.
 Pie Registration forms are 100% responsive, meaning they work on mobile, tablets & desktop.
 
 *   **Advanced Fields**
-Advanced fields section provides fields you can use to create complex and detailed registration forms.
+Advanced fields section provides fields you can use to create complex and detailed registration forms. Like:
+Address field allows the user to enter address details like street, city, state/province, zip code and Country.
+Profile picture field allows the user to upload a profile picture.
+Upload file field to allow users to upload files directly through a registration form.
+Time and Date Picker Field for allowing time and date selection on your registration form.
+Math Captcha field to avoid spam registrations.
 
 *   **[Verify & Moderate Registrations](https://pieregister.com/features/verify-moderate-registrations/)**
 Have the WordPress Administrator approve and moderate user registration requests before users log in.
+Set Grace Period – this is the amount of time within which the users must be verified by the admin and/or email address verification. User Ids that are not verified within the grace period are deleted automatically.
+Setup Email Address Change Verification. Authenticate request by sending an email to old address + verify new address.
 
 *   **[Invitation only Registration](https://pieregister.com/features/invitation-based-registrations/)**
-Have an exclusive site? Let users register only when you send them an invitation code.
+Have an exclusive site? Let users register only when you send them an invitation code. Protect your site's privacy and prevent unwanted registrations by easily set multiple codes and invite codes and limit usage.
 
 *   **[Membership Fees](https://pieregister.com/features/membership-fees/)**
 Charge one-time membership fees to your site or blog using the integrated payment gateway.
@@ -37,8 +44,11 @@ Charge one-time membership fees to your site or blog using the integrated paymen
 *   **[Spam Protection](https://pieregister.com/features/captcha-support/) (ReCaptcha)**
 Apply extreme spam and bot prevention by using reCAPTCHA, Match CAPTCHA, No CAPTCHA reCAPTCHA.
 
+*   **[Restrict Access to Website Content](https://pieregister.com/features/content-restriction/)**
+Restrict access to content, pages, posts based on user roles or logged in status. Restriction types: Block content and show message OR Redirect user to another page or URL.
+
 *   **[Custom Email Notification](https://pieregister.com/features/custom-email-notification/)**
-Control the message precisely to your liking. Use custom Email templates to say it like you want to.
+Control the message precisely to your liking. Use custom Email templates to say it like you want to. Use replacement keys/tags for user information on the email message.
 
 *   **[Data Import/Export](https://pieregister.com/features/import-export-data/) (user default Data only)**
 You can Import and Export user and configuration data via CSV files.
@@ -47,10 +57,10 @@ You can Import and Export user and configuration data via CSV files.
 Use PayPal (standard) to process membership payments. Setup Payment Success/Failed, Reactivate Account, and Already Active Account messages.
 
 *   **[File Upload](https://pieregister.com/features/file-upload)**
-The file upload field lets users upload documents, images, and videos. Receive files via email (one at a time).
+The file upload field lets users upload documents, images, and videos. Receive files via email (one at a time). Admin can restrict file type pdf, doc, docx, xls, xlsx, jpg, jpeg, gif, png, mp3, mp4.
 
-*   **[WooCommerce Integration](https://pieregister.com/addons/woocommerce-addon/)**
-Free addon to integrate Pie Register to WooCommerce.
+*   **[Admin Helper App](https://play.google.com/store/apps/details?id=com.genetech.pieregister&hl=en)**
+Mobile app to perform the frequent administrator tasks on the go.
 
 = Premium Version Features: =
 
@@ -74,6 +84,9 @@ Throw CAPTCHA based on the number of unsuccessful login attempts. Block IP addre
 
 *   **[Data Import/Export](https://pieregister.com/features/import-export-data/) (user and settings)**
 Import and Export user and configuration data using JSON for when you need to quickly duplicate or move your existing WordPress user or configuration data.
+
+*   **User Roles**
+Create and name custom user roles. Inherit permissions from WP User roles. Add user role dropdown in registration form
 
 *   **[Role based redirection](https://pieregister.com/features/role-based-redirection/)**
 Use rules for Role-Based Redirection to land users on pages of your choice based on user role.
@@ -123,6 +136,12 @@ Collect User Geolocation data. Provides information like Country, City, Zip Code
 
 **[Bulk Email](https://pieregister.com/addons/bulk-email-addon/?utm_source=plugin-freeversion&utm_medium=gopropage&utm_campaign=go_pro&utm_content=addons)**
 Send email in bulk to all the registered users at once. Admin can select the form name, and all the users registered through that form will be in the recipients list.
+
+**[Field visibility Addon](https://pieregister.com/addons/field-visibility-addon/)**
+Allows you to show or hide certain fields on the front-end registration form or the User’s Profile page.
+
+**[WooCommerce Addon](https://pieregister.com/addons/woocommerce-addon/)**
+Add fields for billing and shipping address to your Pie Register registration form and synchronize them with the WordPress WooCommerce plugin.
 
 [youtube https://www.youtube.com/watch?v=CTL1pmd4uZA]
 
@@ -181,6 +200,36 @@ Pie-Register provides you with a shortcode ([pie_register_profile]) to display t
 You can embed Forgot password login into your theme and custom pages by inserting a simple shortcode ([pie_register_forgot_password]).
 
 == CHANGELOG ==
+### 3.5.6
+* Fixed: Filter added to redirect after login on current page.
+* Fixed: Extra line breaks in notification emails.
+* Fixed: Edit profile link issue.
+* Fixed: Error messages on login form.
+
+### 3.5.5
+* Fixed: Replacement keys in notification emails for PR WooCommerce addon fields.
+* Updated: Same as billing checkbox for PR WooCommerce addon fields.
+* Updated: Save billing first/last name as user first/last name for PR WooCommerce addon.
+* Added: Feedback form for Admin Helper App.
+
+### 3.5.4
+* Fixed: PHP warnings in User Control settings. (Premium)
+* Added: Polish language option in Google recaptcha.
+* Added: User Roles section to create custom user roles. (Premium)
+* Added: Search users by invitation code in Users grid.
+* Updated: Send invitation codes to email address imported by CSV.
+
+### 3.5.3
+* Fixed: Messages ipdated and Type errors
+
+### 3.5.2
+* Fixed: countires list updated.
+* Fixed: PR registration, forgot password and login forms on same page issue.
+* Added: Admin verification method - Verify link in email.
+* Added: Option to duplicate PR registration form.
+* Updated: Conditional logic on User role dropdown. (PRO)
+* Updated: Messages and language files.
+
 ### 3.5.1
 * Fixed: sql error in inivitation code grid class.
 * Added: filter hook for terms and confition field label.

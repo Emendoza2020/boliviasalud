@@ -302,6 +302,9 @@ if(!$this->piereg_pro_is_activate)	{
                 <option value="de" <?php echo (($piereg['piereg_recaptcha_language']=="de")?'selected="selected"':"");?> >
                 <?php _e("German","pie-register"); ?>
                 </option>
+                <option value="pl" <?php echo (($piereg['piereg_recaptcha_language']=="pl")?'selected="selected"':"");?> >
+                <?php _e("Polish","pie-register"); ?>
+                </option>
                 <option value="es" <?php echo (($piereg['piereg_recaptcha_language']=="es")?'selected="selected"':"");?> >
                 <?php _e("Spanish","pie-register"); ?>
                 </option>

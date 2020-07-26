@@ -318,10 +318,12 @@ jQuery(document).ready(function() {
             jQuery("div#" + jQuery(this).attr("data-conditional_area")).fadeIn();
             set_field_dropdown("div#" + jQuery(this).attr("data-conditional_area")); // if conditional logics enable change to yes in fields settings. 
             jQuery(this).parent().parent().find(".required").after('<span class="message_required"><strong> Note:</strong> Conditional logic, if used, will override this (required) setting. The field will be viewable only when conditional logic is true. Therefore making the field  \'required\' when conditional logic is false has no effect.</span>');
+            jQuery(this).parent().parent().find(".show_on").after('<span class="message_required msg_visibility"><strong> Note:</strong> If Conditional Logic is "Yes" then Field Visibility should be selected accordingly.</span>');
 
         } else {
             jQuery("div#" + jQuery(this).attr("data-conditional_area")).fadeOut();
             jQuery(this).parent().parent().find(".required").next('.message_required').remove();
+            jQuery(this).parent().parent().find(".show_on").next('.message_required').remove();
         }
     });
     jQuery(".piereg_registration_form_fields .enabel_conditional_logic").each(function(i, obj) {
@@ -669,6 +671,16 @@ jQuery(document).ready(function() {
     });
 });
 //End Invitation Page
+//User Role Page
+function confirmDelUserRole(id, role, key) {
+    var conf = window.confirm("Are you sure you want to delete this (" + role + ") role?");
+    if (conf) {
+        document.getElementById("role_del_id").value   = id;
+        document.getElementById("role_del_key").value  = key;
+        document.getElementById("del_role_form").submit();
+    }
+}
+//End User Role page
 //Notification Page
 function changediv() {
     var value = jQuery('#user_email_type').val();

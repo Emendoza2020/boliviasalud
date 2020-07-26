@@ -211,7 +211,7 @@ $newpasspageLock = 0;
 				}
 			}
         }
-		if(trim($wp_session['message']) != "" )
+		if(isset($wp_session['message']) && trim($wp_session['message']) != "" )
 		{
 			$form_data .= '<p class="piereg_login_error"> ' . apply_filters('piereg_messages',__($wp_session['message'],"pie-register")) . "</p>";
 			$wp_session['message'] = "";

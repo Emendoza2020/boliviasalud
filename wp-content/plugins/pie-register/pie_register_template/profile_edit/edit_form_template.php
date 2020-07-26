@@ -297,7 +297,9 @@ class Edit_form_template extends Edit_form
 		$data .= '</div>';
 		$data .= '</div>';
 		
-		$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		if($this->piereg_field_visbility_addon_active){
+			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		}
 
 		if($this->readibility){
 			$this->read_only = "";
@@ -388,7 +390,9 @@ class Edit_form_template extends Edit_form
 		//$data .= $this->made_conditional_logic();
 		$data .= '</div>';
 
-		$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		if($this->piereg_field_visbility_addon_active){
+			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		}
 
 		if($this->readibility){
 			$this->read_only = "";
@@ -596,7 +600,9 @@ class Edit_form_template extends Edit_form
 		$data .= '</div>';
 		$data .= '</div>';
 
-		$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		if($this->piereg_field_visbility_addon_active){
+			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+		}
 
 		if($this->readibility){
 			$this->read_only = "";
@@ -945,7 +951,9 @@ class Edit_form_template extends Edit_form
 				$data .= '</div>';	
 			}	
 			
-			$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+			if($this->piereg_field_visbility_addon_active){
+				$this->readibility = apply_filters("pie_add_hidden_field_addon", $this->read_only);
+			}
 
 			if($this->readibility){
 				$this->read_only = "";
@@ -1094,10 +1102,12 @@ class Edit_form_template extends Edit_form
 		}
 	}
 	function check_readability(){
-		if( isset($this->field['enable_read_only']) && $this->field['enable_read_only'] != "disabled"){
-			$this->read_only = apply_filters('pie_addon_readibility', $this->read_only, $this->field, 'profile');
-		}		
-		return $this->read_only;
+		if($this->piereg_field_visbility_addon_active){
+			if( isset($this->field['enable_read_only']) && $this->field['enable_read_only'] != "disabled"){
+				$this->read_only = apply_filters('pie_addon_readibility', $this->read_only, $this->field, 'profile');
+			}		
+			return $this->read_only;
+		}
 	}
 	function editProfile($user){
 		
@@ -1113,14 +1123,16 @@ class Edit_form_template extends Edit_form
 				$this->read_only        = "";
 				$this->visibility_check = [true, true];
 				$this->not_visible      = "";
+				$this->readibility      = "";
 				
-				if(isset($this->field['show_on']) && !empty($this->field['show_on'])){
-					$this->visibility_check = apply_filters('pie_addon_field_visibility_conditions',$this->visibility_check,$this->field);
-				}
-
-				if(!$this->visibility_check[0])
-				{
-					$this->not_visible     = "control_visibility";
+				if($this->piereg_field_visbility_addon_active){
+					if(isset($this->field['show_on']) && !empty($this->field['show_on'])){
+						$this->visibility_check = apply_filters('pie_addon_field_visibility_conditions',$this->visibility_check,$this->field);
+					}
+					if(!$this->visibility_check[0])
+					{
+						$this->not_visible     = "control_visibility";
+					}
 				}
 				
 				if(!is_admin() && isset($this->field['show_in_profile']) && $this->field['show_in_profile']=="0" && $this->visibility_check[1])

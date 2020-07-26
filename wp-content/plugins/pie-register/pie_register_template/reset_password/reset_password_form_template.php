@@ -23,7 +23,7 @@ if(!class_exists("Reset_pass_form_template"))
 		}
 		function add_submit(){
 			$data  = '<div class="pie_submit">';
-			$data .= '<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="'.__("Reset Password","pie-register").'">';
+			$data .= '<input type="submit" name="wp-submit" id="wp-reset-submit" class="button button-primary button-large" value="'.__("Reset Password","pie-register").'">';
 			$data .= '</div>';
 			return $data;
 		}
@@ -48,7 +48,7 @@ if(!class_exists("Reset_pass_form_template"))
 			{
 				$data .= '<label for="user_login">'.((isset($this->pr_option['forgot_pass_username_label']) && !empty($this->pr_option['forgot_pass_username_label']))? $this->pr_option['forgot_pass_username_label']: __("Username or E-mail:","pie-register")).'</label>';
 			}
-		    $data .= '<input type="text" size="20" value="" class="input input_fields validate[required]" id="user_login" name="user_login" placeholder="'.((isset($this->pr_option['forgot_pass_username_placeholder']) && !empty($this->pr_option['forgot_pass_username_placeholder']))? $this->pr_option['forgot_pass_username_placeholder']: "").'">';
+		    $data .= '<input type="text" size="20" value="" class="input input_fields validate[required]" id="reset_user_login" name="user_login" placeholder="'.((isset($this->pr_option['forgot_pass_username_placeholder']) && !empty($this->pr_option['forgot_pass_username_placeholder']))? $this->pr_option['forgot_pass_username_placeholder']: "").'">';
 			$data .= '</p>';
 			return $data;
 		}
@@ -75,7 +75,7 @@ if(!class_exists("Reset_pass_form_template"))
 		}
 		function add_reset_submit(){
 			$forgot_pass_form  = '<p class="submit">';
-			$forgot_pass_form .= '<input type="submit" value="'.__('Reset my password',"pie-register").'" class="button button-primary button-large" id="wp-submit" name="user-submit">';
+			$forgot_pass_form .= '<input type="submit" value="'.__('Reset my password',"pie-register").'" class="button button-primary button-large" id="wp-reset-submit" name="user-submit">';
 			$forgot_pass_form .= '</p>';
 			return $forgot_pass_form;
 		}

@@ -241,6 +241,13 @@ td.second.tf-select .select2 {
     float: left;
     line-height: 20px;
 }
+.active-tab-header .tf-sortable ul li i {
+    line-height: 20px;
+    width: 20px;
+}
+.active-tab-header .tf-sortable div {
+    margin-top: 20px;
+}
 .tf-sortable ul li i.dashicons-menu{
     display: none!important;
 }
@@ -271,6 +278,9 @@ td.second.tf-select .select2 {
 .titan-framework-panel-wrap .tf-heading th {
     background:none repeat scroll 0 0 #fbfbfb!important;
     width: 100vw;
+}
+.titan-framework-panel-wrap .active-tab-fonts .form-table th label {
+    font-weight: 600;
 }
 .titan-framework-panel-wrap .nav-tab-active, .titan-framework-panel-wrap .nav-tab-active:hover {
     background: #656e77!important;
@@ -565,4 +575,8 @@ td.second.tf-multicheck-pages fieldset {
     min-height: 35px;
     padding-top: 5px;
     border-radius: 6px;
+}
+.toplevel_page_mobile-menu-options .CodeMirror {
+    resize: vertical; 
+    overflow: auto !important;
 }

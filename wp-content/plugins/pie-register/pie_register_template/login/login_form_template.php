@@ -42,7 +42,7 @@ if(!class_exists("Login_form_template"))
 		}
 		function add_submit(){
 			$form_data = '<p class="submit">';
-				$form_data .= '<input type="submit" value="'.__("Log In","pie-register").'" class="button button-primary button-large" id="wp-submit" name="wp-submit">';
+				$form_data .= '<input type="submit" value="'.__("Log In","pie-register").'" class="button button-primary button-large" id="wp-login-submit" name="wp-submit">';
 				$form_data .= '<input type="hidden" value="'.admin_url().'" name="redirect_to">';
 				$form_data .= '<input type="hidden" value="1" name="testcookie">';
 			$form_data .= '</p>';

@@ -242,15 +242,19 @@ class WP_Mobile_Menu_Options
                 'type'    => 'multicheck',
                 'desc'    => __( 'Check the desired elements', 'mobile-menu' ),
                 'options' => array(
-                '1' => '.nav',
-                '2' => '.main-navigation',
-                '3' => '.genesis-nav-menu',
-                '4' => '#main-header',
-                '5' => '#et-top-navigation',
-                '6' => '.site-header',
-                '7' => '.site-branding',
-                '8' => '.ast-mobile-menu-buttons',
-                '9' => '.storefront-handheld-footer-bar',
+                '1'  => '.nav',
+                '2'  => '.main-navigation',
+                '3'  => '.genesis-nav-menu',
+                '4'  => '#main-header',
+                '5'  => '#et-top-navigation',
+                '6'  => '.site-header',
+                '7'  => '.site-branding',
+                '8'  => '.ast-mobile-menu-buttons',
+                '9'  => '.storefront-handheld-footer-bar',
+                '10' => '.elementor-menu-toggle',
+                '11' => '#site-header-inner',
+                '12' => '#sq-masthead',
+                '13' => '.menu-toggle',
             ),
                 'default' => array(
                 '1',
@@ -261,7 +265,11 @@ class WP_Mobile_Menu_Options
                 '6',
                 '7',
                 '8',
-                '9'
+                '9',
+                '10',
+                '11',
+                '12',
+                '13'
             ),
             ) );
             $general_tab->createOption( array(
@@ -614,7 +622,7 @@ class WP_Mobile_Menu_Options
                 'show_color'          => false,
                 'show_line_height'    => false,
                 'default'             => array(
-                'font-family' => 'Roboto',
+                'font-family' => 'Dosis',
                 'font-size'   => $def_value,
             ),
             ) );
@@ -746,7 +754,7 @@ class WP_Mobile_Menu_Options
                 'id'      => 'left_icon_top_margin',
                 'type'    => 'number',
                 'desc'    => __( 'Enter the Left Icon Top Margin', 'mobile-menu' ),
-                'default' => '0',
+                'default' => '10',
                 'max'     => '450',
                 'min'     => '0',
                 'unit'    => 'px',
@@ -1002,7 +1010,7 @@ class WP_Mobile_Menu_Options
                 'id'      => 'right_icon_top_margin',
                 'type'    => 'number',
                 'desc'    => __( 'Enter the Right Icon Top Margin', 'mobile-menu' ),
-                'default' => '0',
+                'default' => '10',
                 'max'     => '450',
                 'min'     => '0',
                 'unit'    => 'px',
@@ -1165,7 +1173,7 @@ class WP_Mobile_Menu_Options
                 'type'    => 'color',
                 'desc'    => '',
                 'alpha'   => true,
-                'default' => '#f7f7f7',
+                'default' => '#111111',
             ) );
             // Header Text color.
             $colors_tab->createOption( array(
@@ -1174,7 +1182,7 @@ class WP_Mobile_Menu_Options
                 'type'    => 'color',
                 'desc'    => '',
                 'alpha'   => true,
-                'default' => '#222',
+                'default' => '#FFF',
             ) );
             // Header Left Menu Section.
             $colors_tab->createOption( array(
@@ -1188,7 +1196,7 @@ class WP_Mobile_Menu_Options
                 'type'    => 'color',
                 'desc'    => '',
                 'alpha'   => true,
-                'default' => '#666',
+                'default' => '#FFF',
             ) );
             // Header Text After Left Icon.
             $colors_tab->createOption( array(
@@ -1274,7 +1282,7 @@ class WP_Mobile_Menu_Options
                 'type'    => 'color',
                 'desc'    => '',
                 'alpha'   => true,
-                'default' => '#222',
+                'default' => '#FFF',
             ) );
             // Header Text Before Right Icon.
             $colors_tab->createOption( array(

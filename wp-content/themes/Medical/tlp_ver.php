@@ -13,7 +13,7 @@ include_once 'dbconnect.php';
         ));
         $resultado=$ver_id->fetch();
     }else{
-        header('Location: http://localhost/saludbolivia/form_alta/');
+        header('Location: form_alta');
     }
 
 ?>
@@ -32,24 +32,24 @@ include_once 'dbconnect.php';
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title"><?php if($resultado) echo $resultado['nombre']; ?></h5>
+                            <h5 class="card-title"><strong><?php if($resultado) echo $resultado['nombre']; ?></strong></h5>
                             <p class="card-text">
                                 <strong>ESPECIALIDAD / RUBRO:</strong>  <?php if($resultado) echo $resultado['especialidad']; ?><BR>
-                                <strong>N° MATRICULA / NIT :</strong>  <?php if($resultado) echo $resultado['nro_matricula']; ?><BR>
-                                <strong>TELEFONO : </strong>  <?php if($resultado) echo $resultado['telefono']; ?><BR>
-                                <strong>DIRECCION : </strong>  <?php if($resultado) echo $resultado['direccion']; ?><BR>
+                                <strong>N° MATRÍCULA / NIT :</strong>  <?php if($resultado) echo $resultado['nro_matricula']; ?><BR>
+                                <strong>TELÉFONO : </strong>  <?php if($resultado) echo $resultado['telefono']; ?><BR>
+                                <strong>DIRECCIÓN : </strong>  <?php if($resultado) echo $resultado['direccion']; ?><BR>
                                 <strong>DEPARTAMENTO : </strong>  <?php if($resultado) echo $resultado['departamento']; ?><BR>
-                                <strong>PAGINA WEB : </strong>  <?php if($resultado) echo $resultado['pagina_web']; ?><BR>
+                                <strong>PÁGINA WEB : </strong>  <?php if($resultado) echo $resultado['pagina_web']; ?><BR>
                                 <strong>EXPERIENCIA: </strong>  <?php if($resultado) echo $resultado['descripcion']; ?><BR>
                                 <strong>FECHA DE REGISTRO: </strong>  <?php if($resultado) echo $resultado['fecha_registro']; ?><BR>
-                                <strong>ESTADO: </strong>  <?php if($resultado) echo $resultado['estado']; ?><BR>
-                                <strong>ATENCION 24 HRS: </strong>  <?php if($resultado) echo $resultado['horario']; ?><BR>
+                                <strong>ESTADO: </strong>  <?php if($resultado['estado']==1) echo 'VIGENTE'; if($resultado['estado']==0) echo 'NO VIGENTE';  ?><BR>
+                                <strong>ATENCIÓN 24 HRS: </strong>  <?php if($resultado['horario']==1) echo 'SI'; if($resultado['horario']==0) echo 'NO'; ?><BR>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="http://localhost/saludbolivia/form_alta/" class="btn btn-primary">Volver</a>
+                    <a href="<?php echo get_home_url();?>/form_alta/" class="btn btn-primary">Volver</a>
                 </div>
             </div>
         </div>   

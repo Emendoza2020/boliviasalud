@@ -55,7 +55,7 @@ global $theme; get_header();
                             </div>                            
                         </div>
                     <div class="card-footer text-muted">
-                        <a href="http://localhost/saludbolivia" class="btn btn-primary">Buscar Nuevo</a>
+                        <a href="<?php echo get_home_url();?>" class="btn btn-primary">Buscar Nuevo</a>
                     </div>
                 </div>
             </div>   

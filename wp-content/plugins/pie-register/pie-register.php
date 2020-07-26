@@ -1,10 +1,10 @@
 <?php
 
 /* 
-Plugin Name: Pie Register
+Plugin Name: Pie Register - Basic
 Plugin URI: https://pieregister.com/
 Description: Create custom user registration forms, drag & drop form builder, send invitation codes, add conditional logic, 2-step authentication, assign user roles, accept payments and more!
-Version: 3.5.1
+Version: 3.5.6
 Author: Genetech Solutions
 Author URI: https://www.genetechsolutions.com/
 Text Domain: pie-register
@@ -145,6 +145,13 @@ if( !class_exists('PieRegister') ){
 			#load_textdomain( 'pie-register', WP_LANG_DIR . '/plugins/' . 'pie-register' . '-' . $locale . '.mo');
 			load_plugin_textdomain( 'pie-register', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 			
+
+			$pie_plugin_data = get_plugin_data( __FILE__ );
+			$pie_plugin_version = $pie_plugin_data['Version'];
+			if(!get_option('pie_countries_v352') && $pie_plugin_version == "3.5.2"){
+				$this->updated_countries_list();
+			}
+
 			$pie_plugin_db_version = get_option('piereg_plugin_db_version');
 			if($pie_plugin_db_version != PIEREG_DB_VERSION){
 				$this->install_settings();
@@ -186,26 +193,32 @@ if( !class_exists('PieRegister') ){
 			
 			add_action( 'wp_ajax_pie_download_user_files', array( $this, 'pieregister_download_user_files' ) );
 			
-			#Pro Version Release notice
+			
 			if( current_user_can( 'administrator' ) && $this->piereg_pro_is_activate ){
-				add_action( 'admin_notices', array( $this, 'pie_promo_notice_for_pro' ), 1 );
+				#Pro Version Release notices
+
 			} else {
+				#FREE Version Release notices
 				add_action( 'admin_notices', array( $this, 'pie_promo_notice_for_free' ), 1 );
-				//add_action( 'admin_notices', array( $this, 'pie_promo_notice_for_free_2' ), 1 ); // When new features page ready
-				add_action( 'admin_notices', array( $this, 'pie_pro_active_guide' ), 1 );
+				add_action( 'admin_notices_specific_pages', array( $this, 'pie_premium_features_notice_for_free' ), 1 );
 			}
 			
-			add_action( 'admin_notices', array( $this, 'pie_promo_notice_for_pro_2' ), 1 );
+			#Both FREE and Pro Version Release notices
+			add_action( 'admin_notices', array( $this, 'pie_promo_notice_for_app' ), 1 );
 			add_action( 'admin_notices', array( $this, 'pie_leave_a_review_request' ), 1 );
 
-			# HIDE PRO VERSION RELEASE NOTICE 
-			add_action( 'wp_ajax_dismiss_pie_pro_release_notice', array( $this, 'dismiss_pie_pro_release_notice' ) );
-			
-			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_pro_2', array( $this, 'dismiss_pie_promo_notice_for_pro_2' ) );
-			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_pro', array( $this, 'dismiss_pie_promo_notice_for_pro' ) );
-			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_free', array( $this, 'dismiss_pie_promo_notice_for_free' ) );
-			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_free_2', array( $this, 'dismiss_pie_promo_notice_for_free_2' ) );
-			add_action( 'wp_ajax_dismiss_pie_pro_active_guide', array( $this, 'dismiss_pie_pro_active_guide' ) );
+			if( is_plugin_active('woocommerce/woocommerce.php') && !is_plugin_active('pie-register-woocommerce/pie-register-woocommerce.php') ) {
+				add_action( 'admin_notices', array( $this, 'pie_promo_notice_for_wc_user' ), 1 );	
+			}
+			if( is_plugin_active('mailchimp-for-wp/mailchimp-for-wp.php') && !is_plugin_active('pie-register-mailchimp/pie-register-mailchimp.php') ) {
+				add_action( 'admin_notices', array( $this, 'pie_promo_notice_for_mc_user' ), 1 );
+			}
+
+			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_app', array( $this, 'dismiss_pie_promo_notice_for_app' ) );
+			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_free', array( $this, 'dismiss_pie_promo_notice_for_free' ) );	
+			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_wc_user', array( $this, 'dismiss_pie_promo_notice_for_wc_user' ) );	
+			add_action( 'wp_ajax_dismiss_pie_promo_notice_for_mc_user', array( $this, 'dismiss_pie_promo_notice_for_mc_user' ) );	
+			add_action( 'wp_ajax_dismiss_pie_premium_features_notice_for_free', array( $this, 'dismiss_pie_premium_features_notice_for_free' ) );			
 			add_action( 'wp_ajax_dismiss_pie_leave_a_review_request', array( $this, 'dismiss_pie_leave_a_review_request' ) );
 			
 			/*********************************************/
@@ -245,7 +258,11 @@ if( !class_exists('PieRegister') ){
 			if( isset($_POST['action']) && $_POST['action'] == 'pie_reg_settings' ) {
 				$this->PieRegSettingsProcess();
 			}
-			
+			// task av
+			# Admin verifying user through email
+			if(isset($_GET['action']) && $_GET['action'] == 'unverified_user'){
+				add_action ('wp_body_open' , array( $this, 'process_verify_user_email' ));				
+			}
 			
 			#Reset Settings to default
 			if( isset($_POST['piereg_default_settings']) )
@@ -283,6 +300,13 @@ if( !class_exists('PieRegister') ){
 			if((is_admin() && 'users.php' == $pagenow) && $this->piereg_pro_is_activate) {
 				add_action('restrict_manage_users', array($this, 'pie_filter_by_reg_form'));
 				add_filter('pre_get_users', 		array($this, 'pie_filter_users_by_reg_form_section'));
+				
+				/**
+				 * Search users by invitation code
+				 * Since version - 3.5.4
+				 */
+				add_action('restrict_manage_users', array($this, 'pie_filter_by_invite_code'));
+				add_filter('pre_get_users', array($this, 'pie_filter_users_by_invitation_code'));
 			}
 			
 			
@@ -373,7 +397,12 @@ if( !class_exists('PieRegister') ){
 			else if(isset($_FILES['csvfile']['name'])){
 				$this->importUsers();
 			}
-				
+			// task
+			// Duplicate the form
+			if(isset($_GET['form_action']) && $_GET['form_action'] == 'duplication'){
+				$this->copyForm();
+			}
+
 			if(isset($_POST['pie_form']))
 			{
 				//This will make sure no one tempers the field from the client side
@@ -580,6 +609,8 @@ if( !class_exists('PieRegister') ){
 			//Validate User expiry period
 			add_action("piereg_validate_user_expiry_period", array($this,"piereg_validate_user_expiry_period_func"),10,1);
 			add_action( 'wp_footer', array($this,'print_multi_captcha_skin' ));
+			add_action('wp_footer', array($this,'pie_update_user_meta_admin_hash' ));			
+
 			
 			//Rest API Initialized
 			$pie_api = new Pie_api();
@@ -603,6 +634,28 @@ if( !class_exists('PieRegister') ){
 				add_filter( 'logout_url', array($this,'piereg_logout_url'),88888,2);
 			}
 			add_filter( 'piereg_password_reset_not_allowed_text', array($this,'piereg_password_reset_not_allowed_text_function'),20,1);
+			
+			/**
+			 * Invitation code column added in Users grid
+			 * Since v3.5.4
+			 */
+			add_filter( 'manage_users_columns', array($this,'pie_column_invite') ); // Add column in Users Table
+			add_filter( 'manage_users_custom_column', array($this,'pie_column_invite_value'), 10, 3 ); // Add column value in Users Table
+		}
+		function pie_column_invite( $column ) {
+			$column['invitation_code'] = __('Invitation Code','pie-register');
+			return $column;
+		}
+		function pie_column_invite_value( $val, $column_name, $user_id ) {
+			switch($column_name) {
+		
+				case 'invitation_code' :
+					$user_meta_data = get_user_meta($user_id, 'invite_code', true);
+					return $user_meta_data ? $user_meta_data : '-';
+					break;
+		
+				   default:
+			}
 		}
 		//Function pr_template_redirect
 		function pr_template_redirect(){
@@ -657,10 +710,15 @@ if( !class_exists('PieRegister') ){
 			wp_register_script('pie_password_checker',plugins_url("/assets/js/pie_password_checker.js",__FILE__),'jquery','2.0',false);
 			wp_register_script('pie_recpatcha_script','//www.google.com/recaptcha/api.js?onload=prRecaptchaCallBack','','',true);	// &render=explicit removed
 			
+			
 			wp_register_style( 'pie_front_css', plugins_url("/assets/css/front.css",__FILE__),false,'2.0', "all" );			
 			wp_register_style( 'pie_wload_css', plugins_url("/assets/css/jquery.wload.css",__FILE__),false,'1.0', "all" );
 			wp_register_style( 'pie_style_css', plugins_url("/assets/css/style.css",__FILE__),false,'2.0', "all" );
 			wp_register_style( 'pie_ui_css', plugins_url("/assets/css/pie_ui.css",__FILE__),false,'2.0', "all" );
+			
+			// task av
+			wp_enqueue_script('pie_dialog_js',plugins_url("/assets/js/dialog.js",__FILE__),array('jquery'),'2.0',false);
+			wp_enqueue_script('jquery-ui-dialog');
 
 		}
 		function piereg_backendregister_scripts(){
@@ -695,6 +753,7 @@ if( !class_exists('PieRegister') ){
 					array_push($form_ids, 'reg_form_'.$option['Id']);
 					$fields_data 	= maybe_unserialize(get_option("piereg_form_fields_".$option['Id']));
 					$the_cap_field = "captcha";
+					$fields_data = is_array($fields_data) ? $fields_data : [$fields_data];
 					$fields_data_filtered = array_filter($fields_data, function($el) use ($the_cap_field) {
 						return ( $el['type'] == $the_cap_field );
 					});
@@ -1032,7 +1091,7 @@ if( !class_exists('PieRegister') ){
 				wp_enqueue_script('jquery-ui-sortable');
 				wp_enqueue_script('jquery-ui-datepicker');	
 				wp_enqueue_script('jquery-ui-draggable');
-				wp_enqueue_script('jquery-ui-dialog');
+				/* wp_enqueue_script('jquery-ui-dialog'); */
 
 				$wp_scripts = wp_scripts();
 			    wp_enqueue_style(
@@ -1463,13 +1522,13 @@ if( !class_exists('PieRegister') ){
 				$install_date = get_option('pie_install_date', '');
 				if (empty($install_date)) return;
 				$diff = round((time() - strtotime($install_date)) / 24 / 60 / 60);
-				if ($diff < 7) return;
+				if ($diff < 4) return;
 		
 				$review_url = 'https://wordpress.org/support/plugin/pie-register/reviews/?filter=5';
 				?>
 					<div class="notice notice-info pie-admin-notice-3 is-dismissible">
 						<p><?php echo  sprintf(
-								__( 'Hey, We noticed you have been using Pie Register for at least 7 days now - that\'s awesome! Could you please do us a BIG favor and give it a %1$s5-star rating on WordPress?%2$s This will help us spread the word and boost our motivation - Thanks!','pie-register'),
+								__( 'Hi there, we see you have been using Pie Register for a few days now, that is awesome! We hope you like it. We have a favor to ask, could you please %1$sreview us on WordPress?%2$s We like reading your feedback, and it helps us spread the word. Thank you.','pie-register'),
 								'<a href="' . $review_url . '" target="_blank">',
 								'</a>'
 							); ?></p>
@@ -1506,67 +1565,35 @@ if( !class_exists('PieRegister') ){
 		{
 			update_option( 'pie_review_request_delete', true );
 		}
-		
-		public function pie_pro_active_guide()
-		{
-
-			// Steps to activate the license
-			$show_pro_step_notice   = get_option( 'pie_pro_active_guide' );
-			if ( empty( $show_pro_step_notice ) ) {
-				$_license_page_link = admin_url() . 'admin.php?page=pie-help&tab=license';
-				?>
-				<div class="notice notice-info pie-admin-notice-2 is-dismissible">
-					<p>
-						<?php 
-							echo ( _e( 'To activate the license Go to <a href="'.$_license_page_link.'">Help > License</a>' ,'pie-register')); 
-							?>
-					</p>
-				</div>
-				<script type="text/javascript">
-					jQuery( '.pie-admin-notice-2' ).on( 'click', '.notice-dismiss', function() {		
-						var data = {
-							action: 'dismiss_pie_pro_active_guide'
-						};
-						jQuery.post( ajaxurl, data );
-					});
-				</script>
-				<?php			
-			}							
-		}
-		
-		public function dismiss_pie_pro_active_guide()
-		{
-			update_option( 'pie_pro_active_guide', 'no' );
-		}
 
 		/* 
-			Since version 3.5
+			Since version 3.5.2
 			@TODO remove this notice in the future.
 		*/
-		public function pie_promo_notice_for_pro_2()
+		public function pie_promo_notice_for_app()
 		{
-			$show_release_notice   = get_option( 'pie_promo_notice_for_pro_3' );
+			$show_release_notice   = get_option( 'pie_promo_notice_for_app' );
 
 			if ( empty( $show_release_notice ) ) {
 				
 				?>
-                <div class="notice notice-info pie-admin-notice is-dismissible">
-					<h3><?php echo ( _e( 'Pie Register - WooCommerce Addon','pireg')); ?></h3>
-					<p><?php echo ( _e( 'With the WooCommerce Addon, you can now add fields for billing and shipping address to your Pie Register registration form and synchronize them with the WordPress WooCommerce plugin.','pireg')); ?></p>
-                	<p><a href="https://pieregister.com/addons/woocommerce-addon/" target="_blank" id="pie_opt_in_start" class="button button-primary"><?php _e( 'Get Now For Free', 'piereg' ) ?></a>&nbsp;<a href="javascript:void(0);" class="button-secondary pie_opt_in_link"><?php _e( 'No thanks', 'piereg' ) ?></a></p>
+                <div class="notice notice-info pie-admin-notice for_app is-dismissible">
+					<h3><?php echo ( _e( 'Admin Helper Application Launched','pireg')); ?></h3>
+					<p><?php echo ( _e( 'Use the Pie Register Android App to access the Admin dashboard and verify and invite users on the go.','pireg')); ?></p>
+                	<p><a href="https://play.google.com/store/apps/details?id=com.genetech.pieregister&hl=en" target="_blank" id="pie_opt_in_start" class="button button-primary"><?php _e( 'Available on Play Store', 'piereg' ) ?></a>&nbsp;<a href="javascript:void(0);" class="button-secondary pie_opt_in_link"><?php _e( 'No thanks', 'piereg' ) ?></a></p>
                 </div>
                 <script type="text/javascript">
 					jQuery(document).on('click', '#pie_opt_in_start', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
+						jQuery(this).parents('.for_app').find( '.notice-dismiss' ).trigger('click');
 					});
 					
 					jQuery(document).on('click', '.pie_opt_in_link', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
+						jQuery(this).parents('.for_app').find( '.notice-dismiss' ).trigger('click');
 					});
 					
-                	jQuery( '.pie-admin-notice' ).on( 'click', '.notice-dismiss', function() {		
+                	jQuery( '.for_app' ).on( 'click', '.notice-dismiss', function() {		
 						var data = {
-							action: 'dismiss_pie_promo_notice_for_pro_2'
+							action: 'dismiss_pie_promo_notice_for_app'
 						};
 						jQuery.post( ajaxurl, data );
 					});
@@ -1575,117 +1602,202 @@ if( !class_exists('PieRegister') ){
             }
 		}
 		// @TODO remove this notice in the future.
-		public function dismiss_pie_promo_notice_for_pro_2()
+		public function dismiss_pie_promo_notice_for_app()
 		{
-			update_option( 'pie_promo_notice_for_pro_3', 'no' );
-		}
+			update_option( 'pie_promo_notice_for_app', 'yes' );
+		}				
 
 		/* 
-			Since version 3.4.2
+			Since version 3.5.4
 			@TODO remove this notice in the future.
 		*/
-		public function pie_promo_notice_for_pro()
-		{
-			$show_release_notice   = get_option( 'pie_promo_notice_for_pro_1' );
-			if ( empty( $show_release_notice ) ) {
-				
-				?>
-                <div class="notice notice-info pie-admin-notice is-dismissible">
-					<h3><?php echo ( _e( 'Bulk Email Addon','pireg')); ?></h3>
-					<p><?php echo ( _e( 'Allows Admin to broadcast an Email message to all the registered users of a specific form.','pireg')); ?></p>
-                	<p><a href="https://pieregister.com/addons/bulk-email-addon/" target="_blank" id="pie_opt_in_start" class="button button-primary"><?php _e( 'Purchase Now', 'piereg' ) ?></a>&nbsp;<a href="javascript:void(0);" class="button-secondary pie_opt_in_link"><?php _e( 'No thanks', 'piereg' ) ?></a></p>
-                </div>
-                <script type="text/javascript">
-					jQuery(document).on('click', '#pie_opt_in_start', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
-					});
-					
-					jQuery(document).on('click', '.pie_opt_in_link', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
-					});
-					
-                	jQuery( '.pie-admin-notice' ).on( 'click', '.notice-dismiss', function() {		
-						var data = {
-							action: 'dismiss_pie_promo_notice_for_pro'
-						};
-						jQuery.post( ajaxurl, data );
-					});
-                </script>
-                <?php 
-            }
-		}
-		// @TODO remove this notice in the future.
-		public function dismiss_pie_promo_notice_for_pro()
-		{
-			update_option( 'pie_promo_notice_for_pro_1', 'no' );
-		}
-
-		public function pie_promo_notice_for_free_2()
-		{
-			$show_release_notice   = get_option( 'pie_promo_notice_for_free_3' );
-			if ( empty( $show_release_notice ) ) {
-				?>
-                <div class="notice notice-info pie-admin-notice is-dismissible">
-                	<p><?php echo sprintf( __( ' You’re using Pie Register Free plugin. To unlock more features and addons consider upgrading to Pro. <a href="%s">Click here.</a>','pie-register'),'https://pieregister.com/features'); ?></p>      	
-                </div>
-                <script type="text/javascript">
-					jQuery(document).on('click', '#pie_opt_in_start', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
-					});
-					
-					jQuery(document).on('click', '.pie_opt_in_link', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
-					});
-					
-                	jQuery( '.pie-admin-notice' ).on( 'click', '.notice-dismiss', function() {		
-						var data = {
-							action: 'dismiss_pie_promo_notice_for_free_2'
-						};
-						jQuery.post( ajaxurl, data );
-					});
-                </script>
-                <?php                 
-			}
-		}
-
 		public function pie_promo_notice_for_free()
 		{
-			$show_release_notice   = get_option( 'pie_promo_notice_for_free_2' );
+			$show_release_notice   = get_option( 'pie_pro_notice_for_free_users' );
+			
 			if ( empty( $show_release_notice ) ) {
+				
 				?>
-                <div class="notice notice-info pie-admin-notice is-dismissible">
-                	<p><?php echo sprintf( __( ' Pie Register Professional package is available for $59.99 (+ Addons FREE). <a href="%s">Upgrade now.</a>','pie-register'),'https://pieregister.com/plan-and-pricing/?utm_source=plugin-freeversion&utm_medium=adminnotification&utm_campaign=go_professional'); ?></p>        	
+                <div class="notice notice-info pie-admin-notice free_promo_users is-dismissible">
+					<p><?php echo sprintf( __( ' You’re using Pie Register Free plugin. To unlock more features and addons consider upgrading to <a target="_blank" style="color:#c30604;" id="pie_opt_in_start" href="%s">Premium</a>.','pireg'),'https://pieregister.com/features/'); ?></p> 
                 </div>
                 <script type="text/javascript">
-					jQuery(document).on('click', '#pie_opt_in_start', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
-					});
 					
-					jQuery(document).on('click', '.pie_opt_in_link', function (e) {
-						jQuery(this).parents('.pie-admin-notice').find( '.notice-dismiss' ).trigger('click');
-					});
-					
-                	jQuery( '.pie-admin-notice' ).on( 'click', '.notice-dismiss', function() {		
+                	jQuery( '.free_promo_users' ).on( 'click', '.notice-dismiss', function() {		
 						var data = {
 							action: 'dismiss_pie_promo_notice_for_free'
 						};
 						jQuery.post( ajaxurl, data );
 					});
                 </script>
-                <?php                 
-			}
-		}
-		
+                <?php 
+            }
+		}		
 		public function dismiss_pie_promo_notice_for_free()
 		{
-			update_option( 'pie_promo_notice_for_free_2', 'no' );
+			update_option( 'pie_pro_notice_for_free_users', 'yes' );
+		}
+		/* 
+			Since version 3.5.4
+			@TODO remove this notice in the future.
+		*/
+		public function pie_premium_features_notice_for_free()
+		{
+			$show_release_notice   = get_option( 'pie_premium_features_notice_for_free' );
+			
+			if ( empty( $show_release_notice ) ) {
+				
+				?>
+                <div class="notice notice-info pie-admin-notice pre-feat is-dismissible">
+					
+					<p style="font-weight:700;font-size:16px;"><?php echo ( _e( 'Upgrade to Pie Register Premium to Unlock all the Awesome Features and Addons','pireg')); ?></p>
+					
+					<div class="notice-features">
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Verify and Moderate Registrations','pireg')); ?></p>
+							<p><?php echo ( _e( 'Setup user verification by Admin Approval, Verify Email Address, or Admin Approval AND Verify Email Address.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Invitation Only Registrations','pireg')); ?></p>
+							<p><?php echo ( _e( 'Auto-Generate codes, invite through Email, set expiry dates, and import invitation codes through CSV.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'File Upload','pireg')); ?></p>
+							<p><?php echo ( _e( 'Set limitation for file upload size (KB), view uploaded files in the admin dashboard, and download all uploaded files in bulk through one-click.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Restrict Widgets','pireg')); ?></p>
+							<p><?php echo ( _e( 'Limit WordPress widgets to users who are logged in, and hide your WordPress widgets to unwanted user roles.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'User Roles','pireg')); ?></p>
+							<p><?php echo ( _e( 'Create and name custom user roles, and inherit permissions from WP User roles.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Customizable Login Security','pireg')); ?></p>
+							<p><?php echo ( _e( 'Ability to show Captcha after preset failed login attempts; attempts limit set by the Admin, and setup unsuccessful attempt limit after which user will be locked out from login or register for a time set by the Admin.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Block Users','pireg')); ?></p>
+							<p><?php echo ( _e( 'Block and Allow users based on IP addresses, username, email address and you can even allow or restrict email addresses with specific domain,  e.g. @domain.com* .','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Role based redirection','pireg')); ?></p>
+							<p><?php echo ( _e( 'Setup user roles to redirect a user after login to a certain page or any URL.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Membership Fees','pireg')); ?></p>
+							<p><?php echo ( _e( 'Integrate Stripe and Authorize.net to charge membership / registration fees.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'CAPTCHA Support','pireg')); ?></p>
+							<p><?php echo ( _e( 'Advanced CAPTCHA option, i.e. Honeypot, and ability to show Captcha after preset failed login attempt limit set by the Admin.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Bulk Email Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Gives Admin the ability to send email in bulk to all the registered users at once.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Social Login Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Giving your users the ability to sign up/sign in with their existing social media accounts can cause them one less step to be a part of your business or community.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Two-step Authentication Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Two-Step Authentication with the help of Twilio can add an extra layer of security to your website.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Two-step Authentication Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Two-Step Authentication with the help of Twilio can add an extra layer of security to your website.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'MailChimp Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Automatically add users to MailChimp list when they register, and export your site’s current users to MailChimp list.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Geolocation Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Collects Geolocation data from your users who registered on your site.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Profile Search Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Profile Search is a tool for community websites as it allows the users to find each other on your website.','pireg')); ?></p>
+						</div>
+						<div class="free-notice-feature">
+							<p style="font-weight:600;"><?php echo ( _e( 'Field Visibility Addon','pireg')); ?></p>
+							<p><?php echo ( _e( 'Allows you to show or hide certain fields on the front-end registration form or the User’s Profile page.','pireg')); ?></p>
+						</div>
+					</div>
+					<a target="_blank" style="color:#c30604;" id="pie_opt_in_start" href="https://pieregister.com/plan-and-pricing/"><?php echo ( _e( 'View all Premium Features and Addons','pireg')); ?></a>
+                </div>
+                <script type="text/javascript">
+					
+                	jQuery( '.pre-feat' ).on( 'click', '.notice-dismiss', function() {		
+						var data = {
+							action: 'dismiss_pie_premium_features_notice_for_free'
+						};
+						jQuery.post( ajaxurl, data );
+					});
+                </script>
+                <?php 
+            }
+		}		
+		public function dismiss_pie_premium_features_notice_for_free()
+		{
+			update_option( 'pie_premium_features_notice_for_free', 'yes' );
+		}
+		
+		public function pie_promo_notice_for_wc_user()
+		{
+			$show_release_notice   = get_option( 'pie_promo_notice_for_wc_user' );
+			
+			if ( empty( $show_release_notice ) ) {
+				
+				?>
+                <div class="notice notice-info pie-admin-notice wc_promo_users is-dismissible">
+					<p><?php echo sprintf( __( ' Using WooCommerce? Synchronize the billing and shipping address on your Pie Register form with WooCommerce with our WooCommerce addon. <a target="_blank" style="color:#c30604;" id="pie_opt_in_start" href="%s">%s</a>.','pireg'),'https://pieregister.com/addons/woocommerce-addon/',"Here's how you can do it"); ?></p> 
+                </div>
+                <script type="text/javascript">
+					
+                	jQuery( '.wc_promo_users' ).on( 'click', '.notice-dismiss', function() {		
+						var data = {
+							action: 'dismiss_pie_promo_notice_for_wc_user'
+						};
+						jQuery.post( ajaxurl, data );
+					});
+                </script>
+                <?php 
+            }
+		}		
+		public function dismiss_pie_promo_notice_for_wc_user()
+		{
+			update_option( 'pie_promo_notice_for_wc_user', 'yes' );
 		}
 
-		public function dismiss_pie_promo_notice_for_free_2()
+		public function pie_promo_notice_for_mc_user()
 		{
-			update_option( 'pie_promo_notice_for_free_3', 'no' );
-		}
+			$show_release_notice   = get_option( 'pie_promo_notice_for_mc_user' );
+			
+			if ( empty( $show_release_notice ) ) {
 				
+				?>
+                <div class="notice notice-info pie-admin-notice mc_promo_users is-dismissible">
+					<p><?php echo sprintf( __( ' Great marketing requires the right tools. Take your marketing to the next level with our <a target="_blank" style="color:#c30604;" id="pie_opt_in_start" href="%s">Mailchimp Addon</a>.','pie-register'),'https://pieregister.com/addons/mailchimp-addon/'); ?></p> 
+                </div>
+                <script type="text/javascript">					
+                	jQuery( '.mc_promo_users' ).on( 'click', '.notice-dismiss', function() {		
+						var data = {
+							action: 'dismiss_pie_promo_notice_for_mc_user'
+						};
+						jQuery.post( ajaxurl, data );
+					});
+                </script>
+                <?php 
+            }
+		}		
+		public function dismiss_pie_promo_notice_for_mc_user()
+		{
+			update_option( 'pie_promo_notice_for_mc_user', 'yes' );
+		}
+
 		/*
 			*	Show Post Meta Box
 		*/
@@ -2055,6 +2167,173 @@ if( !class_exists('PieRegister') ){
 			echo $meta;
 			die();	
 		}
+		function process_verify_user_email(){
+
+			if(isset($_GET['verification_key']) && !empty($_GET['verification_key'])){
+
+				$unverified = get_users(array('meta_key'=> 'admin_hash','meta_value' => sanitize_key($_GET['verification_key'])));
+				$option = get_option(OPTION_PIE_REGISTER);
+				if(sizeof($unverified )==1)
+				{
+					$user_id	= $unverified[0]->ID;
+					$user_login = $unverified[0]->user_login;
+					$user_email = $unverified[0]->user_email;
+					$register_type = get_user_meta( $user_id , "register_type" , true);
+
+					if($register_type == "admin_email_verify"){							
+						update_user_meta( $user_id, 'active', 0);
+						$hash = md5( time() );
+						update_user_meta( $user_id, 'hash', $hash );
+						update_user_meta( $user_id, 'register_type', "email_verify");
+						
+						$subject 		= html_entity_decode($option['user_subject_email_email_verification'],ENT_COMPAT,"UTF-8");
+						$subject 		= $this->filterSubject($user_email,$subject);
+						$message_temp = "";
+						if($option['user_formate_email_email_verification'] == "0"){
+							$message_temp	= nl2br(strip_tags($option['user_message_email_email_verification']));
+						}else{
+							$message_temp	= $option['user_message_email_email_verification'];
+						}
+						$message		= $this->filterEmail($message_temp,$user_email );
+						$from_name		= $option['user_from_name_email_verification'];
+						$from_email		= $option['user_from_email_email_verification'];					
+						$reply_email 	= $option['user_to_email_email_verification'];
+						
+						//Headers
+						$headers  = 'MIME-Version: 1.0' . "\r\n";
+						$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+						
+						
+						if(!empty($from_email) && filter_var($from_email,FILTER_VALIDATE_EMAIL))//Validating From
+						$headers .= "From: ".$from_name." <".$from_email."> \r\n";	
+						if($reply_email){
+							$headers .= "Reply-To: {$reply_email}\r\n";
+							$headers .= "Return-Path: {$reply_email}\r\n";
+						}else{
+							$headers .= "Reply-To: {$from_email}\r\n";
+							$headers .= "Return-Path: {$from_email}\r\n";
+						}
+						if((isset($option['user_enable_email_verification']) && $option['user_enable_email_verification'] == 1) && !wp_mail($user_email, $subject, $message , $headers)){
+							$this->pr_error_log("'The e-mail could not be sent. Possible reason: mail() function may have disabled by your host.'".($this->get_error_log_info(__FUNCTION__,__LINE__,__FILE__)));
+						}else{
+							echo('<div id="dialog-message" title="User Verified Successfully">
+							<p>
+							'.apply_filters("pie_user_veri_by_email_admin",__("User has been verified.","pie-register")).'
+							</p>
+							</div>');
+						}
+					}elseif($user_login == $_GET['pie_id']){
+						
+						do_action( "piereg_action_hook_before_user_verified", $user_id, $user_login, $user_email ); # newlyAddedHookFilter
+						update_user_meta( $user_id, 'active', 1);
+						
+						/*************************************/
+						/////////// THANK YOU E-MAIL //////////
+						$form 			= new Registration_form();
+						$subject 		= html_entity_decode($option['user_subject_email_email_thankyou'],ENT_COMPAT,"UTF-8");;
+						$subject = $form->filterSubject($user_email,$subject);
+						$message_temp = "";
+						if($option['user_formate_email_email_thankyou'] == "0"){
+							$message_temp	= nl2br(strip_tags($option['user_message_email_email_thankyou']));
+						}else{
+							$message_temp	= $option['user_message_email_email_thankyou'];
+						}
+						$message		= $form->filterEmail($message_temp,$user_email);
+						$from_name		= $option['user_from_name_email_thankyou'];
+						$from_email		= $option['user_from_email_email_thankyou'];
+						$reply_email 	= $option['user_to_email_email_thankyou'];
+						//Headers
+						$headers  = 'MIME-Version: 1.0' . "\r\n";
+						$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+						if(!empty($from_email) && filter_var($from_email,FILTER_VALIDATE_EMAIL))//Validating From
+						$headers .= "From: ".$from_name." <".$from_email."> \r\n";
+						if($reply_email){
+							$headers .= "Reply-To: {$reply_email}\r\n";
+							$headers .= "Return-Path: {$reply_email}\r\n";
+						}else{
+							$headers .= "Reply-To: {$from_email}\r\n";
+							$headers .= "Return-Path: {$from_email}\r\n";
+						}	
+						/*************************************/
+
+						if( (isset($option['user_enable_email_thankyou']) && $option['user_enable_email_thankyou'] == 1) && !wp_mail($user_email, $subject, $message , $headers)){
+							$form->pr_error_log("'The e-mail could not be sent. Possible reason: mail() function may have disabled by your host.'".(PieRegister::get_error_log_info(__FUNCTION__,__LINE__,__FILE__)));
+						}else{
+							echo('<div id="dialog-message" title="User Verified Successfully">
+							<p>
+							  '.apply_filters("pie_user_veri_by_email_admin",__("User has been verified.","pie-register")).'
+							</p>
+						  </div>');	
+						}
+					}
+					else
+					{
+						echo('<div id="dialog-message" title="User Not Verified">
+						<p>
+						<strong>'.ucwords(__("error","pie-register")).'</strong>: '.apply_filters("piereg_invalid_verification_key",__("Invalid verification key","pie-register"))).'
+						</p>
+					  	</div>';
+					}
+				}else{
+					$user_name = esc_sql($_GET['pie_id']);
+					$user = get_user_by('login',$user_name);
+					if($user){
+						$user_meta = get_user_meta( $user->ID, 'active');
+						$user_meta_email = get_user_meta($user->ID,'hash');
+
+						if(isset($user_meta[0]) && $user_meta[0] == 1){
+							echo('<div id="dialog-message" title="User Verified">
+							<p><strong>'.ucwords(__("warning","pie-register")).'</strong>:
+							  '.apply_filters("piereg_canelled_your_registration",__("User is already verified","pie-register")).'
+							</p>
+						  </div>');
+							unset($user_meta);
+							unset($user_meta_email);
+							unset($user_name);
+							unset($user);
+						}elseif(isset($user_meta_email[0]) && $user_meta_email[0]){
+							echo('<div id="dialog-message" title="User Verified">
+							<p><strong>'.ucwords(__("warning","pie-register")).'</strong>:
+							  '.apply_filters("piereg_canelled_your_registration",__("User is already verified","pie-register")).'
+							</p>
+						  </div>');
+							unset($user_meta);
+							unset($user_meta_email);
+							unset($user_name);
+							unset($user);
+						}
+						else{
+							echo('<div id="dialog-message" title="User Not Verified">
+							<p><strong>'.ucwords(__("error","pie-register")).'</strong>: 
+							'.apply_filters("piereg_invalid_verification_key",__("Invalid verification key","pie-register")).'
+							</p>
+							</div>');
+						}
+					}
+					else{
+						echo('<div id="dialog-message" title="User Not Verified">
+							<p><strong>'.ucwords(__("error","pie-register")).'</strong>: 
+							'.apply_filters("piereg_invalid_verification_key",__("Invalid verification key","pie-register")).'
+							</p>
+							</div>');
+					}
+				}
+			}
+		}
+		function pie_update_user_meta_admin_hash() {
+			$verification_key = isset($_GET['verification_key']) ? $_GET['verification_key'] : "";
+			$unverified = get_users(array('meta_key'=> 'admin_hash','meta_value' => sanitize_key($verification_key)));
+			if(sizeof($unverified )==1)
+			{
+				$user_id	= $unverified[0]->ID;
+				$user_login = $unverified[0]->user_login;
+				if( isset($_GET['pie_id']) && $user_login == $_GET['pie_id'])
+				{
+					$admin_hash = "";
+					update_user_meta( $user_id, 'admin_hash', $admin_hash );
+				}
+			}
+		}
 		
 		function process_login_form(){
 			get_header();
@@ -2147,7 +2426,7 @@ if( !class_exists('PieRegister') ){
 								$cred_userlogin	= $this->pie_post_array['log'];
 								if( is_email($cred_userlogin) ) {
 									$userdata 			= get_user_by('email', $cred_userlogin);
-									$cred_userlogin		= strtolower($userdata->user_login);
+									$cred_userlogin		= ($userdata !== false) ? strtolower($userdata->user_login) : $cred_userlogin;
 								}
 								
 								$array_username 	= array_map( 'trim', explode(PHP_EOL,$option['piereg_ald_username']) );
@@ -2716,7 +2995,10 @@ if( !class_exists('PieRegister') ){
 			// Restrict Users by username and ip address
 			$pie_page_suffix_15 = add_submenu_page( 'pie-register', 'User Control', __('User Control',"pie-register") , 'manage_options', 'pie-black-listed-users', array($this, 'PieRegRestrictUsers'));
 			add_action('admin_print_scripts-' . $pie_page_suffix_15, array($this,'pieregister_rw_admin_scripts_styles'));
-				
+			
+			$pie_page_suffix_19 = add_submenu_page( 'pie-register', 'User Roles', __('User Roles',"pie-register") , 'manage_options', 'pie-user-roles-custom', array($this, 'PieRegCustomRoles'));
+			add_action('admin_print_scripts-' . $pie_page_suffix_19 , array($this,'pieregister_admin_scripts_styles'));
+	
 			$pie_page_suffix_17 = add_submenu_page( 'pie-register', 'Settings', __('Settings',"pie-register") , 'manage_options', 'pie-settings', array($this, 'PieRegSettings') );
 			add_action('admin_print_scripts-' . $pie_page_suffix_17 , array($this,'pieregister_rw_admin_scripts_styles'));
 			
@@ -2731,12 +3013,19 @@ if( !class_exists('PieRegister') ){
 			$pie_page_suffix_12 = add_submenu_page( 'pie-register', 'Help', __('Help',"pie-register") , 'manage_options', 'pie-help', array($this, 'PieRegHelp'));
 			add_action('admin_print_scripts-' . $pie_page_suffix_12, array($this,'pieregister_admin_scripts_styles'));
 			
-			if( !$this->piereg_pro_is_activate )
+			// Added since v3.5.4
+			$this->no_addon_activated = $this->anyAddonActivated();
+
+			if( $this->no_addon_activated )
 			{
-				$pie_page_suffix_14 = add_submenu_page( 'pie-register', 'Addons', '<span style="color: #C30604">'. __('Addons',"pie-register") .'</span>' , 'manage_options', 'pie-pro-features&tab=addons', array($this, 'PieRegProFeatures'));
-				add_action('admin_print_scripts-' . $pie_page_suffix_14, array($this,'pieregister_admin_scripts_styles_go_pro_menu'));
-				
-				$pie_page_suffix_13 = add_submenu_page( 'pie-register', 'Go Pro!', '<span style="color: #C30604">'. __('Go Pro!',"pie-register") .'</span>' , 'manage_options', 'pie-pro-features', array($this, 'PieRegProFeatures'));
+				if(!$this->piereg_pro_is_activate){
+					$pie_page_suffix_14 = add_submenu_page( 'pie-register', 'Addons', '<span style="color: #82b3f1">'. __('Addons',"pie-register") .'</span>' , 'manage_options', 'pie-pro-features&tab=addons', array($this, 'PieRegProFeatures'));
+					add_action('admin_print_scripts-' . $pie_page_suffix_14, array($this,'pieregister_admin_scripts_styles_go_pro_menu'));
+				}
+			}
+
+			if(!$this->piereg_pro_is_activate){
+				$pie_page_suffix_13 = add_submenu_page( 'pie-register', 'Go Pro!', '<span style="color: #82b3f1">'. __('Go Pro!',"pie-register") .'</span>' , 'manage_options', 'pie-pro-features', array($this, 'PieRegProFeatures'));
 				add_action('admin_print_scripts-' . $pie_page_suffix_13, array($this,'pieregister_admin_scripts_styles_go_pro_menu'));
 			}
 			
@@ -2999,6 +3288,42 @@ if( !class_exists('PieRegister') ){
 			}
 			else{
 				$this->pie_post_array['error_message'] = __("Wrong nonce","pie-register");
+			}
+		}
+
+		function copyForm(){
+			if(isset($_GET['form_id']) && !empty($_GET['form_id'])){
+
+				$form_copied = intval($_GET['form_id']);
+
+				$fields_id   = get_option("piereg_form_fields_id");
+				$fields_id   = ((int)$fields_id)+1;
+				update_option("piereg_form_fields_id",$fields_id);
+
+				// update fields
+				$options_fields   = get_option("piereg_form_fields_{$form_copied}");
+				update_option("piereg_form_fields_".$fields_id,$options_fields);
+				
+				$piereg_form_pricing_fields 	 = get_option("piereg_form_pricing_fields");
+				$piereg_form_pricing_fields["form_id_".$fields_id] = $piereg_form_pricing_fields["form_id_".$form_copied];
+				update_option("piereg_form_pricing_fields",$piereg_form_pricing_fields);
+				
+				$options = get_option(OPTION_PIE_REGISTER);
+				$options['pie_regis_set_user_role_'.$fields_id] = $options['pie_regis_set_user_role_'.$form_copied];
+				$options['piereg_startingDate_'.$fields_id] = "1901";
+				$options['piereg_endingDate_'.$fields_id] = date_i18n("Y");
+
+				// Update Wordpress Drefault User Role
+				update_option(OPTION_PIE_REGISTER,$options);
+
+				$_field 			= get_option("piereg_form_field_option_".$form_copied);
+				$_field['Id'] 		= $fields_id;
+				$_field['Title'] 	= $_field['Title'];
+				$_field['Views'] 	= "0";
+				$_field['Entries'] 	= "0";
+				$_field['Status'] 	= "enable";
+				add_option("piereg_form_field_option_".$fields_id,$_field);
+				wp_redirect("admin.php?page=pr_new_registration_form&form_id={$fields_id}&form_name=".str_replace(" ","_",$_field['Title'])."");
 			}
 		}
 		
@@ -3343,8 +3668,11 @@ if( !class_exists('PieRegister') ){
 							foreach($field_key['value'] as $key=>$value){
 								if($value == $_POST['custom_role']){
 									$new_role = $field_key['role_selection'][ $key];
+									// update_user_meta($user_id, "custom_role", $new_role);
+									break;
 								}
 							}
+							break;
 						}
 					}
 				}
@@ -3380,7 +3708,9 @@ if( !class_exists('PieRegister') ){
 				
 				///////////////////////////////////////////////////
 				/******** Admin Notification *******/
-				$this->send_admin_notifications($option,$user,$pass);
+				if($option_user_verification == 0 || $option_user_verification == 2){
+					$this->send_admin_notifications($option,$user,$pass);
+				}
 				////////////////////////////////////////////////////
 				
 				// until multiple payment gateways release we use this variable to get away with multiple gateway process
@@ -3452,7 +3782,12 @@ if( !class_exists('PieRegister') ){
 				else if($option_user_verification == 1 )//Admin Verification
 				{
 					update_user_meta( $user_id, 'active', 0);
+					$admin_hash = md5( time() );
+					update_user_meta( $user_id, 'admin_hash', $admin_hash);
 					update_user_meta( $user_id, 'register_type', "admin_verify");
+
+					$this->send_admin_notifications($option,$user,$pass);
+
 					$subject 		= html_entity_decode($option['user_subject_email_admin_verification'],ENT_COMPAT,"UTF-8");
 					$subject = $this->filterSubject($user,$subject);
 					$message_temp = "";
@@ -3533,6 +3868,11 @@ if( !class_exists('PieRegister') ){
 					/*	Admin Verification	*/
 					update_user_meta( $user_id, 'active', 0);
 					update_user_meta( $user_id, 'register_type', "admin_email_verify");
+					$admin_hash = md5( time() );
+					update_user_meta( $user_id, 'admin_hash', $admin_hash);
+
+					$this->send_admin_notifications($option,$user,$pass);
+
 					$subject 		= html_entity_decode($option['user_subject_email_admin_verification'],ENT_COMPAT,"UTF-8");
 					$subject = $this->filterSubject($user,$subject);
 					$message_temp = "";
@@ -3920,6 +4260,7 @@ if( !class_exists('PieRegister') ){
 							update_user_meta( $user_id, 'active', 0);
 							$hash = md5( time() );
 							update_user_meta( $user_id, 'hash', $hash );
+							update_user_meta( $user_id, 'admin_hash',"");
 							update_user_meta( $user_id, 'register_type', "email_verify");
 							
 							$subject 		= html_entity_decode($option['user_subject_email_email_verification'],ENT_COMPAT,"UTF-8");
@@ -3954,6 +4295,7 @@ if( !class_exists('PieRegister') ){
 							}
 						}else{
 							update_user_meta( $user_id, 'active',1);
+							update_user_meta( $user_id, 'admin_hash',"");
 							
 							//Sending E-Mail to newly active user
 							$user 			= new WP_User($user_id);
@@ -4194,6 +4536,106 @@ if( !class_exists('PieRegister') ){
 		function PieRegRestrictUsers()
 		{
 			$this->include_pr_menu_pages($this->plugin_dir.'/menus/PieRegRestrictUsers.php');			
+		}
+
+		/**
+		 * PieRegCustomRoles function
+		 * Description: Create custom user roles.
+		 * Since v3.5.4
+		 */
+		function PieRegCustomRoles()
+		{
+			if( isset($_POST['piereg_user_role_nonce']) && wp_verify_nonce( $_POST['piereg_user_role_nonce'], 'piereg_wp_user_role_nonce' ) )
+			{
+				$this->pie_post_array	= $this->piereg_sanitize_post_data( 'piereg_user_role',  ( (isset($_POST) && !empty($_POST))?$_POST : array() ) );
+
+				if(isset($this->pie_post_array['piereg_user_role_nonce']) && wp_verify_nonce( $this->pie_post_array['piereg_user_role_nonce'], 'piereg_wp_user_role_nonce' ))
+				{
+					global $wpdb;
+					$custom_role_table_name = $wpdb->prefix."pieregister_custom_user_roles";
+
+					if(isset($this->pie_post_array['add_role'])){
+
+						if($this->piereg_pro_is_activate){
+							if(empty($this->pie_post_array['piereg_role_key']) && !empty($this->pie_post_array['user_role_name'])){
+								$this->pie_post_array['error'] = __("Role Key is empty.","pie-register");
+							}
+							elseif(empty($this->pie_post_array['user_role_name']) && !empty($this->pie_post_array['piereg_role_key'])){
+								$this->pie_post_array['error'] = __("Role Name is empty.","pie-register");
+							}
+							elseif(empty($this->pie_post_array['piereg_role_key']) && empty($this->pie_post_array['user_role_name'])){
+								$this->pie_post_array['error'] = __("Role Key and Role Name is empty.","pie-register");
+							}						
+							
+							if(isset($this->pie_post_array['piereg_role_key'], $this->pie_post_array['user_role_name'], $this->pie_post_array['inherit_wp_roles']) && !empty($this->pie_post_array['piereg_role_key']) && !empty($this->pie_post_array['user_role_name']) && !empty($this->pie_post_array['inherit_wp_roles'])){
+	
+								$role_key         = strtolower(trim($this->pie_post_array['piereg_role_key']));
+								$role_key		  = str_replace(' ', '_', $role_key);
+								$role_name 		  = $this->pie_post_array['user_role_name'];
+								$wp_selected_role = $this->pie_post_array['inherit_wp_roles'];
+
+								$role_key_exists = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $custom_role_table_name WHERE `role_key`=%s" , $role_key) );
+								
+								if(isset($wpdb->last_error) && !empty($wpdb->last_error)){
+									$this->pr_error_log($wpdb->last_error.($this->get_error_log_info(__FUNCTION__,__LINE__,__FILE__)));
+								}
+
+								$role_name_exists = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $custom_role_table_name WHERE `role_name`=%s" , $role_name) );
+
+								if(isset($wpdb->last_error) && !empty($wpdb->last_error)){
+									$this->pr_error_log($wpdb->last_error.($this->get_error_log_info(__FUNCTION__,__LINE__,__FILE__)));
+								}
+
+								if($role_key_exists || $role_name_exists){
+									if($role_key_exists && !$role_name_exists){
+										$this->pie_post_array['error'] = __("Role Key already exists.","pie-register");
+									}
+									elseif($role_name_exists && !$role_key_exists){
+										$this->pie_post_array['error'] = __("Role Name already exists.","pie-register");
+									}
+									else{
+										$this->pie_post_array['error'] = __("Role Name and Role Key already exists.","pie-register");
+									}
+								}else{
+									$added_role = add_role( $role_key, __( $role_name ), get_role( $wp_selected_role )->capabilities);
+		
+									if($added_role){
+		
+										$sql = "INSERT INTO ".$custom_role_table_name." (`role_key`,`role_name`,`wp_role_name`) VALUES (%s,%s,%s)";
+							
+										if($wpdb->query( $wpdb->prepare($sql, $role_key, $role_name, $wp_selected_role)))
+											$this->pie_post_array['notice'] = __("Role Added Successfully","pie-register");
+										else
+											$this->pr_error_log($wpdb->last_error.($this->get_error_log_info(__FUNCTION__,__LINE__,__FILE__)));
+									}
+								}
+
+	
+							}
+						}
+
+					}elseif(isset($this->pie_post_array['role_del_id'])){
+						$this->piereg_get_wp_plugable_file(true); // require_once pluggable.php
+						if(isset($this->pie_post_array['piereg_user_role_nonce']) && wp_verify_nonce( $this->pie_post_array['piereg_user_role_nonce'], 'piereg_wp_user_role_nonce' ))
+						{
+							if($wpdb->query( $wpdb->prepare("DELETE FROM ".$custom_role_table_name." WHERE id = %s", $this->pie_post_array['role_del_id']) )){
+								$this->pie_post_array['notice'] = __("The Role has been deleted","pie-register");
+								remove_role( $this->pie_post_array['role_del_key']);
+							}	
+							else{
+								$this->pr_error_log($wpdb->last_error.($this->get_error_log_info(__FUNCTION__,__LINE__,__FILE__)));
+							}
+						}else{
+							$this->pie_post_array['error'] = __("Wrong nonce","pie-register");
+						}
+						
+					}
+				}else{
+					$this->pie_post_array['error'] = __("Wrong nonce","pie-register");
+				}
+			}
+
+			$this->include_pr_menu_pages($this->plugin_dir.'/menus/PieRegCustomRoles.php');			
 		}
 		function PieRegExportUsers()
 		{
@@ -4499,12 +4941,59 @@ if( !class_exists('PieRegister') ){
 						if(!isset($this->pie_post_array['pie_email_linkpage']) || empty($this->pie_post_array['pie_email_linkpage'])){
 							$this->pie_post_array['error']['error_reg_pg'] = __("Please select registration page","pie-register");
 						}
+						// ver - 3.5.4
+						if(
+							(!isset($this->pie_post_array['pie_email_invite']) || empty($this->pie_post_array['pie_email_invite']))
+							&&
+							(!isset($_FILES['import_email_addresses_file']) || $_FILES['import_email_addresses_file']['name'] == "")
+						){
+							$this->pie_post_array['error']['error_email_address'] = __("Please provide emaill addresses.","pie-register");
+						}
 
-						if( isset($this->pie_post_array['pie_email_invitecode'],$this->pie_post_array['pie_email_linkpage'],$this->pie_post_array['pie_email_invite']) && 
-							!empty($this->pie_post_array['pie_email_invitecode']) && !empty($this->pie_post_array['pie_email_linkpage']) && !empty($this->pie_post_array['pie_email_invite']) 
+						if( 
+							(isset($this->pie_post_array['pie_email_invite']) && !empty($this->pie_post_array['pie_email_invite']))
+							&&
+							(isset($_FILES['import_email_addresses_file']) && $_FILES['import_email_addresses_file']['name'] != "")
+						){
+							$this->pie_post_array['error']['error_email_address'] = __("Please add email manually OR import csv.","pie-register");
+						}
+						elseif( 
+							(isset($this->pie_post_array['pie_email_invitecode']) && !empty($this->pie_post_array['pie_email_invitecode']))
+							&& 
+							(isset($this->pie_post_array['pie_email_linkpage']) && !empty($this->pie_post_array['pie_email_linkpage']))
+							&&
+							(
+								(isset($this->pie_post_array['pie_email_invite']) && !empty($this->pie_post_array['pie_email_invite']))
+								||
+								(isset($_FILES['import_email_addresses_file']) && $_FILES['import_email_addresses_file']['name'] != "")
+							)
 						) {
-							$to_emails 	= preg_replace('/\s+/', '', $this->pie_post_array['pie_email_invite']);
-							$to_emails	= explode(',',$to_emails);
+							$to_emails = [];
+
+							if( isset($_FILES['import_email_addresses_file']) && $_FILES['import_email_addresses_file']['name'] != "" ){
+
+								if(pathinfo($_FILES['import_email_addresses_file']['name'],PATHINFO_EXTENSION) == "csv"){
+									
+									
+									$data 	= array();
+									
+									if (($handle = fopen($_FILES['import_email_addresses_file']['tmp_name'], 'r')) !== FALSE)
+									{
+										while (($row = fgetcsv($handle, 1000, ',')) !== FALSE)
+										{
+											$data[] = $row[0];
+										}
+										fclose($handle);
+									}
+									$to_emails = $data;
+								}else{
+									$this->pie_post_array['error']['error_file'] = __("Invalid File","pie-register");
+								}
+
+							}elseif(isset($this->pie_post_array['pie_email_invite']) && !empty($this->pie_post_array['pie_email_invite'])){
+								$to_emails 	= preg_replace('/\s+/', '', $this->pie_post_array['pie_email_invite']);
+								$to_emails	= explode(',',$to_emails);
+							}							
 							$subject 	= $piereg['pie_email_subject'];
 							$subject 	= str_replace('%blogname%',get_bloginfo('name'),$subject);
 							$from_name	= $piereg['pie_name_from'];
@@ -5530,6 +6019,8 @@ if( !class_exists('PieRegister') ){
 				$multiple 	= 'multiple';	
 				$name		.= "[]";
 				$data_f_post_name = "";
+			}elseif($field['type']=="custom_role"){
+				echo '<input type="hidden" id="default_'.$field['type'].'">';
 			}
 			echo '<select '.$multiple.' id="'.$name.'" name="'.$name.'" data-field_id="piereg_field_'.$no.'" disabled="disabled" '.$data_f_post_name.'>';
 		
@@ -5574,14 +6065,8 @@ if( !class_exists('PieRegister') ){
 						$checked = 'checked="checked"';	
 					}				
 					echo '<div class="wrapcheckboxes"><label>'.$field['display'][$a].'</label>';
-					// dropdown_ur
-					if($field['type'] == 'custom_role'){
-						$this->custom_role_id = $field['id'];
-						echo '<input type="hidden" id="default_'.$field['type'].'">';
-						echo '<input '.$checked.' type="radio" name="'.$field['type'].'[]" class="radio_fields" disabled="disabled" ></div>';
-					}else{
+					
 						echo '<input '.$checked.' type="'.$field['type'].'" name="'.$field['type'].'_'.$field['id'].'[]" class="radio_fields" disabled="disabled" ></div>';
-					}
 				}		
 				echo '</div>';
 			}			
@@ -6674,7 +7159,7 @@ if( !class_exists('PieRegister') ){
 			$last_segment 	= basename($redirect_to);
 			$current_url 	= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 			
-			if( $last_segment == 'wp-admin' || $redirect_to == admin_url() || $redirect_to == $current_url )
+			if( $last_segment == 'wp-admin' || $redirect_to == admin_url() )
 			{
 				return false;
 			}

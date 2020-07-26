@@ -21,7 +21,7 @@ global $theme; get_header();
         $fono = $fila['telefono'];
         $estado = $fila['estado'];
         $descripcion = $fila['descripcion'];
-        $imagen = $fila['imagen'];
+        $imagen = base64_encode($fila['imagen']);
         $atencion = $fila['horario'];
     }
 ?>
@@ -31,7 +31,7 @@ global $theme; get_header();
             <div class="card mb-4" style="max-width: 1540px;">
                 <div class="row no-gutters">
                     <div class="col-md-3"> <BR>
-                        <img src="data:image/jpg;base64,<?php if($resultado) echo base64_encode($resultado['imagen']); ?>" class="card-img-top" alt="...">
+                        <img src="data:image/jpg;base64,<?php  echo $imagen; ?>" class="card-img-top" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -42,7 +42,7 @@ global $theme; get_header();
                                         <td><input type="text" class="form-control form-control-sm" id="validationDefault02" name="especialidad" value="<?php echo $especialidad; ?>" disabled></td>
                                     </tr> 
                                     <tr>
-                                        <td><label for="validationDefault02" class="title">TIPO DE PUBLICACION:</label></td>
+                                        <td><label for="validationDefault02" class="title">TIPO DE PUBLICACIÓN:</label></td>
                                         <td><input type="text" class="form-control form-control-sm" id="validationDefault02" name="tipo" value="<?php echo $tipo; ?>" disabled></td>
                                     </tr>
                                     <tr>
@@ -74,15 +74,23 @@ global $theme; get_header();
                                         <td><input type="text" class="form-control form-control-sm" id="validationDefault02" name="descripcion" value="<?php echo $descripcion; ?>"></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="validationDefault02" class="title">ESTADO:</label> </td>
-                                        <td><input type="text" class="form-control form-control-sm" id="validationDefault02" name="estado" value="<?php echo $estado; ?>"></td>
+                                        <td><label for="validationDefault02" class="title">ESTADO DE SUSCRIPCIÓN:</label> </td>
+                                        <td>
+                                            <select id="inputState" class="form-control form-control-sm" name="estado">
+                                                <option value="1" <?php if($estado =="1") echo "selected"; ?>>VIGENTE</option>
+                                                <option value="0" <?php if($estado =="0") echo "selected"; ?>>NO VIGENTE</option>
+                                            </select>
+                                        </td>
+                                    
                                     </tr>
                                     <tr>
-                                        <td><label for="validationDefault02" class="title">ATENCION 24 HORAS:</label></td>
+                                        <td><label for="validationDefault02" class="title">ATENCIÓN LAS 24 HORAS:</label></td>
                                         <td>
+                                            <select id="inputState" class="form-control form-control-sm" name="atencion">
+                                                <option value="1" <?php if($atencion =="1") echo "selected"; ?>>SI</option>
+                                                <option value="0" <?php if($atencion =="0") echo "selected"; ?>>NO</option>
+                                            </select>
                                             
-                                            <input type="text" class="form-control form-control-sm" id="validationDefault02" name="atencion"  value="<?php echo $atencion; ?>">
-                                          
                                         </td>
                                     </tr>
                                     <tr>

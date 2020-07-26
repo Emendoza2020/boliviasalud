@@ -100,6 +100,11 @@ class Pie_api extends PieReg_Base {
           "callback"  => array($this, "pie_token_key_callback"),
         ));
 
+        register_rest_route("pie/v1","/feedback",array(
+          "methods"   => "POST",
+          "callback"  => array($this, "pie_feedback"),
+        ));
+
     }
 
 
@@ -113,6 +118,50 @@ class Pie_api extends PieReg_Base {
     CALLBACK API KEY ROUTE: 
     http://DOMAIN-NAME/wp-json/pie/v1/token-key
     ==================================*/
+
+    function pie_feedback(  $request_data )
+    {
+      $data                 = array();
+
+      $getHeaders           = apache_request_headers();
+      $auth_key             = $getHeaders['auth_key'];
+
+      $req_data             = $request_data->get_json_params();
+
+      //GET NONCE AUTH KEY
+      $auth_key_nonce       = $this->authKey($auth_key);
+      $status_code          = ( count( $auth_key_nonce ) > 0 );
+      
+
+      if ($status_code) {
+
+          $from_name  = $req_data['username'];
+          $from_email = $req_data['email'];
+
+          $email      = "pieregister@genetechsolutions.com";
+          $subject    = "Feedback - Pie Register APP";
+          $emailbody  = $req_data['message'];
+
+           $headers    .= "From: ".$from_name." <".$from_email."> \r\n";
+          if(wp_mail($email, $subject, $emailbody, $headers)){
+              $data['message']      = "Email Sent";    
+              $data['status_code']  = 200;    
+          }else{
+              $data['message']      = "Failed to send feedback pie-register";
+          }
+
+
+      }else{
+        $data['message'] = "Authentication Error";
+       // $data['status'] = "Authentication Error"
+      }
+
+      $data['status_code']  = $this->statusCode($status_code);
+
+      return $data;
+
+
+    }
 
     function pie_token_key_callback(  $request_data )
     {

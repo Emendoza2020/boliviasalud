@@ -271,31 +271,13 @@ function getStyle(type) {
 			wc_billing_address_html += '</div>';
 
 			// state / province / region field -> International
-			wc_billing_address_html += '<div  class="address2 state_div_' + no + ' div_wc_billing_state_int" id="state_' + no + '">';
-				wc_billing_address_html += req_chk_wc_billing_state_int;	
-				wc_billing_address_html += '<input type="text" class="input_fields">';
-				wc_billing_address_html += hide_btn_wc_billing_state_int;
-				wc_billing_address_html += '<label>State / Province / Region </label>';
-			wc_billing_address_html += '</div>';
-
-			// state / province / region field -> USA
 			wc_billing_address_html += '<div  class="address2 state_div_' + no + ' div_wc_billing_state_usa" id="state_us_' + no + '" style="display:none;">';
 				wc_billing_address_html += req_chk_wc_billing_state_usa;
 				wc_billing_address_html += '<select id="state_us_field_' + no + '">';
 					wc_billing_address_html += '<option value="" selected="selected"></option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option><option value="Armed Forces Americas">Armed Forces Americas</option><option value="Armed Forces Europe">Armed Forces Europe</option><option value="Armed Forces Pacific">Armed Forces Pacific</option>';
 				wc_billing_address_html += '</select>';
 				wc_billing_address_html += hide_btn_wc_billing_state_usa;
-				wc_billing_address_html += '<label>State </label>';
-			wc_billing_address_html += '</div>';
-
-			// state / province / region field -> Canada
-			wc_billing_address_html += '<div class="address2 state_div_' + no + ' div_wc_billing_state_can" id="state_canada_' + no + '" style="display:none;">';
-				wc_billing_address_html += req_chk_wc_billing_state_can;
-				wc_billing_address_html += '<select id="state_canada_field_' + no + '">';
-					wc_billing_address_html += '<option value="" selected="selected"></option><option value="Alberta">Alberta</option><option value="British Columbia">British Columbia</option><option value="Manitoba">Manitoba</option><option value="New Brunswick">New Brunswick</option><option value="Newfoundland &amp; Labrador">Newfoundland &amp; Labrador</option><option value="Northwest Territories">Northwest Territories</option><option value="Nova Scotia">Nova Scotia</option><option value="Nunavut">Nunavut</option><option value="Ontario">Ontario</option><option value="Prince Edward Island">Prince Edward Island</option><option value="Quebec">Quebec</option><option value="Saskatchewan">Saskatchewan</option><option value="Yukon">Yukon</option>';
-				wc_billing_address_html += '</select>';
-				wc_billing_address_html += hide_btn_wc_billing_state_can;
-				wc_billing_address_html += '<label>Province </label>';
+				wc_billing_address_html += '<label>State / Province / Region </label>';
 			wc_billing_address_html += '</div>';
 
 		wc_billing_address_html += '</div>';
@@ -430,32 +412,15 @@ function getStyle(type) {
 				wc_shipping_address_html += '<label>Country </label>';
 			wc_shipping_address_html += '</div>';
 
-			// state / province / region field -> International
-			wc_shipping_address_html += '<div  class="address2 state_div_' + no + ' div_wc_shipping_state_int" id="state_' + no + '">';
-				wc_shipping_address_html += req_chk_wc_shipping_state_int;
-				wc_shipping_address_html += '<input type="text" class="input_fields">';
-				wc_shipping_address_html += hide_btn_wc_shipping_state_int;
-				wc_shipping_address_html += '<label>State / Province / Region </label>';
-			wc_shipping_address_html += '</div>';
-
-			// state / province / region field -> USA
+            // state / province / region field -> International
+            
 			wc_shipping_address_html += '<div  class="address2 state_div_' + no + ' div_wc_shipping_state_usa" id="state_us_' + no + '" style="display:none;">';
 				wc_shipping_address_html += req_chk_wc_shipping_state_usa;
 				wc_shipping_address_html += '<select id="state_us_field_' + no + '">';
 					wc_shipping_address_html += '<option value="" selected="selected"></option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option><option value="Armed Forces Americas">Armed Forces Americas</option><option value="Armed Forces Europe">Armed Forces Europe</option><option value="Armed Forces Pacific">Armed Forces Pacific</option>';
 				wc_shipping_address_html += '</select>';
 				wc_shipping_address_html += hide_btn_wc_shipping_state_usa;
-				wc_shipping_address_html += '<label>State </label>';
-			wc_shipping_address_html += '</div>';
-
-			// state / province / region field -> Canada
-			wc_shipping_address_html += '<div class="address2 state_div_' + no + ' div_wc_shipping_state_can" id="state_canada_' + no + '" style="display:none;">';
-				wc_shipping_address_html += req_chk_wc_shipping_state_can;
-				wc_shipping_address_html += '<select id="state_canada_field_' + no + '">';
-					wc_shipping_address_html += '<option value="" selected="selected"></option><option value="Alberta">Alberta</option><option value="British Columbia">British Columbia</option><option value="Manitoba">Manitoba</option><option value="New Brunswick">New Brunswick</option><option value="Newfoundland &amp; Labrador">Newfoundland &amp; Labrador</option><option value="Northwest Territories">Northwest Territories</option><option value="Nova Scotia">Nova Scotia</option><option value="Nunavut">Nunavut</option><option value="Ontario">Ontario</option><option value="Prince Edward Island">Prince Edward Island</option><option value="Quebec">Quebec</option><option value="Saskatchewan">Saskatchewan</option><option value="Yukon">Yukon</option>';
-				wc_shipping_address_html += '</select>';
-				wc_shipping_address_html += hide_btn_wc_shipping_state_can;
-				wc_shipping_address_html += '<label>Province </label>';
+                wc_shipping_address_html += '<label>State / Province / Region </label>';               
 			wc_shipping_address_html += '</div>';
 
 		wc_shipping_address_html += '</div>';
@@ -500,7 +465,7 @@ function getStyle(type) {
     } // dropdown_ur
       else if (type == "custom_role") {
 
-        html.find("#field_position_" + no).html('<div class="radio_wrap"><label>My Label</label><input disabled="disabled" id="field_' + no + '" type="radio" class="radio_fields" /><label>My Label</label><input disabled="disabled" id="field_' + no + '" type="radio" class="radio_fields" /></div>');
+        html.find("#field_position_" + no).html('<select disabled="disabled" id="field_' + no + '"><option></option></select>');
  
     } else if (type == "pricing") {
         html.find("#field_label_" + no + " label").html("Membership");

@@ -8,7 +8,7 @@ if(!$this->piereg_pro_is_activate)  {
 
 ?>
 <fieldset class="piereg_fieldset_area-nobg" <?php echo $_disable; ?>>
-<form method="post" action="" name="pie_invite_sent" id="pie_invite_sent">
+<form method="post" action="" name="pie_invite_sent" id="pie_invite_sent" enctype="multipart/form-data">
 <?php if( function_exists( 'wp_nonce_field' )) wp_nonce_field( 'piereg_wp_invitation_code_nonce','piereg_invitation_code_nonce'); ?>
 <h3><?php echo _e('Invite Users','pie-register'); ?></h3>
 <ul class="bg-white clearfix invite-form">
@@ -63,13 +63,42 @@ if(!$this->piereg_pro_is_activate)  {
 </li>
 <li class="clearfix">
   <div class="fields">
-    <div  class="cols-2">
+    <div class="cols-2">
       <h3>
-        <?php _e("Invite users to register <small>(comma separated)</small>: ","pie-register");?>
+        <?php _e("Invite users to register (invite manually or through import): ","pie-register");?>
       </h3>
     </div>
+  </div>
+</li>
+<li class="clearfix">
+  <div class="fields extra-margin">
     <div class="cols-3">
-      <textarea name="pie_email_invite" id="pie_email_invite" rows="20"></textarea>      
+      <textarea name="pie_email_invite" id="pie_email_invite" rows="20"></textarea>   
+      <span class="quotation import-email-invites">
+        <?php _e("Add Email Addresses, comma seperated.","pie-register"); ?>
+      </span>   
+    </div>
+  </div>
+</li>
+<li class="clearfix">
+<div class="fields extra-margin">
+    <div class="cols-3">
+      <span class="quotation import-email-invites optional-selection">
+        <strong><?php _e("OR","pie-register"); ?></strong>
+      </span>   
+    </div>
+  </div>
+</li>
+<li class="clearfix">
+  <div class="fields extra-margin">
+    <div class="cols-3">
+      <input type="file" name="import_email_addresses_file" class="import_email_addresses_file" title="">
+      <span class="quotation import-email-invites">
+        <strong><?php _e("Warning","pie-register"); ?></strong>:
+        <?php _e("Supports CSV format.","pie-register"); ?>
+      </span>             
+      <span class="quotation import-email-invites"><?php echo sprintf( __( 'You may want to see', 'pie-register').' <a target="_blank" download href="%s"> '.__('the example of the CSV file', 'pie-register').'</a>. Use a separate line for each email address.' , plugin_dir_url(__FILE__).'../examples/example-import-email-addresses-test.csv'); ?>
+      </span>
     </div>
   </div>
 </li>

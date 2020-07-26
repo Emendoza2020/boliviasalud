@@ -23,7 +23,7 @@ global $theme; get_header();
                         <td class="title">ESPECIALIDAD</td>
                         <td class="title">NOMBRE</td>                                                
                         <td class="title">ESTADO</td>
-                        <td class="title">ACCION</td>                                                          
+                        <td class="title">ACCIÓN</td>                                                          
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -45,7 +45,7 @@ global $theme; get_header();
                         <td><?php echo $tipo; ?> </td>
                         <td><?php echo $especialidad; ?> </td>
                         <td><?php echo $nombre; ?> </td>                            
-                        <td><?php echo $estado; ?> </td> 
+                        <td><?php if($estado=="1") echo 'VIGENTE'; if($estado=="0") echo 'NO VIGENTE';?> </td> 
                         <td >
                             <div class="btn-group" role="group" aria-label="First group">
                                 <a href="ver_detalle?id=<?php echo $id; ?>" title="Detalle de Datos" class="badge badge-success" name="ver">VER</span></a>

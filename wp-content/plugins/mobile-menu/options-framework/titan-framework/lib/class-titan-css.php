@@ -32,16 +32,11 @@ class TitanFrameworkCSS
         $this->frameworkInstance = $frameworkInstance;
         $css = get_option( $this->getCSSSlug() );
         $generated_css = $this->getCSSFilePath();
-        if ( !file_exists( $generated_css ) || get_option( 'mobmenu_latest_update_version', '' ) !== WP_MOBILE_MENU_VERSION ) {
-            add_action( 'admin_init', array( $this, '_generateMissingCSS' ), 10 );
-        }
         // Gather all the options
         add_action( 'tf_create_option_' . $frameworkInstance->optionNamespace, array( $this, 'getOptionsWithCSS' ) );
         // display our CSS
         add_action( 'wp_head', array( $this, 'printCSS' ), 99 );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueueCSS' ) );
-        // Trigger new compile when theme customizer settings were saved
-        add_action( 'customize_save_after', array( $this, 'generateSaveCSS' ) );
         // Trigger new compile when admin option settings were saved
         add_action( 'tf_admin_options_saved_' . $frameworkInstance->optionNamespace, array( $this, 'generateSaveCSS' ) );
         // Trigger compile when there are no default options saved yet
@@ -107,7 +102,7 @@ class TitanFrameworkCSS
                 $css = get_option( $this->getCSSSlug() );
                 $generated_css = $this->getCSSFilePath();
                 
-                if ( file_exists( $generated_css ) && get_option( 'mobmenu_latest_update_version', '' ) === WP_MOBILE_MENU_VERSION ) {
+                if ( file_exists( $generated_css ) ) {
                     wp_enqueue_style(
                         'tf-compiled-options-' . $this->frameworkInstance->optionNamespace,
                         $this->getCSSFileURL(),

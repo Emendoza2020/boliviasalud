@@ -44,21 +44,27 @@ class Profile_front extends PieReg_Base
 			$data .= '<div class="piereg_profile_cont">';
           	//$data .= '<h1 id="piereg_pie_form_heading">'.__("Profile Page","pie-register").'</h1>';
 			$data .= '<span class="piereg-profile-logout-url"><a href="'.wp_logout_url().'">'.__("Logout","pie-register").'</a></span>';
-            $data .= '<a class="piereg_edit_profile_link" href="' . (add_query_arg( array("edit_user" => "1"), $this->piereg_get_current_url() )) . '"></a>';
+			
+			$option =  get_option(OPTION_PIE_REGISTER);
+			$profile_page = $option['alternate_profilepage'];
+			if($profile_page > 0){
+				$data .= '<a class="piereg_edit_profile_link" href="' . (add_query_arg( array("edit_user" => "1"), get_permalink($profile_page) )) . '"></a>';	
+			}			
 		    $data .= '<table border="0" cellpadding="0" cellspacing="0" class="pie_profile" id="pie_register">';
 			
 			if(is_array($this->data)){
 				foreach ($this->data as $this->field)
 				{
 					$this->visibility_check = [true, true];
-
-					if(isset($this->field['show_on']) && !empty($this->field['show_on'])){
-						$this->visibility_check = apply_filters('pie_addon_field_visibility_conditions',$this->visibility_check,$this->field);
-					}
-
-					if(!$this->visibility_check[0])
-					{
-						continue;
+					if($this->piereg_field_visbility_addon_active){
+						if(isset($this->field['show_on']) && !empty($this->field['show_on'])){
+							$this->visibility_check = apply_filters('pie_addon_field_visibility_conditions',$this->visibility_check,$this->field);
+						}
+	
+						if(!$this->visibility_check[0])
+						{
+							continue;
+						}
 					}
 
 					if(isset($this->field['show_in_profile']) && $this->field['show_in_profile']=="0" && $this->visibility_check[1])
@@ -164,12 +170,22 @@ class Profile_front extends PieReg_Base
 									$wc_billing_email 			= get_user_meta($this->user_id, "billing_email", true);
 									$wc_billing_phone 			= get_user_meta($this->user_id, "billing_phone", true);
 
-									global $woocommerce;					
-									$countries_obj   	= new WC_Countries();
-									$states 			= $countries_obj->get_states($wc_billing_country);
-									$wc_billing_country = $countries_obj->countries[$wc_billing_country];
-									if ($states) {
-										$wc_billing_state	= $states[$wc_billing_state];
+									if (!empty($wc_billing_country))
+									{
+										global $woocommerce;					
+										$countries_obj   	= new WC_Countries();
+										$states 			= $countries_obj->get_states($wc_billing_country);
+										$wc_billing_country = $countries_obj->countries[$wc_billing_country];
+										if ($states) {
+											if ( array_key_exists($wc_billing_state, $states) )
+											{
+												$wc_billing_state	= $states[$wc_billing_state];
+											}
+											else 
+											{
+												$wc_billing_state	= "";
+											}
+										}
 									}
 
 									$data .= '<tr><td class="fields fields2" style="vertical-align:top;">'.$label.'</td>';
@@ -245,12 +261,22 @@ class Profile_front extends PieReg_Base
 									$wc_shipping_email 			= get_user_meta($this->user_id, "shipping_email", true);
 									$wc_shipping_phone 			= get_user_meta($this->user_id, "shipping_phone", true);
 
-									global $woocommerce;					
-									$countries_obj   		= new WC_Countries();
-									$states 				= $countries_obj->get_states($wc_shipping_country);
-									$wc_shipping_country 	= $countries_obj->countries[$wc_shipping_country];
-									if ($states) {
-										$wc_shipping_state	= $states[$wc_shipping_state];
+									if (!empty($wc_shipping_country))
+									{
+										global $woocommerce;					
+										$countries_obj   		= new WC_Countries();
+										$states 				= $countries_obj->get_states($wc_shipping_country);
+										$wc_shipping_country 	= $countries_obj->countries[$wc_shipping_country];
+										if ($states) {
+											if ( array_key_exists($wc_shipping_state, $states) )
+											{
+												$wc_shipping_state	= $states[$wc_shipping_state];
+											}
+											else
+											{
+												$wc_shipping_state	= "";
+											}
+										}
 									}
 
 									$data .= '<tr><td class="fields fields2" style="vertical-align:top;">'.$label.'</td>';

@@ -69,6 +69,7 @@
                         <?php
                             $fields = maybe_unserialize(get_option("pie_fields"));
                             $replacement_fields = '';
+                            $woocommerce_fields = '';	   	
                             if( (is_array($fields) || is_object($fields)) && sizeof($fields) > 0 )
                             {
                                 foreach($fields as $pie_fields)	
@@ -91,13 +92,42 @@
                                     break;
                                     endswitch;						
                                     if($pie_fields['type'] == "invitation")
+                                    {
                                         $meta_key = "invitation_code";
+                                    }
                                     elseif($pie_fields['type'] == "custom_role")
+                                    {
                                         $meta_key = "custom_role";
+                                    }
+                                    elseif($pie_fields['type'] == "wc_billing_address")
+                                    {
+                                        $meta_key = "wc_billing_address";
+                                        if( empty($pie_fields['label']) ) 
+                                        {
+                                          $pie_fields['label'] = "Billing Address";
+                                        }
+                                    }
+                                    elseif($pie_fields['type'] == "wc_shipping_address")
+                                    {
+                                        $meta_key = "wc_shipping_address";
+                                        if( empty($pie_fields['label']) ) 
+                                        {
+                                          $pie_fields['label'] = "Shipping Address";
+                                        }
+                                    }
                                     else
+                                    {
                                         $meta_key	= "pie_".$pie_fields['type']."_".$pie_fields['id'];
-            
-                                    $replacement_fields .= '<option value="%'.$meta_key.'%">'.ucwords($pie_fields['label']).'</option>';
+                                    }
+                                    
+                                    if ($pie_fields['type'] == "wc_billing_address" || $pie_fields['type'] == "wc_shipping_address")
+                                    {
+                                      $woocommerce_fields .= '<option value="%'.$meta_key.'%">'.$pie_fields['label'].'</option>';
+                                    }
+                                    else
+                                    {
+                                      $replacement_fields .= '<option value="%'.$meta_key.'%">'.ucwords($pie_fields['label']).'</option>';
+                                    }
                                 }
                             }
                             ?>
@@ -118,9 +148,13 @@
                                 <optgroup label="<?php _e("Custom Fields",'pie-register') ?>">
                                     <?php echo $replacement_fields; ?>
                                 </optgroup>
+                                <optgroup label="<?php _e("WooCommerce Fields",'pie-register') ?>">
+                                    <?php echo $woocommerce_fields; ?>
+                                </optgroup>
                                 <optgroup label="<?php _e("Other",'pie-register') ?>">
                                     <option value="%blogname%"><?php _e("Blog Name",'pie-register') ?></option>
                                     <option value="%siteurl%"><?php _e("Site URL",'pie-register') ?></option>
+                                    <option value="%verificationurl%"><?php _e("Verification URL",'pie-register') ?></option> <!-- task duplicate form -->
                                     <option value="%blogname_url%"><?php _e("Blog Name With Site URL",'pie-register') ?></option>
                                     <option value="%user_ip%"><?php _e("User IP",'pie-register') ?></option>
                                 </optgroup>

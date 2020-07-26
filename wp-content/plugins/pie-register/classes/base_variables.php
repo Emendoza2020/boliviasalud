@@ -11,7 +11,7 @@ if(!defined('OPTION_PIE_REGISTER'))
 	*	Define PR DB Version Name
 */
 if(!defined('PIEREG_DB_VERSION'))
-	define('PIEREG_DB_VERSION','3.5');
+	define('PIEREG_DB_VERSION','3.5.4');
 
 /*
 	*	Define Restrict Widgets Option Name
@@ -76,8 +76,12 @@ if( !class_exists('PieRegisterBaseVariables') ){
 		
 		var $piereg_pro_is_activate = false;
 		var $piereg_bundle_activate = false;
+		var $no_addon_activated     = false;
+
          //pie-register-woocommerce addon
 		var $woocommerce_and_piereg_wc_addon_active = false;
+		//pie-register-field-visibility addon
+		var $piereg_field_visbility_addon_active = false;
 		
 		function __construct(){
 			
@@ -129,6 +133,11 @@ if( !class_exists('PieRegisterBaseVariables') ){
 			//pie-register-woocommerce addon
 			if( is_plugin_active( 'woocommerce/woocommerce.php') && is_plugin_active('pie-register-woocommerce/pie-register-woocommerce.php') && get_option('piereg_api_manager_addon_WooCommerce_activated') == "Activated" ) {
 				$this->woocommerce_and_piereg_wc_addon_active = true;
+			}
+
+			//pie-register-field-visibility addon
+			if( is_plugin_active('pie-register-field-visibility/pie-register-field-visibility.php') && get_option('piereg_api_manager_addon_Field_Visibility_activated') == "Activated" ) {
+				$this->piereg_field_visbility_addon_active = true;
 			}
 		}
 		public function pie_get_admin_path()

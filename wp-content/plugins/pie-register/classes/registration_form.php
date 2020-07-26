@@ -198,8 +198,9 @@ class Registration_form extends PieReg_Base
 			$errors->add( "username" , '<strong>'.ucwords(__('error','pie-register')).'</strong>: '.apply_filters("piereg_Username_already_exists",__('Username already exists','pie-register' )));
 		}		
 		
-		$regXemail = "/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$/";
-		if ( !isset($this->pie_post_array['e_mail']) || empty( $this->pie_post_array['e_mail'] ) || !preg_match($regXemail,$this->pie_post_array['e_mail']) )
+		//$regXemail = "/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$/";
+
+		if ( !isset($this->pie_post_array['e_mail']) || empty( $this->pie_post_array['e_mail'] ) || !is_email($this->pie_post_array['e_mail']) )
 		{
 			$errors->add( "email" , '<strong>'.ucwords(__('error','pie-register')).'</strong>: '.apply_filters("piereg_Invalid_Email_address",__('Invalid E-mail address','pie-register' )));
 		}
@@ -298,12 +299,13 @@ class Registration_form extends PieReg_Base
 		if(is_array($this->data)){
 			 foreach($this->data as $field)
 			 {
-				 $checking = false;
-
-				if(isset($field['show_on']) && !empty($field['show_on']) && $field['show_on'] == "profile"){
-					$checking = apply_filters('pie_addon_field_visibility_conditions',$checking,$field);
-					if($checking){
-						continue;
+				$checking = false;
+				if($this->piereg_field_visbility_addon_active){
+					if(isset($field['show_on']) && !empty($field['show_on']) && $field['show_on'] == "profile"){
+						$checking = apply_filters('pie_addon_field_visibility_conditions',$checking,$field);
+						if($checking){
+							continue;
+						}
 					}
 				}
 				
@@ -639,7 +641,7 @@ class Registration_form extends PieReg_Base
 			else if($rule=="email" && !empty($field_name))
 			{
 				$regXemail = "/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$/";
-				if( !preg_match($regXemail,$field_name) )
+				if( !is_email($field_name) )
 				{
 					$errors->add( $slug ,"<strong>". __(ucwords("Error"),"pie-register").":</strong> ".$field['label'] .apply_filters("piereg_field_must_contain_valid_email",__(" field must contain a valid email address." ,"pie-register")));		
 				}	

@@ -699,9 +699,10 @@ div.pieregForgotPassword{box-sizing:border-box;float:none;padding:15px;width:100
 	.pieregWrapper .wrapmathcaptcha{float:left;width:100%;}
 	.pieregWrapper .wrapmathcaptcha input{width:50% !important;} 
 }
-.piereg_container .pie-register-social-login{list-style:none;display:inline-block;margin:0px 15px;padding:0px;width:100%;}
+.piereg_container .pie-register-social-login{list-style:none;display:inline-block;margin: 0 0 15px 30%;padding:0px;width:calc( 100% - 30%);}
 .piereg_container .pie-register-social-login.piereg_left_icons li{float:left;padding:1px 3px;}
 .piereg_container .pie-register-social-login.piereg_right_icons li{float:right;padding:1px 3px;}
+.piereg_container .pie-register-social-login.default{display:flex; flex-wrap: wrap; justify-content: space-around;}
 .pieregWrapper #pie_register div.piereg-html-field-content{float:left;}
 .pieregWrapper #pie_register .PieRegister_paypal_pro .fields #PR_card_verification{width:100px;}
 /*Main UL of form*/
@@ -780,4 +781,56 @@ div.pieregformWrapper div.piereg_show_user_profile div.piereg_ps_user_profile_re
 }
 .fields .woo_fields_profile td{
 	border-right: none;
+}
+.fixed-dialog .ui-dialog-titlebar .ui-button .ui-icon-closethick::after {
+    content: url(../images/installation_status_faild.png) !important;
+    background-position: left top !important;
+    margin: 0 !important;
+    height: 10px !important;
+    width: 20px !important;
+}
+
+.ui-dialog.fixed-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
+    z-index: 999;
+    background: white;
+    border: 0.5px darkgray solid;
+    box-shadow: 0.5px 0.5px 6px grey;
+    border-radius: 9px;
+}
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.fixed-dialog.ui-dialog-buttons.ui-draggable.ui-resizable{
+	width:auto !important;
+}
+.fixed-dialog .ui-dialog-titlebar .ui-button span.ui-button-text{
+	display: none;
+}
+.fixed-dialog .ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.ui-draggable-handle {
+    background: #133950;
+    color: white;
+    padding-left: 24px;
+    line-height: 51px;
+    border-radius: 10px 10px 0px 0px;
+}
+.fixed-dialog button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close {
+    background: none;
+    float: right;
+}
+
+.fixed-dialog div#dialog-message > p {
+    text-align: center;
+    padding: 33px;
+    color: #8c8888;
+}
+.fixed-dialog button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+    background: #133950;
+    padding: 8px 19px;
+    border-radius: 8px;
+}
+.fixed-dialog .ui-dialog-buttonset {
+    text-align: right;
+    margin: 10px 12px;
+}
+.fixed-dialog{
+  position: fixed;
+  top: 50px;
+  left: 50px;
 }
