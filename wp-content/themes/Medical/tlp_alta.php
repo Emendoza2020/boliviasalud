@@ -9,8 +9,8 @@ global $theme; get_header();
 
         <div class="container">                                
                 
-            <h5 class="widgettitle">DATOS ESPECIALISTAS / EMPRESAS DE SALUD</h5>
-        
+                <h5 class="widgettitle">DATOS ESPECIALISTAS / EMPRESAS DE SALUD</h5>
+            <div class="table-responsive-sm">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -58,6 +58,7 @@ global $theme; get_header();
                 <?php } ?>
 
             </table>
+            </div>
             <script>
                  $('#mytable').ddTableFilter();
             </script>
@@ -72,7 +73,7 @@ global $theme; get_header();
                     });
                 });
             </script> 
-            
+    
         </div>   
     
     </div><!-- #main -->
